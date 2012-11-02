@@ -1,0 +1,16 @@
+name = UW
+description = UW Drupal Theme
+version = VERSION
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/bootstrap-responsive.css
+stylesheets[all][] = style.css
+scripts[] = js/header.js
+
+
+regions[dropdowns] = Dropdowns
+regions[sidebar_first] = Right sidebar
+regions[content] = Content
+regions[header] = Header
+regions[footer_nav] = Footer Nav
