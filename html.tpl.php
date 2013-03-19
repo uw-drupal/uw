@@ -11,7 +11,7 @@
 <!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 <html dir="ltr" lang="en-US">
 <!--<![endif]-->
-<head profile="<?php print $grddl_profile; ?>">
+<head>
 
 
   <?php print $head; ?>

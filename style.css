@@ -9,7 +9,7 @@ Version: 1.0
 
 
 /********************************************************************************************************************************************************************************
-	Common to both Mobile and Desktop 
+	Common to both Mobile and Desktop
 *********************************************************************************************************************************************************************************/
 
 /************************************************************************************
@@ -21,17 +21,17 @@ body {
 
 h1, h2, h3, h4 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400; 
+    font-weight: 400;
     letter-spacing: -.05em;
     color: #39275B;
 }
 h1 {
 	margin: 10px 0 25px;
 	font-size: 2.65em;
-	font-weight: 400; 
+	font-weight: 400;
 	line-height: 1.1em;
 }
-h2, h3, h4 { 
+h2, h3, h4 {
 	margin-bottom: 10px;
 	font-weight: 300;
 	letter-spacing: 0;
@@ -115,8 +115,8 @@ hr {
 }
 
 
-.widget_recent_entries h2, 
-.widget_categories h2, 
+.widget_recent_entries h2,
+.widget_categories h2,
 .widget_archive h2,
 .widget_links h2,
 .widget_archive h2,
@@ -126,7 +126,7 @@ hr {
 .widget_uw_showcase h2,
 .widget_mailchimp_subscribe h2,
 .widget_text h2,
-.subpage_menu h2, 
+.subpage_menu h2,
 .pagelet_widget h2,
 .widget_uw_rss_widget h2,
 #masonry h2 {
@@ -275,7 +275,7 @@ hr {
 	border: none;
 }
 .menu .sub-menu {
-	display: none;	
+	display: none;
 	z-index: 999;
 	top: -20px;
 	position: absolute;
@@ -315,7 +315,7 @@ hr {
 #sidebar .announcements ul li,
 .entry-content ul li,
 .widget_text ul li,
-.widget_uw_showcase ul li, 
+.widget_uw_showcase ul li,
 .pagelet_widget ul li,
 .widget_uw_rss_widget ul li {
 	margin-left: 0;
@@ -454,7 +454,7 @@ ol li {
 #alert-mini.uwalert-orange { background: url('http://www.uw.edu/static/alert_logo_orange-v2.jpg') no-repeat 16% 14% #ec7330; background-size: 18%; }
 
 
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
 	#access {
 		overflow: hidden;
 	}
@@ -484,8 +484,8 @@ ol li {
 		right: 25px;
 	}
 	.nav-collapse, .nav-collapse.collapse {
-    	visibility:hidden; 
-    	height:0; 
+    	visibility:hidden;
+    	height:0;
 	}
 	.navbar .btn-navbar::before {
 		content: "MENU";
@@ -552,7 +552,7 @@ ol li {
 	#branding {
 		height: 150px !important;
 	}
-	
+
 	/* ---- Alert ---- */
 
 	#uwalert-alert-message h1, #uwalert-alert-message p {
@@ -564,15 +564,15 @@ ol li {
 		width: 768px;
 	}
 }
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 }
 
 /********************************************************************************************************************************************************************************
-	Mobile 
+	Mobile
 *********************************************************************************************************************************************************************************/
 
 
-@media (max-width: 767px) {  
+@media (max-width: 767px) {
 
 	p {
     	font-size: 15px;
@@ -589,7 +589,7 @@ ol li {
 	}
 	#branding {
 		height: auto !important;
-	}	
+	}
 	#menu-primary-menu {
 		padding: 10px 0 0 0;
 	}
@@ -646,7 +646,7 @@ ol li {
 	.nav-collapse .nav > li:last-child > a {
 		border-bottom: none;
 	}
-	.navbar-inner {	
+	.navbar-inner {
 		background-color: #fff;
 		display: block;
 		padding: 0 0 0 0;
@@ -687,7 +687,7 @@ ol li {
 		content: " ";
 	}
 	/* Stuff to Hide */
-	
+
 	.header-image, .skip-link, .assistive-text { display: none }
 
 	/* =============================================================================
@@ -716,7 +716,7 @@ ol li {
 		height: 44px !important;
 	}
 	#listicon-wrapper, #searchicon-wrapper {
-		background: url("img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent;	
+		background: url("img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent;
 		position: absolute;
 		top: 4px;
 		right: 10px;
@@ -726,10 +726,10 @@ ol li {
 		text-indent: -9999px;
 		overflow: hidden;
 	}
-	#searchicon-wrapper {	
+	#searchicon-wrapper {
 		right: 50px;
 		height: 30px;
-		background: url("img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent;	
+		background: url("img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent;
 	}
 	.main-search, #thin-strip {
 		 visibility: hidden;
@@ -738,8 +738,8 @@ ol li {
 	/* =============================================================================
 	   Mobile Header Queries
 	   ========================================================================== */
-	
-	
+
+
 	#headerMobile {
 	    position: relative;
 	    width: 100%;
@@ -765,7 +765,7 @@ ol li {
 	    text-align: center;
 	    text-transform: uppercase;
 	    width: 61px;
-	}	
+	}
 	#background {
 	  width: 100%;
 	  background-color:#000;
@@ -800,7 +800,7 @@ ol li {
 		clear: both;
 		display: block;
 	}
-	
+
 	#thin-strip li a {
 		color: #39275B;
 		margin: 0;
@@ -902,13 +902,13 @@ ol li {
 	.formbutton {
 		display: none;
 	}
-	
-	
+
+
 	/* =============================================================================
 	   Body Content Styles
 	   ========================================================================== */
-	
-	
+
+
 	.widget_nav_menu a, .subpage_menu a { font-size: 15px; padding: 4px 0; }
 	#sidebar {
 		padding: 15px;
@@ -929,18 +929,18 @@ ol li {
 		border-top: 4px solid #D7A900;
 		border-bottom: 4px solid #D7A900;
 		background-color: #F9F9F9;
-	}	
+	}
 
-	#s { 
-		width: 90%; 
+	#s {
+		width: 90%;
 		padding: 9px 0 9px 10%;
 	}
 	.sharing li, .sharing-hidden li {}
-	
+
 	/* Image Handling */
-	
-	.image-magnifier { 
-		display: none; 
+
+	.image-magnifier {
+		display: none;
 	}
 	.alignleft, .alignright, .alignnone {
 		min-width: 225px !important;
@@ -966,9 +966,9 @@ ol li {
 		margin-bottom: 0;
 	}
 	.wp-media-credit:empty { display: none }
-	
+
 	/* Copy */
-	
+
 	body h1 {
 		padding: 0 15px 0 10px;
 		margin: 16px 0 16px 0;
@@ -980,20 +980,20 @@ ol li {
 	h1 i, h1 em {
 		font-size: 31px;
 	}
-	
+
 	/* ----  Disqus ---- */
-	
+
 	#disqus_thread {
 		margin: 0 15px;
 	}
-	
+
 
 	/* ----  Thin Strip Footer ---- */
 
 	#footer {
 		display: none;
 	}
-	
+
 	#footer-main {
 		background: #bfbfbf; /* Old browsers */
 		background: -moz-linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%); /* FF3.6+ */
@@ -1031,7 +1031,7 @@ ol li {
 	#footer-right {
 		display: none;
 	}
-	
+
 	/* ---- Alert ---- */
 
 	.alert-steel div, .alert-orange div, .alert-red div, .alert-blue divs {
@@ -1064,7 +1064,7 @@ ol li {
 	#thin-strip li a {
 		background-image: url('img/mobile-header/sprite1x.png');
 		background-repeat: no-repeat;
-	} 
+	}
 	#thin-strip li:nth-child(1) a {	background-position: center 0;		}
 	#thin-strip li:nth-child(2) a {	background-position: center -173px;	}
 	#thin-strip li:nth-child(3) a {	background-position: center -267px;	}
@@ -1073,36 +1073,36 @@ ol li {
 	#thin-strip li:nth-child(6) a {	background-position: center -690px; }
 	#thin-strip li:nth-child(7) a {	background-position: center -530px;	}
 	#thin-strip li:nth-child(9) a {	background-position: center -83px;	}
-	#thin-strip li:nth-child(10) a { background-position: center -530px; }	
-	#thin-strip li:nth-child(11) a { background: none; padding: 0; }	
-	#thin-strip li:nth-child(12) a { background: none; padding: 0; margin: 0 }	
+	#thin-strip li:nth-child(10) a { background-position: center -530px; }
+	#thin-strip li:nth-child(11) a { background: none; padding: 0; }
+	#thin-strip li:nth-child(12) a { background: none; padding: 0; margin: 0 }
 	#thin-strip li:nth-child(12) { background: none; margin: 0; }
-	
+
 }
 
 
 
 /********************************************************************************************************************************************************************************
-	Desktop 
+	Desktop
 *********************************************************************************************************************************************************************************/
 
-@media (min-width: 768px) {  
+@media (min-width: 768px) {
 
 
 	/* ----  Photo Handling ---- */
-	
+
 	.undefined {
 		position: relative;
 	}
-	
+
 	.alignleft {
 		float: left;
 		margin: 5px 20px 15px 0;
-		position: relative;	
+		position: relative;
 	}
 	.alignright {
 		float: right;
-		margin: 5px 0 15px 20px;	
+		margin: 5px 0 15px 20px;
 		position: relative;
 	}
 	.wp-media-credit {
@@ -1155,9 +1155,9 @@ ol li {
 	.type-page ul, .type-post ul {
 		overflow: hidden;
 	}
-	
+
 	/* ---- Inset Boxes ---- */
-	
+
 	.info-box {
 		border-left: 4px solid #DDD;
 		width: 245px;
@@ -1184,17 +1184,17 @@ ol li {
 	.entry-content .info-box-large h2 {
 		margin-top: 0;
 	}
-	
+
 	/************************************************************************************
 		Header
 	*************************************************************************************/
-	
+
 	body {
 	    background: url(img/header/bg-stripe.gif) repeat-x 197px 0 #FFF;
 	}
-	
+
 	/* ----  Thin Strip ---- */
-	
+
 	#thin-strip {
 	    height: 30px;
 	    position: absolute;
@@ -1210,7 +1210,7 @@ ol li {
 	}
 	#thin-strip.thin-fixed {
 		position: fixed;
-		top: 0px;		
+		top: 0px;
 	}
 	.logged-in #thin-strip.thin-fixed {
 	  top:28px;
@@ -1225,7 +1225,7 @@ ol li {
 		height: 30px;
 	    width: 960px;
 	    margin: 0 auto;
-	}	
+	}
 	#thin-strip ul {
 	    float: right;
 	}
@@ -1243,9 +1243,9 @@ ol li {
 	#thin-strip img {
 	    margin-top: -8px;
 	}
-	
+
 	/* ----  Switch thin strip colors based on class ---- */
-	
+
 	.tan-band #thin-strip {
 		background-color: #F3F2E9;
 	}
@@ -1267,10 +1267,10 @@ ol li {
 	}
 	.wordmark-white .wordmark {
 		background-position: 0 -197px;
-	}	
-	
+	}
+
 	/* ----  Header Logos Area ---- */
-	
+
 	#branding {
     	position:relative;
 		height: 150px;
@@ -1311,11 +1311,11 @@ ol li {
 	    left: 125px;
 	    top: 25px;
 	}
-	
-	
-	
+
+
+
 	/* ----  Top Search ---- */
-	
+
 	.main-search {
 	    position: absolute;
 	    top: 20px;
@@ -1442,8 +1442,8 @@ ol li {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
   }
-  
-	
+
+
 	.header-image {
 	    margin-top: -200px;
 	    display: block;
@@ -1452,9 +1452,9 @@ ol li {
 	    text-align: center;
 	    background-color: #d6e8fa;
 	}
-	
+
 	/* ----  Accessibility ---- */
-	
+
 	.assistive-text {
 		position: absolute !important;
 		z-index: -1;
@@ -1474,9 +1474,9 @@ ol li {
 		top: -30px;
 		left: 9.9%;
 	}
-	
+
 	/* ----  Dropdown Nav ---- */
-	
+
 	#access {
 		position: relative;
 		z-index: 3;
@@ -1558,7 +1558,7 @@ ol li {
 	}
 	.dropdown-toggle, .navbar .nav > li > a {
 	    font-family: 'Open Sans', sans-serif;
-	    font-weight: 400; 
+	    font-weight: 400;
 	    font-size: 1.1em;
 	}
 	.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown > .dropdown-toggle:focus {
@@ -1598,9 +1598,9 @@ ol li {
 	.nav > li.uw-medicine:hover {
 	    background-position: 10px -142px;
 	}
-	
+
 	/* ----  New Navigation ---- */
-	
+
 	.dropdown-menu {
 		top: 42px;
 		left: 0;
@@ -1622,7 +1622,7 @@ ol li {
 		visibility:visible;
 	}
 	.dropdown {
-		
+
 	}
 	.dropdown-menu.open {
     	height:240px;
@@ -1632,8 +1632,8 @@ ol li {
 		-moz-transition-duration: 0.3s;
 		background: rgba(255, 255, 255, 0.98);
 		opacity: 1;
-		box-shadow: 1px 1px 5px #808080;	
-		-webkit-box-shadow: 1px 1px 5px #808080;	
+		box-shadow: 1px 1px 5px #808080;
+		-webkit-box-shadow: 1px 1px 5px #808080;
 		-moz-box-shadow: 1px 1px 5px #808080;
 		box-shadow: 1px 1px 5px #808080;
 		/* For IE 8 */
@@ -1659,7 +1659,7 @@ ol li {
 	/************************************************************************************
 		Body
 	*************************************************************************************/
-	
+
 	/* ----  Right Sidebar ---- */
 
 	#sidebar {
@@ -1680,7 +1680,7 @@ ol li {
 		margin-top: 20px;
 	}
 	.right-bar, .stripe-top, .stripe-bottom {
-		background: url(img/side-stripe.png) no-repeat 0 0 transparent;	
+		background: url(img/side-stripe.png) no-repeat 0 0 transparent;
 	}
 	.right-bar {
 	    background-repeat: repeat-y;
@@ -1699,9 +1699,9 @@ ol li {
 	    bottom: 0;
 	    background-position: left bottom;
 	}
-		
+
 	/* ----  Content ---- */
-	
+
 	#content {
 		padding: 30px 0 30px 0;
 	}
@@ -1718,7 +1718,7 @@ ol li {
 	#arrow-mark {
 		position: absolute;
 		left: -7px;
-		top: 35px;	
+		top: 35px;
 	    background: url(img/arrow.png) no-repeat 0 0 transparent;
 	    width: 32px;
 	    height: 50px;
@@ -1729,9 +1729,9 @@ ol li {
 		width: 100% !important;
 		height: 442px !important;
 	}
-	
+
 	/* ----  Featured Image Banner ---- */
-	
+
 	.blog.featured-image #arrow-mark {
 		left: auto;
 		top: auto;
@@ -1742,25 +1742,25 @@ ol li {
 	}
 
 	/* ----  Footer ---- */
-	
-	
+
+
 	.footer-navigation > li {
 		float: left;
 		width: 140px;
 		margin-left: 20px;
 	}
-	
+
 	#footerBG {
 		clear: both;
 		margin-top: -35px;
 		padding: 124px 0 50px 0;
 		overflow: hidden;
-		background: url(img/footer.jpg) no-repeat center top transparent;	
+		background: url(img/footer.jpg) no-repeat center top transparent;
 	}
 	#footer {
 		width: 990px;
-		margin: 0 auto;	
-	}	
+		margin: 0 auto;
+	}
 	#footer li {
 		line-height: 14px;
 		list-style: none;
@@ -1792,20 +1792,20 @@ ol li {
 	.social-footer .footerTitle {
 		margin: 0 0 10px 0;
 	}
-	.uw-facebook a, .uw-twitter a, .uw-youtube a, .uw-itunes a, .uw-muw a, .uw-linkedin a {	
+	.uw-facebook a, .uw-twitter a, .uw-youtube a, .uw-itunes a, .uw-muw a, .uw-linkedin a {
 		background: url(img/soc-med.gif) no-repeat 0 0 transparent;
 		padding: 6px 0 6px 31px;
 		margin-bottom: 3px;
 		display: block;
-	}	
+	}
 	.uw-twitter a 	{	background-position: 0 -92px	}
 	.uw-youtube	a	{	background-position: 0 -30px	}
 	.uw-itunes a	{	background-position: 0 -60px	}
 	.uw-muw a		{	background-position: 0 -123px	}
 	.uw-linkedin a  {	background-position: 0 -154px	}
-	
+
 	/* ----  Thin Strip Footer ---- */
-	
+
 	#footer-main {
 		background: url(img/footer/bg.gif) repeat-x 0 0 #62584b;
 		height: 25px;
@@ -1840,9 +1840,9 @@ ol li {
 		right: 30px;
 		left: auto;
 	}
-	
+
 	/* ----  404 ---- */
-	
+
 	.parallax-viewport{position:relative;overflow:hidden;}.parallax-layer{position:absolute;}
 	#parallax {
 			margin: 1.5em 0px;
@@ -1853,9 +1853,9 @@ ol li {
 	.four-oh-four {
 		padding: 0 0 50px;
 	}
-	
+
 	/* ---- Alert ---- */
-	
+
   #uwalert-alert-message {
     position: relative;
     z-index: 1;
@@ -1872,7 +1872,7 @@ ol li {
     text-align:center;
     z-index: 1;
     color: #fff;
-    padding: 40px 0 10px 0; 
+    padding: 40px 0 10px 0;
     z-index: 0;
 	}
   .logged-in #alert-mini {
@@ -1882,9 +1882,9 @@ ol li {
 /************************************************************************************
 	Unique Pages
 *************************************************************************************/
-	
+
 	/* ----  Author Page ---- */
-	
+
 	.author h3 {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 15px;
@@ -1902,17 +1902,17 @@ ol li {
 	.author .author-posts h2 {
 		margin: 40px 0 20px;
 	}
-	
+
 	/* ----  Category Page ---- */
-	
+
 	.category .entry-header {
 		clear: both;
 	}
-	
+
 	/* ----  Post Page ---- */
-	
+
 	.single #arrow-mark { top: 55px }
-	
+
 
 	div.author-info {
    		font-size: 14px;
@@ -1921,10 +1921,10 @@ ol li {
    		padding: 0 0 0 15px; }
 
    	.date { margin-bottom: .6em }
-   	    
+
    	p small {
    	    font-size: 13px; }
-   	
+
    	.story-tags {
    	    margin-top: -15px; }
 
@@ -1934,13 +1934,13 @@ ol li {
 	    font-weight: 400; }
 
 	/* ----  Admissions Page ---- */
-	
+
 	.three-col {
 		float: left;
 		border-radius: 5px;
 		width: 170px;
 	}
-	
+
 	.post-info {
 		display: block;
 		width: 100%;
@@ -1957,11 +1957,11 @@ ol li {
 		font-weight: normal;
 	}
 }
-@media (min-width: 1200px) {  
+@media (min-width: 1200px) {
 }
 
 @media (max-width: 979px) {
-	body .navbar .btn-navbar {	
+	body .navbar .btn-navbar {
 		background-color: #f4f4f4;
 		background-image: -ms-linear-gradient(top, #f4f4f4, #f8f8f8);
 		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#f8f8f8));
@@ -1991,20 +1991,20 @@ ol li {
    ========================================================================== */
 
 
-@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), 
-		only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3/2), 
-		only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), 
-		only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) { 
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3/2),
+		only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5),
+		only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) {
     	.wordmark {
     		background: url("img/mobile-header/logo2x.png") no-repeat 0 0 transparent !important;
       	    background-size: 230px 35px;
     	}
     	#listicon-wrapper {
-    		background: url("img/mobile-header/dropdowns2x.png") no-repeat -29px 0px transparent !important;	
+    		background: url("img/mobile-header/dropdowns2x.png") no-repeat -29px 0px transparent !important;
     		background-size: 66px 32px;
     	}
- 		#searchicon-wrapper {	
-    		background: url("img/mobile-header/dropdowns2x.png") no-repeat 10px 0px transparent !important;	
+ 		#searchicon-wrapper {
+    		background: url("img/mobile-header/dropdowns2x.png") no-repeat 10px 0px transparent !important;
     		background-size: 66px 32px;
     	}
     	#thin-strip ul {

@@ -89,7 +89,7 @@
 					<input id="q" class="wTextInput" placeholder="Search the UW" title="Search the UW" name="q" type="text" autocomplete="off">
   					<input value="Go" name="sa" class="formbutton" type="submit">
   				</span>
-			</form>	
+			</form>
 
       <span class="search-toggle"></span>
       <div class="search-options">
@@ -132,15 +132,15 @@
         <li class="visible-phone"><a href="http://www.uw.edu/news">News</a></li>
         <li class="visible-phone"><a href="http://www.gohuskies.com/">UW Athletics</a></li>
       </ul>
-    </div>	
+    </div>
   </div><!-- #thin-strip -->
 
 
   <nav id="access" role="navigation" aria-label="Main menu">
     <h3 class="assistive-text">Main menu</h3>
-  
+
     <div id="navbar-menu" class="navbar">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" role="button" title="Open Navigation" href="#menu" tabindex="0" role="button" aria-haspopup="true">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" title="Open Navigation" href="#menu" tabindex="0" role="button" aria-haspopup="true">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -184,15 +184,14 @@
     <div id="content" role="main" class="container">
 
     <div class="row show-grid">
-      <div class="span8">
-
-      <div id="content" class="column">
-      </div> <!-- #content -->
+      <div class="span8 column">
+        <?php print render($page['content']); ?>
+      </div> <!-- #content .column -->
 
       <?php if ($page['sidebar_first']): ?>
 
-        <div id="secondary" class="span4 right-bar" role="complemntary">
-					<div class="stripe-top"></div><div class="stripe-bottom"></div>				
+        <div id="secondary" class="span4 right-bar" role="complementary">
+					<div class="stripe-top"></div><div class="stripe-bottom"></div>
           <div id="sidebar">
             <?php print render($page['sidebar_first']); ?>
           </div><!-- #sidebar -->
@@ -200,7 +199,6 @@
 
       <?php endif; ?>
 
-      </div>
     </div><!-- .row.show-grid -->
 
   </div><!-- #content -->
@@ -208,7 +206,7 @@
 
 
 <div id="footerBG">
-    <div id="footer" role="navigation" aira-label="Global Footer Menu">
+    <div id="footer" role="navigation" aria-label="Global Footer Menu">
     	<h2>Explore <?php echo $site_name; ?></h2>
       <div class="menu-global-footer-container">
           <?php print theme('links', array(
@@ -222,20 +220,20 @@
     </div>
 </div>
 
-<div id="footer-main" role="footer">
+<footer id="footer-main" role="contentinfo">
   <div id="footer-right">
   	<a href="http://www.seattle.gov/">Seattle, Washington</a>
   </div>
-	  <ul role="footer">
-	  	<li><a href="http://www.washington.edu/home/siteinfo/form">Contact Us</a></li>
-	  	<li><a href="http://www.washington.edu/jobs">Jobs</a></li>
-	  	<li><a href="http://myuw.washington.edu/">My UW</a></li>
-	  	<li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
-	  	<li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
-	  	<li><a href="http://www.washington.edu/online/terms">Terms</a></li>
-      </ul>
+  <ul>
+  	<li><a href="http://www.washington.edu/home/siteinfo/form">Contact Us</a></li>
+  	<li><a href="http://www.washington.edu/jobs">Jobs</a></li>
+  	<li><a href="http://myuw.washington.edu/">My UW</a></li>
+  	<li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
+  	<li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
+  	<li><a href="http://www.washington.edu/online/terms">Terms</a></li>
+  </ul>
   <div id="footer-left">
   	<a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
   </div>
-</div>
+</footer>
 
