@@ -1,8 +1,8 @@
 jQuery(document).ready(function($){
 
   //prevent ios nav bar from popping down
-  $('[href=#]').removeAttr('href'); 
-  $('table').addClass('table') //for bootstrap 
+  $('[href=#]').removeAttr('href');
+  $('table').addClass('table') //for bootstrap
 
     /*
      * UW Alert Banner
@@ -13,7 +13,7 @@ jQuery(document).ready(function($){
       status:'publish'
     }
 
-    var alert_url =  window.location.hash.indexOf('alert') === -1 ? 
+    var alert_url =  window.location.hash.indexOf('alert') === -1 ?
           "https://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/?callback=?" :
           'https://public-api.wordpress.com/rest/v1/sites/en.blog.wordpress.com/posts/?callback=?';
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
         function(res){
           if ( !res || res.found < 1)
             return;
-          
+
           var post  = res.posts[0]
             , cats  = post.categories
             , slugs = []
@@ -82,7 +82,7 @@ jQuery(document).ready(function($){
         url: 'https://ajax.googleapis.com/ajax/services/feed/load?callback=?',
         dataType: 'jsonp',
         data: data,
-        success: function(json) { 
+        success: function(json) {
           var icon = $.trim(json.responseData.feed.entries[2].title.split('|')[1]);
           var weat = $.trim(json.responseData.feed.entries[1].title.split('|')[1]);
           var temp = $.trim(json.responseData.feed.entries[0].title.split('|')[1]);
@@ -114,14 +114,14 @@ jQuery(document).ready(function($){
 		});
 		return false;
 	});
-	
+
 	closeImage.click(function(){
 		if (linkRotator.height() != 0){
-			linkRotator.css('height', 0).one('webkitTransitionEnd', function() {				
+			linkRotator.css('height', 0).one('webkitTransitionEnd', function() {
 				ul.hide();
 				linkImage.removeClass('hideLinkAnchor');
 			});
-		} 
+		}
 		return false;
 	});
 
@@ -138,14 +138,14 @@ jQuery(document).ready(function($){
   $('body').on('touchstart click', '#searchicon-wrapper, #listicon-wrapper', function() {
     var $this = $(this)
       , $nav  = [search, topnav]
-      , ismenu = $this.is('#listicon-wrapper') 
+      , ismenu = $this.is('#listicon-wrapper')
 
-    if ( ismenu ) 
+    if ( ismenu )
       $nav.reverse()
 
     search.find('input.wTextInput').blur()
 
-    var height = $nav[0].data('open') ? 0 : 
+    var height = $nav[0].data('open') ? 0 :
                  ismenu ? 340 : 45;
 
     $nav[0]
@@ -157,8 +157,8 @@ jQuery(document).ready(function($){
       .height(0)
       .data('open', false )
 
-    // Toggle title Show/Hide text 
-    $this.attr('title', $this.attr('title').indexOf('Show') ===  -1 ? 
+    // Toggle title Show/Hide text
+    $this.attr('title', $this.attr('title').indexOf('Show') ===  -1 ?
                           $this.attr('title').replace('Hide', 'Show') :
                           $this.attr('title').replace('Show', 'Hide') )
 
@@ -168,7 +168,7 @@ jQuery(document).ready(function($){
       window.scrollTo(0,0)
     }
 
-    return false; 
+    return false;
 
   }).on('transitionend webkitTransitionEnd mozTransitionEnd oTransitionEnd', '#thin-strip, form.main-search', function(e) {
 
@@ -196,7 +196,7 @@ jQuery(window).load(function() {
       , search = $('#search form')
       , win    = $(window)
       , bod    = $('body')
-      
+
 
     bod.append(strip.hide())
     strip.data('otop',bod.hasClass('top'))
@@ -228,197 +228,16 @@ jQuery(window).load(function() {
           $mini.slideDown()
       }
     });
-  
+
 /*
  * Dropdowns
  */
-
-  var calculate_dropdowns = function() {
-    $('.dropdown-menu').each(function() {
-      var $this  = $(this) 
-        , $items = $this.find('li')
-        , width  = height = 0
-
-      $this.find('.menu-block').filter(function() {
-        return width += $(this).outerWidth()
-      })
-
-      var shift  = $this.parent().position().left + width - 980
-        , height = $items.length < 7 ?  $this.height() : 240
-
-      $this.css({
-        width: width+1, //+1 for IE...
-        left: shift > 0 ? -1*shift : 0
-      }).data('height',height) 
-    })
-  }
-  calculate_dropdowns();
-
-  $('#menu-primary-menu').attr('role','menubar')
-  $('.dropdown')
-    .mouseenter(function(e) {
-    
-      if ( e.type === 'mouseenter' && $(window).width() < 979 ) 
-        return false;
-         
-      var $this   = $(this)
-        , $ul     = $this.children('.dropdown-menu')
-
-        $ul.addClass('open').attr('aria-hidden','false')
-          .height($ul.data('height'))
-
-      $('span.navbar-caret').css('left', $this.position().left + 20 ).hide().fadeIn(100);
-
-    }).mouseleave(function() {
-
-      if ( $(window).width() < 979 ) 
-        return false;
-         
-      var $this   = $(this)
-        , $ul     = $this.children('.dropdown-menu')
-
-        $ul.removeClass('open').attr('aria-hidden','true')
-          .height(0)
-
-      $('span.navbar-caret').stop().hide()
-
-    }).click(function(e) {
-
-      if ( $(window).width() < 979 )  {
-
-        var $this   = $(this)
-          , $ul     = $this.children('.dropdown-menu')
-          , $a      = $this.children('a')
-
-      if ( $ul.hasClass('open') ) {
-        document.location.href = $(e.target).attr('href')
-      } else {
-        window.scrollTo(0,0)
-          $('.dropdown-menu').removeClass('open').height(0)
-          $ul.addClass('open').attr('aria-hidden','false')
-            .height($ul.data('height')) 
+    // override and allow top-level menu clicks (vs. bootstrap toggle behavior)
+    $('.dropdown').click(function(e) {
+      if ($(this).hasClass('open') ) {
+        document.location.href = $(e.target).attr('href');
       }
-
-        return false;
-      }
-    
-    })
-
-  $('body').on('keydown.dropdown', 'ul.dropdown-menu a', function(e) {
-    
-      if (e.altKey || e.ctrlKey)
-        return true;
-
-      var keys     = {enter:13, esc:27, tab:9, left:37, up:38, right:39, down:40, spacebar:32 }
-        , $this    = $(this)
-        , $anchors = $this.closest('ul').find('a')
-        , clearMenus = function() { 
-          $('.dropdown-menu').removeClass('open').attr('aria-hidden','true').height(0);
-          $('span.navbar-caret').hide();
-        }
-
-      switch(e.keyCode) {
-
-        case keys.spacebar:
-          document.location.href = $this.attr('href');
-          return false;
-
-        case keys.tab:
-          clearMenus();
-          return true;
-
-        case keys.esc:
-          $this.blur().closest('ul').siblings('a').focus();
-          clearMenus();
-          return true;
-
-        case keys.down:
-          var index = $anchors.index($this)
-          //fix last anchor to circle focus back to first anchor
-          index = index === $anchors.length-1 ? -1 : index; 
-          $anchors.eq(index+1).focus();
-          return false;
-
-        case keys.up:
-          var index = $anchors.index($this)
-          $anchors.eq(index-1).focus();
-          return false;
-
-        case keys.left:
-          $this.blur().closest('ul').siblings('a').focus();
-          clearMenus();
-          return false;
-
-        case keys.right:
-          $this.blur().closest('ul').parent().next('li').children('a').focus();
-          clearMenus();
-          return false;
-
-        default:
-          var chr = String.fromCharCode(e.which)
-            , exists = false;
-          $anchors.filter(function() {
-            exists = this.innerHTML.charAt(0) === chr
-            return exists;
-          }).first().focus();
-          return !exists;
-    
-      }
-    
-    }).on('keydown.dropdown', 'a.dropdown-toggle', function(e) {
-
-      if (e.altKey || e.ctrlKey)
-        return true;
-
-      var keys     = {enter:13, esc:27, tab:9, left:37, up:38, right:39, down:40, spacebar:32 }
-        , $this = $(this)
-        , $ul   = $this.siblings('ul')
-        , $anchors = $('a.dropdown-toggle')
-        , clearMenus = function() { 
-          $('.dropdown-menu').removeClass('open').attr('aria-hidden','true').height(0);
-          $('span.navbar-caret').hide();
-        }
-
-      switch(e.keyCode) {
-        case keys.enter:
-          $ul.addClass('open').attr('aria-hidden','false').height($ul.data('height'))
-              .find('a').first().focus()
-          $('span.navbar-caret').css('left', $this.parent().position().left + 20 ).show();
-          return true;
-
-        case keys.spacebar:
-        case keys.up:
-        case keys.down:
-          var fake_event = jQuery.Event( 'keydown', { keyCode: keys.enter } );
-          $this.trigger(fake_event);
-          return false;
-
-        case keys.esc:
-          clearMenus();
-          return false;
-
-        case keys.tab:
-          clearMenus();
-          return true;
-        
-        case keys.left:
-          var index = $anchors.index($this)
-          $anchors.eq(index-1).focus()
-          return false;
-
-        case keys.right:
-          var index = $anchors.index($this)
-          //fix last anchor to circle focus back to first anchor
-          index = index === $anchors.length-1 ? -1 : index; 
-          $anchors.eq(index+1).focus()
-          return false;
-
-        default:
-          return true;
-      }
-  
     });
-
 
     $('[data-toggle=collapse]').click(function() {
 
@@ -440,14 +259,10 @@ jQuery(window).load(function() {
    */
   $(window).resize(function() {
     var w = $(this).width()
-    if ( w > 979 ) {
-      $('div.nav-collapse').show().find('.dropdown-menu').removeClass('open')
-      calculate_dropdowns()
-    } else if ( w > 767 ) {
-      search.removeAttr('style') 
+    if ( w > 767 ) {
+      search.removeAttr('style')
       $thin.removeAttr('style')
       strip.css('visibility','visible')
-      $('div.nav-collapse').removeAttr('style').find('.dropdown-menu').removeClass('open').removeAttr('style')
     }
   })
 

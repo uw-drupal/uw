@@ -71,14 +71,14 @@
  */
 ?>
 
-<header id="branding" style="background-image:url(<?php echo base_path().drupal_get_path('theme', 'uw'); ?>/img/header/cherries.jpg);" role="banner"> <!-- [TODO]:needs background image and banner_class() port -->
+<header id="branding" style="background-image:url(<?php print base_path().drupal_get_path('theme', 'uw'); ?>/img/header/cherries.jpg);" role="banner"> <!-- [TODO]:needs background image and banner_class() port -->
 
   <div id="header">
 		<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
 		<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to sidebar content">Skip to sidebar content</a></div>
 
 		<a class="patch" href="http://www.uw.edu" title="University of Washington">University of Washington</a>
-		<a class="wordmark" href="//www.washington.edu">University of Washington</a><!-- [TODO]:custom_wordmark() port and change href if exists -->
+		<a class="wordmark" href="<?php print $front_page; ?>">University of Washington | <?php print $site_name; ?></a>
 		<a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
 		<div id="search">
 			<form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
@@ -102,7 +102,7 @@
           UW Directory
         </label>
         <label class="radio">
-          <input type="radio" name="search-toggle" value="site" data-site="<?php echo url('', array('absolute'=>true)); ?>" data-placeholder="<?php echo $site_name; ?>"/>
+          <input type="radio" name="search-toggle" value="site" data-site="<?php print url('', array('absolute'=>true)); ?>" data-placeholder="<?php print $site_name; ?>"/>
           This site
         </label>
 
@@ -147,16 +147,7 @@
       </a>
       <div class="navbar-inner">
         <span class="navbar-caret" style="position:absolute;"></span>
-        <h3 class="visible-phone"><a href="<?php echo $base_path; ?>/"><?php echo $site_name; ?></a></h3>
-
-          <?php //print theme('links', array(
-                //'links' => $main_menu,
-                //'attributes' => array(
-                //  'id' => 'main-menu-links',
-                //  'class' => array('nav'),
-                //  'role' => array('menubar')
-                //),
-                //)); ?>
+        <h3 class="visible-phone"><a href="<?php print $base_path; ?>/"><?php print $site_name; ?></a></h3>
 
         <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
       </div>
@@ -191,6 +182,16 @@
 
     <div class="row show-grid">
       <div class="span8 column">
+
+        <header class="entry-header">
+          <?php print render($title_prefix); ?>
+          <?php if (!empty($title)): ?>
+            <h1 class="entry-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+        </header>
+
+        <span id="arrow-mark"></span>
         <?php print render($page['content']); ?>
       </div> <!-- #content .column -->
 
@@ -213,7 +214,7 @@
 
 <div id="footerBG">
     <div id="footer" role="navigation" aria-label="Global Footer Menu">
-    	<h2>Explore <?php echo $site_name; ?></h2>
+    	<h2>Explore <?php print $site_name; ?></h2>
       <div class="menu-global-footer-container">
           <?php print theme('links', array(
                 'links' => menu_navigation_links('menu-footer-menu'),

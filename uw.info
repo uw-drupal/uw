@@ -2,13 +2,20 @@ name = UW
 description = UW Drupal Theme
 version = VERSION
 core = 7.x
+base theme = bootstrap
 engine = phptemplate
-stylesheets[all][] = css/bootstrap.css
-stylesheets[all][] = css/bootstrap-responsive.css
-stylesheets[all][] = style.css
+
 scripts[] = js/header.js
+scripts[] = js/bootstrap-hover-dropdown.min.js
 
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/desktop.css
+stylesheets[all][] = css/hidpi.css
+stylesheets[all][] = css/mobile.css
+stylesheets[all][] = css/tablet.css
+stylesheets[all][] = css/alert.css
 
+regions[help] = Help
 regions[dropdowns] = Dropdowns
 regions[sidebar_first] = Right sidebar
 regions[content] = Content
