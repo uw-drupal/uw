@@ -1,0 +1,15 @@
+@import "compass/css3";
+
+@mixin multires-bg-image($prefix, $suffix) {
+  width: image-width($prefix + $suffix);
+  height: image-height($prefix + $suffix);
+  background: transparent no-repeat;
+  background-image: image-url($prefix + '@2x' + $suffix);
+  @media print,
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (-o-min-device-pixel-ratio: 5/4),
+         (min-resolution: 120dpi) {
+    background-image: image-url($prefix + '@2x' + $suffix);
+    background-size: image-width($prefix + $suffix) image-height($prefix + $suffix);
+  }
+}

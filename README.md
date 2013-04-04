@@ -35,3 +35,14 @@ We are using Sass+compass as a CSS preprocessor. To modify stylesheets, edit the
                                        One of: nested, expanded, compact, compressed
 ```
 
+## Theme Options
+
+Some options are available to control the look of the theme—look under the Appearance page, under UW theme settings.
+
+### Options
+
+* Patch color (W logo)
+	* gold (default), purple
+* Band color
+	* purple  (default), tan
+* Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (for high-dpi displays)

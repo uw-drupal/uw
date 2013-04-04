@@ -22,10 +22,13 @@
     margin-left: -400px;
   }
   body .wordmark {
-    left: 145px;
+    left: 130px;
   }
   .main-search {
-    right: 25px;
+    right: 0;
+  }
+  #search .search-toggle {
+    right: 7px;
   }
   .nav-collapse, .nav-collapse.collapse {
       visibility:hidden;

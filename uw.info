@@ -21,3 +21,7 @@ regions[sidebar_first] = Right sidebar
 regions[content] = Content
 regions[header] = Header
 regions[footer_nav] = Footer Nav
+
+settings[patch_color] = gold
+settings[band_color] = purple
+settings[show_patch] = 1

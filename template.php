@@ -10,6 +10,8 @@ function uw_js_alter(&$javascript) {
 function uw_preprocess_page(&$variables) {
   $variables['patch_color'] = theme_get_setting('patch_color');
   $variables['band_color'] = theme_get_setting('band_color');
+  $variables['default_logo'] = theme_get_setting('default_logo');
+  $variables['show_patch'] = theme_get_setting('show_patch');
 }
 
 function uw_menu_tree__main_menu(array $tree) {

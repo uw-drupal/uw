@@ -1,4 +1,4 @@
-@import "compass/css3";
+@import "base";
 
 @media (min-width: 768px) {
   .undefined {  position: relative }
@@ -159,11 +159,9 @@
     text-indent: -999px;
   }
   .wordmark {
-    background: url(../img/header/header-sprite.png) no-repeat 0 -87px transparent;
-    width: 325px;
-    height: 25px;
-    left: 125px;
-    top: 25px;
+    top: 0;
+    left: 115px;
+    @include multires-bg-image("header/logo", ".png");
   }
   .main-search {
     position: absolute;

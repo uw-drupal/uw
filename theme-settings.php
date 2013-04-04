@@ -21,18 +21,24 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
+  $form['uw']['show_patch'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Show patch (W logo)'),
+    '#default_value' => theme_get_setting('show_patch'),
+  );
+
   $form['uw']['patch_color'] = array(
-    '#type'          => 'select',
+    '#type'          => 'radios',
     '#title'         => t('Patch color (W logo)'),
     '#default_value' => theme_get_setting('patch_color'),
     '#options' => drupal_map_assoc(array('gold', 'purple')),
   );
 
   $form['uw']['band_color'] = array(
-    '#type'          => 'select',
+    '#type'          => 'radios',
     '#title'         => t('Band color'),
     '#default_value' => theme_get_setting('band_color'),
-    '#options' => drupal_map_assoc(array('tan', 'purple')),
+    '#options' => drupal_map_assoc(array('purple', 'tan')),
   );
 
 
