@@ -21,11 +21,18 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
-  $form['uw']['w_color'] = array(
+  $form['uw']['patch_color'] = array(
     '#type'          => 'select',
-    '#title'         => t('W logo color'),
-    '#default_value' => theme_get_setting('w_color'),
+    '#title'         => t('Patch color (W logo)'),
+    '#default_value' => theme_get_setting('patch_color'),
     '#options' => drupal_map_assoc(array('gold', 'purple')),
+  );
+
+  $form['uw']['band_color'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Band color'),
+    '#default_value' => theme_get_setting('band_color'),
+    '#options' => drupal_map_assoc(array('tan', 'purple')),
   );
 
 

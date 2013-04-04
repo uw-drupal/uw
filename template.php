@@ -7,6 +7,10 @@ function uw_js_alter(&$javascript) {
   $javascript['misc/jquery.js']['data'] = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 }
 
+function uw_preprocess_page(&$variables) {
+  $variables['patch_color'] = theme_get_setting('patch_color');
+  $variables['band_color'] = theme_get_setting('band_color');
+}
 
 function uw_menu_tree__main_menu(array $tree) {
   return '<ul role="menu" aria-hidden="true" class="dropdown-menu">'. $tree['tree'] .'</ul>';
