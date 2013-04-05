@@ -1,13 +1,18 @@
 <?php
 
-drupal_add_css('https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C400%2C300', 'external');
-
 function uw_js_alter(&$javascript) {
   // Swap out jQuery to use an updated version of the library.
-  $javascript['misc/jquery.js']['data'] = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+  $javascript['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
+  $javascript['misc/jquery.js']['version'] = null;
 }
 
 function uw_preprocess_page(&$variables) {
+  global $theme_path;
+  $base_path = base_path();
+
+  drupal_add_js("window.jQuery || document.write('<script src=\"$base_path$theme_path/js/jquery-1.8.3.min.js\"><' + '/script>');", array('type' => 'inline', 'group' => JS_LIBRARY, 'weight' => -19.9999999, 'every_page' => TRUE));
+  drupal_add_css('https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C400%2C300', 'external');
+
   $variables['patch_color'] = theme_get_setting('patch_color');
   $variables['band_color'] = theme_get_setting('band_color');
   $variables['default_logo'] = theme_get_setting('default_logo');
