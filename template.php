@@ -68,6 +68,7 @@ function uw_menu_link(array $variables) {
       'html' => TRUE
     );
   } else {
+    $element['#attributes']['role'] = 'menuitem';
     unset($element['#attributes']['class']);
   }
 
