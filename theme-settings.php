@@ -32,6 +32,12 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#title'         => t('Patch color (W logo)'),
     '#default_value' => theme_get_setting('patch_color'),
     '#options' => drupal_map_assoc(array('gold', 'purple')),
+    '#states' => array(
+      // Hide the patch color settings if show_patch is unchecked
+      'invisible' => array(
+        'input[name="show_patch"]' => array('checked' => FALSE),
+      ),
+    ),
   );
 
   $form['uw']['band_color'] = array(
