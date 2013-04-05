@@ -25,3 +25,5 @@ regions[footer_nav] = Footer Nav
 settings[patch_color] = gold
 settings[band_color] = purple
 settings[show_patch] = 1
+settings[show_search] = 1
+settings[search_default_site] = this site

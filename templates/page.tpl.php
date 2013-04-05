@@ -80,7 +80,9 @@
 		<?php if ($show_patch): ?><a class="patch" href="http://www.uw.edu" title="University of Washington">University of Washington</a><?php endif; ?>
 		<a style="<?php if (empty($default_logo)): ?>background-image: url(<?php print $logo; ?>)<?php endif; ?>" class="wordmark" href="<?php print $front_page; ?>">University of Washington | <?php print $site_name; ?></a>
 		<a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
-		<div id="search">
+
+    <?php if ($show_search): ?>
+    <div id="search">
 			<form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
 				<span class="wfield">
 					<input value="008816504494047979142:bpbdkw8tbqc" name="cx" type="hidden">
@@ -94,7 +96,7 @@
       <span class="search-toggle"></span>
       <div class="search-options">
         <label class="radio">
-          <input type="radio" name="search-toggle" value="main" checked="checked" data-placeholder="the UW">
+          <input type="radio" name="search-toggle" value="main" <?php if ($search_default_site == 'UW'): ?>checked="checked"<?php endif; ?> data-placeholder="the UW">
           UW.edu
         </label>
         <label class="radio">
@@ -102,7 +104,7 @@
           UW Directory
         </label>
         <label class="radio">
-          <input type="radio" name="search-toggle" value="site" data-site="<?php print url('', array('absolute'=>true)); ?>" data-placeholder="<?php print $site_name; ?>"/>
+          <input type="radio" name="search-toggle" value="site" data-site="<?php print url('', array('absolute'=>true)); ?>" <?php if ($search_default_site == 'this site'): ?>checked="checked"<?php endif; ?> data-placeholder="<?php print $site_name; ?>"/>
           This site
         </label>
 
@@ -113,7 +115,7 @@
         <h6>Tip: Click the notch for search options</h6>
         <span class="search-options-notch"></span>
       </div-->
-
+      <?php endif; ?>
 		</div>
 		<a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
   </div><!-- #header -->

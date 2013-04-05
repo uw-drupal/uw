@@ -17,6 +17,8 @@ function uw_preprocess_page(&$variables) {
   $variables['band_color'] = theme_get_setting('band_color');
   $variables['default_logo'] = theme_get_setting('default_logo');
   $variables['show_patch'] = theme_get_setting('show_patch');
+  $variables['show_search'] = theme_get_setting('show_search');
+  $variables['search_default_site'] = theme_get_setting('search_default_site');
 }
 
 function uw_menu_tree__main_menu(array $tree) {

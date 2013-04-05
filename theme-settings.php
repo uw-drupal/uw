@@ -21,6 +21,25 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
+  $form['uw']['show_search'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Show search (in header)'),
+    '#default_value' => theme_get_setting('show_search'),
+  );
+
+  $form['uw']['search_default_site'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Default search site'),
+    '#default_value' => theme_get_setting('search_default_site'),
+    '#options' => drupal_map_assoc(array('this site', 'UW')),
+    '#states' => array(
+      // Hide the patch color settings if show_patch is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
   $form['uw']['show_patch'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show patch (W logo)'),

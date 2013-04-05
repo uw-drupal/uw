@@ -275,15 +275,17 @@ jQuery(document).ready(function($) {
     , $toggle  = $('.search-toggle')
     , $flash   = $('.search-flash')
     , $q = $('#q')
+    , query = encodeURIComponent($q.val())
     , ie = $.browser.msie //$('[id^=ie]')
 
-  $inputs.removeAttr('checked').first().attr('checked', true)
-
-  $inputs.change(function() {
+  var update_placeholder = function() {
     var str = 'Search ' + $(this).data('placeholder')
     $q.prop('placeholder', str).attr('placeholder', str);
     if ( ie ) $q.val(str)
-  })
+  }
+
+  update_placeholder.call($inputs.filter(':checked'));
+  $inputs.change(update_placeholder);
 
   $toggle.click(function() {
     if ( !ie ) $q.css('width', soptions.is(':hidden') ?  '225px' : '' )
@@ -300,12 +302,12 @@ jQuery(document).ready(function($) {
       return true;
 
     if ( method === 'directory') {
-      window.location.href = 'http://www.washington.edu/home/peopledir/?method=name&whichdir=both&term=' + $q.val()
+      window.location.href = 'http://www.washington.edu/home/peopledir/?method=name&whichdir=both&term=' + query
       return false;
     }
 
     if ( method === 'site') {
-      window.location.href = $input.data('site') + '?s=' + $q.val()
+      window.location.href = $input.data('site') + 'search/node/' + query
       return false;
     }
     return true; //all else fails, just go to the normal search
@@ -316,7 +318,5 @@ jQuery(document).ready(function($) {
     //$flash.fadeIn().delay(2000).fadeOut()
     //soptions.fadeIn();
   })
-
-
 
 })
