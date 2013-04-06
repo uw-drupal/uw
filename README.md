@@ -41,8 +41,12 @@ Some options are available to control the look of the theme—look under the App
 
 ### Options
 
+* Show patch (enabled by default)
 * Patch color (W logo)
 	* gold (default), purple
+* Show search (enabled by default)
+* Search default site
+	* this site (default), or UW
 * Band color
-	* purple  (default), tan
+	* purple (default), tan
 * Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (for high-dpi displays)
