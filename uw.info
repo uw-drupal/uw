@@ -14,6 +14,7 @@ stylesheets[all][] = css/hidpi.css
 stylesheets[all][] = css/mobile.css
 stylesheets[all][] = css/tablet.css
 stylesheets[all][] = css/alert.css
+stylesheets[print][] = css/print.css
 
 regions[help] = Help
 regions[dropdowns] = Dropdowns
