@@ -2,7 +2,7 @@
 
 function uw_js_alter(&$javascript) {
   // Swap out jQuery to use an updated version of the library.
-  $javascript['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
+  $javascript['misc/jquery.js']['data'] = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
   $javascript['misc/jquery.js']['version'] = null;
 }
 
