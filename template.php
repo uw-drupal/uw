@@ -6,6 +6,10 @@ function uw_js_alter(&$javascript) {
   $javascript['misc/jquery.js']['version'] = null;
 }
 
+function uw_preprocess_html(&$variables) {
+  $variables['base_path'] = base_path();
+}
+
 function uw_preprocess_page(&$variables) {
   global $theme_path;
   $base_path = base_path();
