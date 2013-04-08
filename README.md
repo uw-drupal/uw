@@ -16,7 +16,7 @@ drush dl bootstrap
 drush en -y bootstrap
 ```
 
-Download the [Bootstrap library v2.3.x](http://twitter.github.com/bootstrap/) and extract it such that you have `sites/all/themes/bootstrap/bootstrap/...`
+Download the [Bootstrap library v2.3.x](http://twitter.github.com/bootstrap/) and extract it such that you have `sites/all/themes/bootstrap/bootstrap/...` or CD to your sites/all/themes/bootstrap directory and type: git clone git://github.com/twitter/bootstrap.git
 
 ## Stylesheets
 
