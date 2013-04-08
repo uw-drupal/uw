@@ -235,7 +235,10 @@ jQuery(window).load(function() {
     // override and allow top-level menu clicks (vs. bootstrap toggle behavior)
     $('.dropdown').click(function(e) {
       if ($(this).hasClass('open') ) {
-        document.location.href = $(e.target).attr('href');
+        var href = $('a', this).attr('href');
+        if (typeof href !== 'undefined') {
+          window.location.href = href;
+        }
       }
     });
 

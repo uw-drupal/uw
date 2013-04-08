@@ -4,10 +4,6 @@ input[type="text"].wTextInput {
 #s {
 	background: url('../img/search-bar.png') no-repeat 0 -54px transparent;
 }
-#primary {
-	background: url('../img/misc/ie-rounded-corners.png') no-repeat 0 0 transparent;
-	background-color: transparent !important;
-}
 .menu-block {
 	background: url('../img/header/ie-menu-bg.gif') repeat-y top right transparent;
 }
@@ -15,7 +11,7 @@ input[type="text"].wTextInput {
 .menu .sub-menu { border: 2px solid #e7e7e7; }
 
 /* --- News page  --- */
- 
+
 #nc-right-col .widget {
 	border: 1px solid #e3e3e3;
 }
@@ -34,7 +30,7 @@ input[type="text"].wTextInput {
 body h1 {
 	margin: 10px 0 33px;
 	font-size: 35px;
-	font-weight: 600; 
+	font-weight: 600;
 }
 body h2 {
     font-size: 21px;

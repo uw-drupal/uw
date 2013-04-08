@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if IE 6]>
 <html id="ie6" lang="<?php print $language->language; ?>">
 <![endif]-->
@@ -18,9 +18,11 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-  <!-- HTML5 element support for IE6-8 -->
+  <!-- HTML5 element and media query support for IE6-8 -->
   <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="<?php print $base_path . $directory; ?>/js/html5shiv.js"></script>
+    <script src="<?php print $base_path . $directory; ?>/js/respond.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php print $base_path . $directory ?>/css/ie8-and-down.css" />
   <![endif]-->
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
