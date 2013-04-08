@@ -77,8 +77,9 @@
 		<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
 		<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to sidebar content">Skip to sidebar content</a></div>
 
-		<?php if ($show_patch): ?><a class="patch" href="http://www.uw.edu" title="University of Washington">University of Washington</a><?php endif; ?>
-		<a style="<?php if (empty($default_logo)): ?>background-image: url(<?php print $logo; ?>)<?php endif; ?>" class="wordmark" href="<?php print $front_page; ?>">University of Washington | <?php print $site_name; ?></a>
+		<?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php echo $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
+    <?php endif; ?>
+		<a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
 		<a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
 
     <?php if ($show_search): ?>

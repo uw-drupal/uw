@@ -49,4 +49,4 @@ Some options are available to control the look of the theme—look under the App
 	* this site (default), or UW
 * Band color
 	* purple (default), tan
-* Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (for high-dpi displays)
+* Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)

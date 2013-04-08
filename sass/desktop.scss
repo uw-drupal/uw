@@ -150,18 +150,26 @@
   }
   .wordmark,
   .patch {
-    top: -30px;
-    display: block;
     position: absolute;
-    background: url(../img/header/header-sprite.png) no-repeat 5px 15px #d7a900;
+    display: block;
+    top: -30px;
+    left: 0;
+  }
+  .patch {
     width: 95px;
     height: 90px;
-    text-indent: -999px;
+    background-color: #d7a900;
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 75px;
+    }
   }
   .wordmark {
     top: 0;
     left: 115px;
-    @include multires-bg-image("header/logo", ".png");
+    width: 400px;
+    height: 100px;
   }
   .main-search {
     position: absolute;
@@ -173,7 +181,7 @@
     left: 9px;
     top: 4px;
     background: url(../img/header/header-sprite.png) no-repeat -103px 2px transparent;
-    box-shadow: none;
+    @include box-shadow(none);
     border: none;
     display: block;
     text-indent: -999px;
@@ -290,16 +298,14 @@
   }
   .navbar-inner {
     position: relative;
-    padding: 0;
     width: 995px;
     margin: 0 auto;
+    padding: 0;
+    border: none;
     background-color: transparent;
     background-image: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border: none;
     filter: none;
+    @include box-shadow(none);
   }
   .navbar .nav>li>.dropdown-menu:before {
     top: -11px;
@@ -405,8 +411,8 @@
     border: none;
     border-top: 4px solid #d7a900;
     margin: -1px 0 0;
-    box-shadow: inset 0 0 7px #656565;
     background: rgba(255,255,255,0.9);
+    @include box-shadow(inset 0 0 7px #656565);
     @include border-radius(0);
   }
   .open>.dropdown-menu {
@@ -434,14 +440,6 @@
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease;
     -moz-animation-fill-mode: forwards;
-  }
-  @keyframes slidenavAnimation {
-    from {  opacity: 0 }
-    to {  opacity: 1 }
-  }
-  @-webkit-keyframes slidenavAnimation {
-    from {  opacity: 0 }
-    to {  opacity: 1 }
   }
   #sidebar {  padding: 10px 0 0 55px }
   .right-bar .post-thumbnail.widget p {
@@ -481,9 +479,7 @@
     width: 1024px;
     margin: 0 auto;
     background-color: #FFF;
-    box-shadow: 0 0 7px #d3d3d3;
-    -moz-box-shadow: 0 0 7px #d3d3d3;
-    -webkit-box-shadow: 0 0 7px #d3d3d3;
+    @include box-shadow(0 0 7px #d3d3d3);
     border-radius: 5px;
   }
   #arrow-mark {
@@ -676,4 +672,13 @@
     border-left: 1px solid #ddd;
     font-weight: normal;
   }
+  @keyframes slidenavAnimation {
+    from {  opacity: 0 }
+    to {  opacity: 1 }
+  }
+  @-webkit-keyframes slidenavAnimation {
+    from {  opacity: 0 }
+    to {  opacity: 1 }
+  }
+
 }
