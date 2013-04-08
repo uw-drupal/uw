@@ -23,6 +23,8 @@ function uw_preprocess_page(&$variables) {
   $variables['show_patch'] = theme_get_setting('show_patch');
   $variables['show_search'] = theme_get_setting('show_search');
   $variables['search_default_site'] = theme_get_setting('search_default_site');
+  $variables['default_header'] = theme_get_setting('default_header');
+  $variables['header_path'] = file_create_url(theme_get_setting('header_path'));
 }
 
 function uw_menu_tree__main_menu(array $tree) {

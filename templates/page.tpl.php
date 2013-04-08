@@ -71,7 +71,7 @@
  */
 ?>
 
-<header id="branding" class="<?php print $patch_color;?>-patch <?php print $band_color;?>-band" style="background-image:url(<?php print base_path().drupal_get_path('theme', 'uw'); ?>/img/header/cherries.jpg);" role="banner"> <!-- [TODO]:needs background image port -->
+<header id="branding" class="<?php print $patch_color;?>-patch <?php print $band_color;?>-band" style="<?php if (!$default_header): ?>background-image:url(<?php print $header_path; ?>);<?php endif; ?>" role="banner">
 
   <div id="header">
 		<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>

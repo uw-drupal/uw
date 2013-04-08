@@ -28,3 +28,4 @@ settings[band_color] = purple
 settings[show_patch] = 1
 settings[show_search] = 1
 settings[search_default_site] = this site
+settings[default_header] = 1

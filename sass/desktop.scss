@@ -130,9 +130,10 @@
     position: relative;
     height: 150px;
     margin-bottom: 20px;
-    background-position: center top;
     padding-top: 30px;
     z-index: 1;
+    background-image: image-url("header/cherries.jpg");
+    background-position: center top;
   }
   #header {
     z-index: 4;
