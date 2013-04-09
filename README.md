@@ -50,3 +50,7 @@ Some options are available to control the look of the theme—look under the App
 * Band color
 	* purple (default), tan
 * Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)
+* Header image
+  * Specify a path within your Drupal's file folder or upload an image from your computer
+  * 1280x193 JPG image recommended
+    * Note: the image repeats, so you should check that your left and right seams blend nicely, or make your image wider
