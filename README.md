@@ -1,5 +1,14 @@
 # UW Drupal Theme – Readme
 
+## Before you Start
+
+This repository is for the UW Drupal Theme -- it contains the theme only, and
+not a full Drupal installation. This project assumes that you already have a
+working installation of Drupal in place.
+
+Installing Drupal is beyond the scope of this document. Contact the UW (or
+larger) Drupal community if you need a hand!
+
 ## Getting Started
 
 First, download (or clone) the theme into your Drupal 7 theme folder.
@@ -17,6 +26,8 @@ drush en -y bootstrap
 ```
 
 Download the [Bootstrap library v2.3.x](http://twitter.github.com/bootstrap/) and extract it such that you have `sites/all/themes/bootstrap/bootstrap/...`
+
+Finally, switch to the UW Drupal theme at Admin -> Appearance.
 
 ## Stylesheets
 
