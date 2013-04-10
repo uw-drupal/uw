@@ -153,23 +153,34 @@
         <h3 class="visible-phone"><a href="<?php print $base_path; ?>/"><?php print $site_name; ?></a></h3>
 
         <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
+
+        <?php if (!empty($primary_nav)): ?>
+          <div class="nav-collapse collapse">
+            <nav id="access" role="navigation" aria-label="Main menu">
+              <?php print render($primary_nav); ?>
+            </nav>
+          </div>
+        <?php endif; ?>
+
       </div>
     </div>
 
   </nav><!-- #access -->
 
+  <?php if (!empty($secondary_nav) || !empty($page['navigation'])): ?>
+    <div class="nav-collapse collapse">
+      <nav role="navigation" aria-label="Secondary menu">
+        <?php if (!empty($page['navigation'])): ?>
+          <?php print render($page['navigation']); ?>
+        <?php endif; ?>
+        <?php if (!empty($secondary_nav)): ?>
+          <?php print render($secondary_nav); ?>
+        <?php endif; ?>
+      </nav>
+    </div>
+  <?php endif; ?>
+
 </header>
-
-<?php if ($main_menu || $secondary_menu): ?>
-  <!--div id="navigation"><div class="section">
-    <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
-    <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
-  </div></div--> <!-- /.section, /#navigation -->
-<?php endif; ?>
-
-<?php if ($breadcrumb): ?>
-  <!--div id="breadcrumb"><?php print $breadcrumb; ?></div-->
-<?php endif; ?>
 
 <?php print $messages; ?>
 
