@@ -228,7 +228,7 @@
 
 <div id="footerBG">
     <div id="footer" role="navigation" aria-label="Global Footer Menu">
-    	<h2>Explore <?php print $site_name; ?></h2>
+    	<?php if ($site_name): ?><h2>Explore <?php print $site_name; ?></h2><?php endif; ?>
       <div class="menu-global-footer-container">
           <?php print theme('links', array(
                 'links' => menu_navigation_links('menu-footer-menu'),
