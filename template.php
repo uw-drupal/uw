@@ -21,7 +21,7 @@ function uw_preprocess_page(&$variables) {
   # add [data-hover="dropdown"] for dropdown hover functionality
   # kpr($variables['primary_nav']);
   foreach ($variables['primary_nav'] as &$link) {
-    if (count($link['#below'])) {
+    if (isset($link['#below']) && count($link['#below'])) {
       $link['#attributes']['aria-haspopup'] = 'true';
       $link['#localized_options']['attributes']['role'] = array('menuitem');
       $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
