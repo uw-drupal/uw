@@ -8,7 +8,7 @@ function uw_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  if ($element['#below']) {
+  if (isset($element['#below'])) {
     // Ad our own wrapper
     unset($element['#below']['#theme_wrappers']);
     $sub_menu = '<ul class="dropdown-menu" role="menu" aria-hidden="true">' . drupal_render($element['#below']) . '</ul>';

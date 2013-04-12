@@ -73,7 +73,7 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
   $form['uw']['header']['default_header'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use the default header image'),
-    '#default_value' => theme_get_setting('default_header', $key),
+    '#default_value' => theme_get_setting('default_header'),
     '#tree' => FALSE,
     '#description' => t('Check here if you want the theme to use the header supplied with it.')
   );
@@ -90,7 +90,7 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#type' => 'textfield',
     '#title' => t('Path to custom header'),
     '#description' => t('The path to the file you would like to use as your header file instead of the default header.'),
-    '#default_value' => theme_get_setting('header_path', $key),
+    '#default_value' => theme_get_setting('header_path'),
   );
   $form['uw']['header']['settings']['header_upload'] = array(
     '#type' => 'file',
