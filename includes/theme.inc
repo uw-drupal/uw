@@ -8,8 +8,8 @@ function uw_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  if (isset($element['#below'])) {
-    // Ad our own wrapper
+  if (isset($element['#below']) && !empty($element['#below'])) {
+    // add our own wrapper
     unset($element['#below']['#theme_wrappers']);
     $sub_menu = '<ul class="dropdown-menu" role="menu" aria-hidden="true">' . drupal_render($element['#below']) . '</ul>';
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
