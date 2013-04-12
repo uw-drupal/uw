@@ -504,7 +504,7 @@
     width: 675px;
     height: 102px;
   }
-  .footer-navigation>li {
+  #footer .menu-level-1>ul.nav>li {
     float: left;
     width: 140px;
     margin-left: 20px;
@@ -530,7 +530,7 @@
     font-size: 20px;
     margin: 0 0 45px 20px;
   }
-  .footer-navigation>li>a {
+  #footer .menu-level-1>ul.nav>li>a {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
@@ -539,6 +539,10 @@
   #footer a {
     color: #484848;
     font-size: 12px;
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
   }
   .social-footer {  margin: 20px 0 0 0 }
   .social-footer {  margin: 20px 0 0 0 }

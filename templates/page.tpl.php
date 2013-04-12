@@ -230,13 +230,7 @@
     <div id="footer" role="navigation" aria-label="Global Footer Menu">
     	<?php if ($site_name): ?><h2>Explore <?php print $site_name; ?></h2><?php endif; ?>
       <div class="menu-global-footer-container">
-          <?php print theme('links', array(
-                'links' => menu_navigation_links('menu-footer-menu'),
-                'attributes' => array(
-                  'id' => 'menu-global-footer',
-                  'class' => array('footer-navigation')
-                ),
-                )); ?>
+        <?php print render($page['footer_nav']); ?>
       </div>
     </div>
 </div>

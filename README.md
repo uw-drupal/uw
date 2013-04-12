@@ -65,3 +65,28 @@ Some options are available to control the look of the theme—look under the App
   * Specify a path within your Drupal's file folder or upload an image from your computer
   * 1280x193 JPG image recommended
     * Note: the image repeats, so you should check that your left and right seams blend nicely, or make your image wider
+
+## Menus
+
+
+### Dropdown Main Menu
+
+The main menu is displayed in the *Dropdowns* region by default. You can remove the default menu under the theme settings page by unchecking "Main Menu".
+
+### Expanded Footer Menu
+
+For an expanded, nested footer menu you must install the menu_block module.
+
+`drush dl menu_block && drush en -y menu_block`
+
+Once you install *menu_block*, it's recommended that you create a footer menu in the Footer Nav region.
+
+1. Navigate to the **Structure: Blocks** admin page.
+2. Add menu block
+3. Use these settings:
+	* a block title of \<none\>
+	* advanced options
+	* administrative title: [menu_block] Footer Menu
+	* maximum depth 2
+	* check: **Expand all children** of this tree
+	* assign region: Footer Nav

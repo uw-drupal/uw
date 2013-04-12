@@ -4,9 +4,20 @@
  *
  */
 
-function uw_menu_link(array $variables) {
+# THEME_menu_link__MENU_NAME implementation
+function uw_menu_link__main_menu(array $variables) {
+
   $element = $variables['element'];
   $sub_menu = '';
+
+  # normal menu style for menu_block__main_menu blocks
+  if (in_array('menu_link__menu_block__main_menu', (array)$element['#theme'])) {
+    # don't include "Home" links
+    if ($element['#title'] == 'Home') {
+      return;
+    }
+    return theme_menu_link($variables);
+  }
 
   if (isset($element['#below']) && !empty($element['#below'])) {
     // add our own wrapper
