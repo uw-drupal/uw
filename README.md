@@ -27,6 +27,13 @@ drush en -y bootstrap
 
 Download the [Bootstrap library v2.3.x](http://twitter.github.com/bootstrap/) and extract it such that you have `sites/all/themes/bootstrap/bootstrap/...`
 
+```
+cd sites/all/themes/bootstrap
+wget http://twitter.github.io/bootstrap/assets/bootstrap.zip
+unzip bootstrap.zip
+rm bootstrap.zip
+```
+
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
 
 ## Stylesheets
