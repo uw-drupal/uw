@@ -74,25 +74,25 @@
 <header id="branding" class="<?php print $patch_color;?>-patch <?php print $band_color;?>-band" style="<?php if (!$default_header): ?>background-image:url(<?php print $header_path; ?>);<?php endif; ?>" role="banner">
 
   <div id="header">
-		<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
-		<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to sidebar content">Skip to sidebar content</a></div>
+    <div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+    <div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to sidebar content">Skip to sidebar content</a></div>
 
-		<?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php echo $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
+    <?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php echo $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
     <?php endif; ?>
-		<a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
-		<a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
+    <a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
+    <a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
 
     <?php if ($show_search): ?>
     <div id="search">
-			<form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
-				<span class="wfield">
-					<input value="008816504494047979142:bpbdkw8tbqc" name="cx" type="hidden">
-					<input value="FORID:0" name="cof" type="hidden">
+      <form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
+        <span class="wfield">
+          <input value="008816504494047979142:bpbdkw8tbqc" name="cx" type="hidden">
+          <input value="FORID:0" name="cof" type="hidden">
           <label for="q" class="hide">Search the UW</label>
-					<input id="q" class="wTextInput" placeholder="Search the UW" title="Search the UW" name="q" type="text" autocomplete="off">
-  					<input value="Go" name="sa" class="formbutton" type="submit">
-  				</span>
-			</form>
+          <input id="q" class="wTextInput" placeholder="Search the UW" title="Search the UW" name="q" type="text" autocomplete="off">
+            <input value="Go" name="sa" class="formbutton" type="submit">
+          </span>
+      </form>
 
       <span class="search-toggle"></span>
       <div class="search-options">
@@ -117,8 +117,8 @@
         <span class="search-options-notch"></span>
       </div-->
       <?php endif; ?>
-		</div>
-		<a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
+    </div>
+    <a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
   </div><!-- #header -->
 
   <div id="thin-strip">
@@ -212,7 +212,7 @@
       <?php if ($page['sidebar_first']): ?>
 
         <div id="secondary" class="span4 right-bar" role="complementary">
-					<div class="stripe-top"></div><div class="stripe-bottom"></div>
+          <div class="stripe-top"></div><div class="stripe-bottom"></div>
           <div id="sidebar">
             <?php print render($page['sidebar_first']); ?>
           </div><!-- #sidebar -->
@@ -227,28 +227,28 @@
 
 
 <div id="footerBG">
-    <div id="footer" role="navigation" aria-label="Global Footer Menu">
-    	<?php if ($site_name): ?><h2>Explore <?php print $site_name; ?></h2><?php endif; ?>
-      <div class="menu-global-footer-container">
-        <?php print render($page['footer_nav']); ?>
-      </div>
+  <div id="footer" role="navigation" aria-label="Global Footer Menu">
+    <h2>Explore <?php print empty($site_name) ? 'UW' : $site_name; ?></h2>
+    <div class="menu-global-footer-container">
+      <?php print render($page['footer_nav']); ?>
     </div>
+  </div>
 </div>
 
 <footer id="footer-main" role="contentinfo">
   <div id="footer-right">
-  	<a href="http://www.seattle.gov/">Seattle, Washington</a>
+    <a href="http://www.seattle.gov/">Seattle, Washington</a>
   </div>
   <ul>
-  	<li><a href="http://www.washington.edu/home/siteinfo/form">Contact Us</a></li>
-  	<li><a href="http://www.washington.edu/jobs">Jobs</a></li>
-  	<li><a href="http://myuw.washington.edu/">My UW</a></li>
-  	<li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
-  	<li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
-  	<li><a href="http://www.washington.edu/online/terms">Terms</a></li>
+    <li><a href="http://www.washington.edu/home/siteinfo/form">Contact Us</a></li>
+    <li><a href="http://www.washington.edu/jobs">Jobs</a></li>
+    <li><a href="http://myuw.washington.edu/">My UW</a></li>
+    <li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
+    <li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
+    <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
   </ul>
   <div id="footer-left">
-  	<a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
+    <a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
   </div>
 </footer>
 
