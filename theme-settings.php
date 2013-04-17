@@ -21,13 +21,18 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
-  $form['uw']['show_search'] = array(
+  $form['uw']['search'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search Box'),
+  );
+
+$form['uw']['search']['show_search'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show search (in header)'),
     '#default_value' => theme_get_setting('show_search'),
   );
 
-  $form['uw']['search_default_site'] = array(
+  $form['uw']['search']['search_default_site'] = array(
     '#type'          => 'radios',
     '#title'         => t('Default search site'),
     '#default_value' => theme_get_setting('search_default_site'),
@@ -40,13 +45,18 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     ),
   );
 
-  $form['uw']['show_patch'] = array(
+  $form['uw']['patch'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('UW Logo Patch'),
+  );
+
+$form['uw']['patch']['show_patch'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show patch (W logo)'),
     '#default_value' => theme_get_setting('show_patch'),
   );
 
-  $form['uw']['patch_color'] = array(
+  $form['uw']['patch']['patch_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Patch color (W logo)'),
     '#default_value' => theme_get_setting('patch_color'),
@@ -59,7 +69,11 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     ),
   );
 
-  $form['uw']['band_color'] = array(
+  $form['uw']['logo_band'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('UW Logo Band'),
+  );
+  $form['uw']['logo_band']['band_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Band color'),
     '#default_value' => theme_get_setting('band_color'),
