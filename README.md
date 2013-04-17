@@ -25,13 +25,18 @@ drush dl bootstrap
 drush en -y bootstrap
 ```
 
-Download the [Bootstrap library v2.3.x](http://twitter.github.com/bootstrap/) and extract it such that you have `sites/all/themes/bootstrap/bootstrap/...`
+Download the customized [Bootstrap library](https://github.com/uw-drupal/bootstrap) and clone it to `sites/all/themes/bootstrap/bootstrap`
 
 ```
 cd sites/all/themes/bootstrap
-wget http://twitter.github.io/bootstrap/assets/bootstrap.zip
-unzip bootstrap.zip
-rm bootstrap.zip
+git clone git://github.com/uw-drupal/bootstrap.git
+```
+
+or, as a git submodule:
+
+```
+cd DRUPAL_ROOT
+git submodule add git://github.com/uw-drupal/bootstrap.git sites/all/themes/bootstrap/bootstrap
 ```
 
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
