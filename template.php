@@ -19,16 +19,17 @@ function uw_preprocess_page(&$variables) {
 
   # modify primary_nav before rendering
   # add [data-hover="dropdown"] for dropdown hover functionality
-  # kpr($variables['primary_nav']);
-  foreach ($variables['primary_nav'] as &$link) {
-    if (isset($link['#below']) && count($link['#below'])) {
-      $link['#attributes']['aria-haspopup'] = 'true';
-      $link['#localized_options']['attributes']['role'] = array('menuitem');
-      $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
-      # unset links below second level
-      foreach ($link['#below'] as $key => &$_link) {
-        if ($key[0] !== '#') {
-          unset($_link['#below']);
+  if (isset($variables['primary_nav']) && is_array($variables['primary_nav'])) {
+    foreach ($variables['primary_nav'] as &$link) {
+      if (isset($link['#below']) && count($link['#below'])) {
+        $link['#attributes']['aria-haspopup'] = 'true';
+        $link['#localized_options']['attributes']['role'] = array('menuitem');
+        $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
+        # unset links below second level
+        foreach ($link['#below'] as $key => &$_link) {
+          if ($key[0] !== '#') {
+            unset($_link['#below']);
+          }
         }
       }
     }

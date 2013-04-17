@@ -157,7 +157,7 @@
         <?php if (!empty($primary_nav)): ?>
           <div class="nav-collapse collapse">
             <nav id="access" role="navigation" aria-label="Main menu">
-              <?php //print render($primary_nav); ?>
+              <?php print render($primary_nav); ?>
             </nav>
           </div>
         <?php endif; ?>
