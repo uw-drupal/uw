@@ -41,23 +41,6 @@ git submodule add git://github.com/uw-drupal/bootstrap.git sites/all/themes/boot
 
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
 
-## Stylesheets
-
-**Do not edit any stylesheets in the CSS directory…such changes will be overwritten and lost.**
-
-We are using Sass+compass as a CSS preprocessor. To modify stylesheets, edit the corresponding .scss file, then compile using `compass watch` or `compass compile`.
-
-### Using Compass
-
-* Installing: [Compass installation instructions](http://compass-style.org/install/)
-* Compiling: switch to the UW Drupal Theme directory and run `compass watch`
-  * For debugging purposes, you might want to specify the `-s` switch, which controls the output format. But, remember to compile compressed before committing the CSS.
-
-```
-  -s, --output-style STYLE         Select a CSS output mode.
-                                       One of: nested, expanded, compact, compressed
-```
-
 ## Theme Options
 
 Some options are available to control the look of the theme—look under the Appearance page, under UW theme settings.
@@ -102,3 +85,9 @@ Once you install *menu_block*, it's recommended that you create a footer menu in
 	* maximum depth 2
 	* check: **Expand all children** of this tree
 	* assign region: Footer Nav
+
+## Further Changes and Customizations
+
+If you need to customize the stylesheets further or make other changes, we recommend creating a sub-theme.  See [Creating a sub-theme](http://drupal.org/node/225125) at drupal.org.  With this approach, you can continue to pull in changes and enhancements for the UW Drupal Theme without overriding your own customizations.
+
+Developers interested in contributing to this theme should see the [project wiki](https://github.com/uw-drupal/UW-Drupal-Theme/wiki) for additional info.
