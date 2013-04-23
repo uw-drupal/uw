@@ -91,6 +91,12 @@
     height: 150px !important;
   }
 
+  /* Override bootstrap default input element styles to ensure fields aren't
+     too wide. */
+  #sidebar input, #sidebar textarea, #sidebar .uneditable-input {
+    width: 119px;
+  }
+
   /* ---- Alert ---- */
 
   #uwalert-alert-message h1, #uwalert-alert-message p {

@@ -177,6 +177,13 @@
     top: 20px;
     right: 45px;
   }
+
+  // Override bootstrap default input element styles to ensure fields aren't
+  // too wide.
+  #sidebar input, #sidebar textarea, #sidebar .uneditable-input {
+    width: 191px;
+  }
+
   input[type="submit"].formbutton {
     position: absolute;
     left: 9px;
