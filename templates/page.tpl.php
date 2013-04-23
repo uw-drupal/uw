@@ -150,7 +150,7 @@
       </a>
       <div class="navbar-inner">
         <span class="navbar-caret" style="position:absolute;"></span>
-        <h3 class="visible-phone"><a href="<?php print $base_path; ?>/"><?php print $site_name; ?></a></h3>
+        <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
         <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
 
