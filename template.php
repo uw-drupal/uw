@@ -13,25 +13,35 @@ function uw_preprocess_html(&$variables) {
   $variables['base_path'] = base_path();
 }
 
+# helper function processes menu render arrays
+# - insert some aria and role attributes
+# - add [data-hover="dropdown"] for dropdown hover functionality
+function _uw_alter_menu(&$menu) {
+  foreach (element_children($menu) as $_key) {
+    $link = &$menu[$_key];
+    if (isset($link['#below']) && count($link['#below'])) {
+      $link['#attributes']['aria-haspopup'] = 'true';
+      $link['#localized_options']['attributes']['role'] = array('menuitem');
+      $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
+      # unset links below second level
+      foreach (element_children($link['#below']) as $__key) {
+        unset($link['#below'][$__key]['#below']);
+      }
+    }
+  }
+}
+
 function uw_preprocess_page(&$variables) {
   global $theme_path;
   $base_path = base_path();
 
-  # modify primary_nav before rendering
-  # add [data-hover="dropdown"] for dropdown hover functionality
+  # modify dropdown menus: primary_nav and any menu_* in the dropdowns region
   if (isset($variables['primary_nav']) && is_array($variables['primary_nav'])) {
-    foreach ($variables['primary_nav'] as &$link) {
-      if (isset($link['#below']) && count($link['#below'])) {
-        $link['#attributes']['aria-haspopup'] = 'true';
-        $link['#localized_options']['attributes']['role'] = array('menuitem');
-        $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
-        # unset links below second level
-        foreach ($link['#below'] as $key => &$_link) {
-          if ($key[0] !== '#') {
-            unset($_link['#below']);
-          }
-        }
-      }
+    _uw_alter_menu($variables['primary_nav']);
+  }
+  foreach ($variables['page']['dropdowns'] as $key => &$block) {
+    if (strpos($key, 'menu_') !== false) {
+      _uw_alter_menu($block);
     }
   }
 
