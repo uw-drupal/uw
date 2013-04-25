@@ -4,8 +4,8 @@
  *
  */
 
-# THEME_menu_link__MENU_NAME implementation
-function uw_menu_link__main_menu(array $variables) {
+# THEME_menu_link implementation
+function uw_menu_link(array $variables) {
 
   $element = $variables['element'];
   $sub_menu = '';
@@ -45,3 +45,5 @@ function uw_menu_link__main_menu(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
+
+# THEME_menu_link__MENU_NAME implementation can be used for specific menus
