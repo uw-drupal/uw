@@ -52,8 +52,12 @@ function uw_preprocess_page(&$variables) {
 }
 
 /**
- * override bootstrap theme wrapper function for the primary menu links
+ * override bootstrap_menu_tree
  */
-function uw_menu_tree__primary(&$variables) {
-  return '<ul class="menu nav" role="menubar">' . $variables['tree'] . '</ul>';
+function uw_menu_tree(&$variables) {
+  $role = "";
+  if (strpos($variables['tree'], 'menuitem') !== false) {
+    $role = "menubar";
+  }
+  return t('<ul class="menu nav" role="!role">', array('!role' => $role)) . $variables['tree'] . '</ul>';
 }
