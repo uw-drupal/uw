@@ -686,64 +686,62 @@
     font-weight: normal;
   }
 
-/* footer: aka Obama links */
+/* === footer: aka Obama links ============================== */
 
-  div.region-footer-nav section {
-    z-index:200;
+	div.region-footer-nav > section > ul.menu > li {
+	 /* -- Header items: Admissions, Academics, Campus Life... --*/
+		float:left;
+		z-index:0;
+		font-size:12px;
+	}
+	
+	div.region-footer-nav > section > ul.menu > li > a ,
+	div.region-footer-nav > section > ul.menu > li > div {
+		margin-bottom:9px;
+		font-weight: bolder;
+	}
+	
+	div.region-footer-nav > section > ul.menu > li > a > span.caret,
+	div.region-footer-nav > section > ul.menu > li > div > span.caret{
+		display:none;
+	}
+	
+	div.region-footer-nav > section > ul.menu > li ul.dropdown-menu{
+		/* -- the dropdown container -- */
+		border:none;
+		line-height:100%;
+		top:0px;
+		position:relative;
+		display:block;
+		box-shadow:none;
+		padding:0px;
+		background-color:transparent;
+	}
+	
+	div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li {
+	/* -- the items in the dropdown -- */
+	}
+	
+	div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
+	/* -- links in the items in the dropdown -- */
+		margin:0px;
+		padding:0px;
+		border:none;
+		line-height:16px;
+		background-color:none;
+		background-image:none;
+	}
+	
+	/* === /footer === */
+	
+	// ensure @keyframes come last in this file for IE compatibility
+	@keyframes slidenavAnimation {
+		from {  opacity: 0 }
+		to {  opacity: 1 }
+	}
+	@-webkit-keyframes slidenavAnimation {
+		from {  opacity: 0 }
+		to {  opacity: 1 }
+	}
 
-		div ul li {
-			margin-bottom:5px;
-			float:left;
-
-			span.caret {
-				display:none;
-			}
-
-			ul.dropdown-menu {
-				display:block;
-				top:0;
-				position:relative;
-				border:none;
-				padding:0px;
-				background-color:transparent;
-				box-shadow:none;
-
-				li.first {
-					padding-top:10px;
-				}
-
-				li {
-					display:block;
-					clear:both;
-					border:none;
-					padding-bottom: 5px;
-
-					a {
-						border:none;
-						background-color:none;
-					}
-
-				}
-
-			}
-
-    }
-
-  }
-
-  div.region-footer-nav section div ul li ul.dropdown-menu>li>a {
-    padding:0px;
-    line-height:120%;
-  }
-
-}
-
-// ensure @keyframes come last in this file for IE compatibility
-@keyframes slidenavAnimation {
-  from {  opacity: 0 }
-  to {  opacity: 1 }
-}
-@-webkit-keyframes slidenavAnimation {
-  from {  opacity: 0 }
-  to {  opacity: 1 }
 }

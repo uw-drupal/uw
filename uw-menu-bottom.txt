@@ -1,5 +1,4 @@
-drush dl menu_import
-drush en menu_import
+Install menu_import module per uw-menu-readme.txt
 Go to admin/structure/menu
 Click Add Menu -> Title: UW Footer Menu -> Save
 Go to admin/structure/menu

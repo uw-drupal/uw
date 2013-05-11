@@ -70,21 +70,20 @@ The main menu is displayed in the *Dropdowns* region by default. You can remove 
 
 ### Expanded Footer Menu
 
-For an expanded, nested footer menu you must install the menu_block module.
+If you'd like a nested footer menu similar to the one found on UW Homepage:
+1. Create a new menu at /admin/structure/menu
+2. Add 5 or 6 parent items and nested child items:
+	* Parent Item One
+		* Child item A
+		* Child item B
+		* Child item C
+	* Parent Item Two
+		* Child item D
+		* Child item E
+		…
+3. Add your new menu to the "Footer Nav" region at /admin/structure/blocks
 
-`drush dl menu_block && drush en -y menu_block`
-
-Once you install *menu_block*, it's recommended that you create a footer menu in the Footer Nav region.
-
-1. Navigate to the **Structure: Blocks** admin page.
-2. Add menu block
-3. Use these settings:
-	* a block title of \<none\>
-	* advanced options
-	* administrative title: [menu_block] Footer Menu
-	* maximum depth 2
-	* check: **Expand all children** of this tree
-	* assign region: Footer Nav
+See "UW-ME-README.txt" in the themes folder for additional instructions on installing the header and footer menus which appear on the UW Homepage.
 
 ## Further Changes and Customizations
 
