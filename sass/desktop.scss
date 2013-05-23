@@ -686,6 +686,49 @@
     font-weight: normal;
   }
 
+
+/* === dropdown columns =====================================
+ *   ul.menu             --horizontal
+ *   li.(first expanded dropdown) -- Horiz. Navigation Lables
+ *     ul.dropdown-menu
+ *       li.(dropdown-submenu)  -- Column1, Column2, Column3
+ *         ul.dropdown-menu     -- item container
+ *            li                --items 
+ * ---------------------------------------------------------- */
+
+ul.menu > li.dropdown {
+  /* border: thin solid purple; */
+}
+
+ul.menu > li.dropdown > ul.dropdown-menu{
+  background-color:#fff;
+}
+
+ul.menu > li.dropdown > ul.dropdown-menu > li.dropdown-submenu {
+   /* border: thin solid green; */
+   display:table-cell;
+   vertical-align:top;
+}
+ul.menu > li.dropdown > ul.dropdown-menu > li.dropdown-submenu span.nolink {
+  color: #717171;
+  padding-left:6px;
+  /* display:none; */
+
+}
+ul.menu > li.dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu, ul.dropdown-menu2{
+  /* border: thin solid orange; */
+  border-top:none;
+  padding:12px 0 0 0;
+  float:left;
+  position:relative;
+  left: 0; 
+  box-shadow: 0px 0px 0px;
+  display:block;
+  background-color:transparent;
+}
+
+/* === /dropdown columns ==================================== */
+
 /* === footer: aka Obama links ============================== */
 
 	div.region-footer-nav > section > ul.menu > li {
@@ -733,7 +776,7 @@
 	}
 	
 	/* === /footer === */
-	
+       
 	// ensure @keyframes come last in this file for IE compatibility
 	@keyframes slidenavAnimation {
 		from {  opacity: 0 }

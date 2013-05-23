@@ -141,8 +141,10 @@
 
   <nav id="access" role="navigation" aria-label="Main menu">
     <h3 class="assistive-text">Main menu</h3>
-
-    <div id="navbar-menu" class="navbar">
+		
+		<?php $show_navbar = ( !empty($primary_nav) || $page['dropdowns'] ) ? true : false ; ?>
+		
+    <div id="navbar-menu" class="navbar" <?php $show_navbar || (print 'style="display:none;"'); ?> >
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" title="Open Navigation" href="#menu" tabindex="0" role="button" aria-haspopup="true">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -152,15 +154,14 @@
         <span class="navbar-caret" style="position:absolute;"></span>
         <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
-        <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
 
-        <?php if (!empty($primary_nav)): ?>
-          <div class="nav-collapse collapse">
-            <nav id="access" role="navigation" aria-label="Main menu">
-              <?php print render($primary_nav); ?>
-            </nav>
-          </div>
-        <?php endif; ?>
+        <?php if ( $show_navbar ){ ?>
+					  <div class="nav-collapse collapse">
+           		<nav id="access" role="navigation" aria-label="Main menu">
+				      	<?php !empty($primary_nav) ? (print render($primary_nav)) : (print render($page['dropdowns'])) ; ?>
+            	</nav>
+         		</div>			
+        <?php  } ?>
 
       </div>
     </div>
@@ -248,7 +249,7 @@
     <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
   </ul>
   <div id="footer-left">
-    <a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
+    <a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>
   </div>
 </footer>
 
