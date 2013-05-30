@@ -25,7 +25,7 @@ function _uw_alter_menu(&$menu) {
       $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
       # unset links below second level
       foreach (element_children($link['#below']) as $__key) {
-  //      unset($link['#below'][$__key]['#below']);
+        unset($link['#below'][$__key]['#below']);
       }
     }
   }
@@ -35,7 +35,7 @@ function uw_preprocess_page(&$variables) {
   global $theme_path;
   $base_path = base_path();
 
-  # modify dropdown menus: primary_nav and any menu_* in the dropdowns region 
+  # modify dropdown menus: primary_nav and any menu_* in the dropdowns region
   if (isset($variables['primary_nav']) && is_array($variables['primary_nav'])) {
     _uw_alter_menu($variables['primary_nav']);
   }
