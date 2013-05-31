@@ -1,7 +1,7 @@
 @media (max-width: 767px) {
 
   p {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   #primary {
@@ -20,7 +20,7 @@
     padding: 10px 0 0 0;
   }
   .nav-collapse {
-      display:none;
+    display:none;
   }
   .nav-collapse, .nav-collapse.collapse {
     height:auto;
@@ -117,8 +117,8 @@
   .header-image, .skip-link, .assistive-text { display: none }
 
   /* =============================================================================
-     Mobile Header Queries Rewrite
-     ========================================================================== */
+   * Mobile Header Queries Rewrite
+   * ========================================================================== */
   #branding {
     background-image: none !important;
     background-color: #fff !important;
@@ -158,22 +158,22 @@
     background: url("../img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent;
   }
   .main-search, #thin-strip {
-     visibility: hidden;
-  }
+   visibility: hidden;
+ }
 
-  /* =============================================================================
-     Mobile Header Queries
-     ========================================================================== */
+/* =============================================================================
+   Mobile Header Queries
+   ========================================================================== */
 
 
-  #headerMobile {
-      position: relative;
-      width: 100%;
+   #headerMobile {
+    position: relative;
+    width: 100%;
   }
   #thin-strip {
-      height: 0;
-      overflow: hidden;
-      z-index: 9999;
+    height: 0;
+    overflow: hidden;
+    z-index: 9999;
     transition: height .5s;
     -moz-transition: height .5s; /* Firefox 4 */
     -webkit-transition: height .52s; /* Safari and Chrome */
@@ -182,15 +182,15 @@
     visibility: hidden;
   }
   #thin-strip span {
-      background:url("../img/misc/arrow2.png") no-repeat scroll right -69px transparent;
-      color: #FFFFFF;
-      display: block;
-      font-size: 10px;
-      height: 32px;
-      padding: 8px 0 0;
-      text-align: center;
-      text-transform: uppercase;
-      width: 61px;
+    background:url("../img/misc/arrow2.png") no-repeat scroll right -69px transparent;
+    color: #FFFFFF;
+    display: block;
+    font-size: 10px;
+    height: 32px;
+    padding: 8px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 61px;
   }
   #background {
     width: 100%;
@@ -206,19 +206,19 @@
     display: block;
   }
   #thin-strip ul {
-      background: url("../img/mobile-header/gridLines.png") center center no-repeat #fff;
-      height: 325px;
-      z-index: 9999;
-      box-shadow: inset 0 0 20px #d3d3d3;
-      -webkit-box-shadow: inset 0 0 20px #d3d3d3;
-      margin: 5px;
-      padding: 0;
-      border: 1px solid #e1e1e1
+    background: url("../img/mobile-header/gridLines.png") center center no-repeat #fff;
+    height: 325px;
+    z-index: 9999;
+    box-shadow: inset 0 0 20px #d3d3d3;
+    -webkit-box-shadow: inset 0 0 20px #d3d3d3;
+    margin: 5px;
+    padding: 0;
+    border: 1px solid #e1e1e1
   }
   #thin-strip li {
-      float: left;
-      list-style: none outside none;
-      margin: 20px 0 0;
+    float: left;
+    list-style: none outside none;
+    margin: 20px 0 0;
     text-align: center;
     width: 33%;
   }
@@ -236,17 +236,17 @@
     margin: 5px 0 0 0;
   }
   #weather {
-      bottom: 3px;
-      color: #fff;
-      font-size: 11px;
-      height: 45px;
-      left: 10px;
-      padding: 0;
-      position: absolute;
-      text-transform: uppercase;
-      width: 48px;
-      text-align: center;
-      font-weight: bold;
+    bottom: 3px;
+    color: #fff;
+    font-size: 11px;
+    height: 45px;
+    left: 10px;
+    padding: 0;
+    position: absolute;
+    text-transform: uppercase;
+    width: 48px;
+    text-align: center;
+    font-weight: bold;
   }
   #weather a {
     color: #fff;
@@ -263,11 +263,11 @@
     display:none;
   }
   .main-search {
-      height: 0;
-      overflow: hidden;
-      margin: 0 auto ;
-      width: 95%;
-      position: relative;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto ;
+    width: 95%;
+    position: relative;
     transition: height .5s;
     -moz-transition: height .5s; /* Firefox 4 */
     -webkit-transition: height .52s; /* Safari and Chrome */
@@ -310,8 +310,8 @@
     color: #484848
   }
   #logo {
-      text-align: center;
-      height: 44px;
+    text-align: center;
+    height: 44px;
   }
   .nav-collapse .dropdown-menu {
     display: none;
@@ -330,13 +330,13 @@
   }
 
 
-  /* =============================================================================
-     Body Content Styles
-     ========================================================================== */
+/* =============================================================================
+   Body Content Styles
+   ========================================================================== */
 
 
-  .widget_nav_menu a, .subpage_menu a { font-size: 15px; padding: 4px 0; }
-  #sidebar {
+   .widget_nav_menu a, .subpage_menu a { font-size: 15px; padding: 4px 0; }
+   #sidebar {
     padding: 15px;
   }
   .entry-content, .entry-meta, .post-content, #respond {
@@ -458,33 +458,10 @@
     display: none;
   }
 
-  /* ---- Alert ---- */
-
-  .alert-steel div, .alert-orange div, .alert-red div, .alert-blue divs {
-    background-position: center -40px;
-  }
-  #uwalert-alert-message{
-    position: relative;
-    z-index: 1;
-  }
-  #uwalert-alert-message div {
-    width: 100%;
-    padding-top: 65px;
-  }
-  #uwalert-alert-message h1, #uwalert-alert-message p {
-    color: #fff;
-    padding: 5px 15px 5px 30px;
-    margin: 0;
-    border: none;
-  }
-  #uwalert-alert-message h1 {
-    line-height: 18px;
-  }
-
-  /* =============================================================================
-     Media Queries
-     ========================================================================== */
-  #thin-strip li a {
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+   #thin-strip li a {
     padding: 54px 0 0 0;
   }
   #thin-strip li a {

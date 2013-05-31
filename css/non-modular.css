@@ -1,11 +1,11 @@
 /*
 Syntax error: Undefined mixin 'background-image'.
-        on line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss, in `background-image'
-        from line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss
+        on line 377 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss, in `background-image'
+        from line 377 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss
 
 Backtrace:
-/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss:241:in `background-image'
-/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss:241
+/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss:377:in `background-image'
+/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss:377
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
@@ -58,11 +58,11 @@ Backtrace:
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:31:in `create'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:26:in `block in created'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:25:in `each'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:25:in `created'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:17:in `refresh'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:30:in `block in temporary_multipath_handler'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `each'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `temporary_multipath_handler'
@@ -88,4 +88,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'background-image'.\A         on line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss, in `background-image'\A         from line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss"; }
+  content: "Syntax error: Undefined mixin 'background-image'.\A         on line 377 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss, in `background-image'\A         from line 377 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/non-modular.scss"; }

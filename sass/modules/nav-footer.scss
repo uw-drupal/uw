@@ -1,0 +1,181 @@
+// FIXME: needs to be "smacked"
+
+#footer .menu-level-1>ul.nav>li {
+  float: left;
+  width: 140px;
+  margin-left: 20px;
+}
+
+#footerBG {
+  clear: both;
+  margin-top: -35px;
+  padding: 124px 0 50px 0;
+  overflow: hidden;
+  background: url(../img/footer.jpg) no-repeat center top transparent;
+}
+
+#footer {
+  width: 990px;
+  margin: 0 auto;
+}
+
+#footer li {
+  line-height: 14px;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+#footer ul {
+  margin: 0;
+}
+
+#footer h2 {
+  font-size: 20px;
+  margin: 0 0 45px 20px;
+}
+
+#footer .menu-level-1>ul.nav>li>a {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+#footer a {
+  color: #484848;
+  font-size: 12px;
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+.social-footer {
+  margin: 20px 0 0 0;
+}
+
+.social-footer {
+  margin: 20px 0 0 0;
+}
+
+.social-footer .footerTitle {
+  margin: 0 0 10px 0;
+}
+
+.uw-facebook a,
+.uw-twitter a,
+.uw-youtube a,
+.uw-itunes a,
+.uw-muw a,
+.uw-linkedin a {
+  background: url(../img/soc-med.gif) no-repeat 0 0 transparent;
+  padding: 6px 0 6px 31px;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.uw-twitter a {
+  background-position: 0 -92px;
+}
+
+.uw-youtube a {
+  background-position: 0 -30px;
+}
+
+.uw-itunes a {
+  background-position: 0 -60px;
+}
+
+.uw-muw a {
+  background-position: 0 -123px;
+}
+
+.uw-linkedin a {
+  background-position: 0 -154px;
+}
+
+#footer-main {
+  background: url(../img/footer/bg.gif) repeat-x 0 0 #62584b;
+  height: 25px;
+  position: relative;
+  padding: 4px 0 0;
+}
+
+#footer-main a {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #fff;
+}
+
+#footer-main ul {
+  text-align: center;
+  margin: 0;
+}
+
+#footer-main li {
+  padding: 0 9px 0 0;
+  display: inline;
+  margin: 0 0 0 3px;
+  border-right: 2px solid #a1a1a1;
+}
+
+#footer-main li:last-child {
+  border-right: none;
+}
+
+#footer-left,
+#footer-right {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+}
+
+#footer-right {
+  right: 30px;
+  left: auto;
+}
+
+div.region-footer-nav > section > ul.menu > li {
+  /* -- Header items: Admissions, Academics, Campus Life... --*/
+  float: left;
+  z-index: 0;
+  font-size: 12px;
+}
+
+div.region-footer-nav > section > ul.menu > li > a,
+div.region-footer-nav > section > ul.menu > li > div {
+  margin-bottom: 9px;
+  font-weight: bolder;
+}
+
+div.region-footer-nav > section > ul.menu > li > a > span.caret,
+div.region-footer-nav > section > ul.menu > li > div > span.caret {
+  display: none;
+}
+
+div.region-footer-nav > section > ul.menu > li ul.dropdown-menu {
+  /* -- the dropdown container -- */
+  border: none;
+  line-height: 100%;
+  top: 0px;
+  position: relative;
+  display: block;
+  box-shadow: none;
+  padding: 0px;
+  background-color: transparent;
+}
+
+div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li {
+  /* -- the items in the dropdown -- */
+}
+
+div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
+  /* -- links in the items in the dropdown -- */
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  line-height: 16px;
+  background-color: none;
+  background-image: none;
+}

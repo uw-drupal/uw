@@ -1,11 +1,11 @@
 /*
-Syntax error: Undefined mixin 'background-image'.
-        on line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss, in `background-image'
-        from line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss
+Syntax error: Undefined mixin 'box-shadow'.
+        on line 9 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss, in `box-shadow'
+        from line 9 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss
 
 Backtrace:
-/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss:241:in `background-image'
-/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss:241
+/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss:9:in `box-shadow'
+/Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss:9
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
@@ -17,16 +17,6 @@ Backtrace:
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:362:in `visit_media'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -55,14 +45,15 @@ Backtrace:
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:95:in `block (4 levels) in perform'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:31:in `create'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:26:in `block in created'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:25:in `each'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:25:in `created'
-/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:17:in `refresh'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/path.rb:39:in `delete'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:32:in `block in deleted'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:31:in `each'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:31:in `deleted'
+/Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/state/directory.rb:16:in `refresh'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:30:in `block in temporary_multipath_handler'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `each'
 /Users/joel/.rvm/gems/ruby-1.9.3-p374/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `temporary_multipath_handler'
@@ -88,4 +79,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'background-image'.\A         on line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss, in `background-image'\A         from line 241 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/style.scss"; }
+  content: "Syntax error: Undefined mixin 'box-shadow'.\A         on line 9 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss, in `box-shadow'\A         from line 9 of /Library/WebServer/Documents/uwd7/sites/all/themes/UW-Drupal-Theme/sass/modules/thinstrip.scss"; }

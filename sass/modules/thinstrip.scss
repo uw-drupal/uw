@@ -1,0 +1,60 @@
+.thinstrip {
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #39275B;
+  z-index: 1;
+  @include box-shadow(0 0 6px #333333);
+  overflow: hidden;
+}
+
+.thinstrip-fixed {
+  position: fixed;
+  top: 0px;
+}
+
+.thinstrip-fixed > .thinstrip-inner {
+  background: url("../img/mobile-header/logo1x.png") no-repeat -35px -5px;
+}
+
+.thinstrip-inner {
+  height: 30px;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.thinstrip ul {
+  float: right;
+}
+
+.thinstrip li {
+  float: left;
+  list-style: none;
+  padding: 5px 10px 0 0;
+}
+
+.thinstrip li a {
+  color: #fff;
+  font-size: 73%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.thinstrip img {
+  margin-top: -8px;
+}
+
+.tan-band .thinstrip {
+  background-color: #f3f2e9;
+}
+
+.tan-band .thinstrip a {
+  color: #555;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.tan-band .thinstrip-fixed .thinstrip-inner {
+  background: url(../img/header/header-sprite.png) no-repeat 10px -225px transparent;
+}
