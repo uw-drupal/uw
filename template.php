@@ -71,3 +71,14 @@ function uw_menu_tree(&$variables) {
   }
   return t('<ul class="menu nav" role="!role">', array('!role' => $role)) . $variables['tree'] . '</ul>';
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for search_block_form().
+ */
+function uw_form_search_block_form_alter(&$form, &$form_state) {
+  // Remove the 'pull-left' class set by the bootstrap parent theme, which was
+  // obscuring part of the form input's clickable area.
+  // There's probably a better way to do this, but we're just rebuilding 
+  // with the known, desired classes.
+  $form['#attributes']['class'] = array('form-search', 'content-search');
+}
