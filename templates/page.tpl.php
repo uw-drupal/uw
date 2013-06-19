@@ -148,15 +148,15 @@
         <span class="navbar-caret" style="position:absolute;"></span>
         <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
-        <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
-
-        <?php if (!empty($primary_nav)): ?>
-          <div class="nav-collapse collapse">
-            <nav id="access" role="navigation" aria-label="Main menu">
-              <?php print render($primary_nav); ?>
-            </nav>
-          </div>
-        <?php endif; ?>
+        <!-- Everything you want collapsed on smaller screens goes here -->
+        <div class="nav-collapse collapse">
+          <nav id="access" role="navigation" aria-label="Main menu">
+            <?php if (!empty($primary_nav)): ?>
+               <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
+          </nav>
+        </div>
 
       </div>
     </div>

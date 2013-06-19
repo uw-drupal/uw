@@ -1,0 +1,12 @@
+// compass imports
+@import "breakpoint";
+@import "compass/css3";
+
+// breakpoints https://github.com/Team-Sass/breakpoint
+$breakpoint-to-ems: true;
+
+$breakpoints:
+  "large" (969px),
+  "tablet" (768px 979px),
+  "mobile" (max-width 768px),
+  "!mobile" (768px);

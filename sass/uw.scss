@@ -1,6 +1,3 @@
-// compass imports
-@import "compass/css3";
-
 // base, layout styles
 @import "base.scss";
 @import "layout.scss"; // desktop layout NOTE: bootstrap 3.x will be mobile-first and this will change
@@ -12,6 +9,7 @@
 
 // modules
 @import "modules/alert.scss";
+@import "modules/branding.scss";
 @import "modules/thinstrip.scss";
 @import "modules/navbar.scss";
 @import "modules/nav-sidebar.scss";

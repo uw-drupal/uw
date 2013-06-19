@@ -1,0 +1,59 @@
+@import "_common";
+
+#branding {
+  position: relative;
+  height: 150px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  z-index: 1;
+  background-image: image-url("header/cherries.jpg");
+  background-position: center top;
+}
+#branding {
+  @include respond-to(mobile) {
+    height: auto;
+  }
+}
+#branding a:focus {
+  outline: thin dotted white;
+}
+.purple-patch .patch {
+  background-color: #39275b;
+}
+.hide-patch .patch {
+  display: none;
+}
+.hide-patch .wordmark {
+  left: 0;
+}
+.wordmark-white .wordmark {
+  background-position: 0 -197px;
+}
+.wordmark,
+.patch {
+  position: absolute;
+  display: block;
+  top: -30px;
+  left: 0;
+}
+.patch {
+  width: 95px;
+  height: 90px;
+  background-color: #d7a900;
+  img {
+    display: block;
+    margin: 20px auto;
+    width: 75px;
+  }
+}
+.wordmark {
+  top: 0;
+  left: 115px;
+  width: 400px;
+  height: 100px;
+}
+.wordmark {
+  @include respond-to("tablet") {
+    left: 130px;
+  }
+}

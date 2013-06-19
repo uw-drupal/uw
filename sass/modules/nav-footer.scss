@@ -1,5 +1,7 @@
 // FIXME: needs to be "smacked"
 
+@import "_common";
+
 #footer .menu-level-1>ul.nav>li {
   float: left;
   width: 140px;
@@ -94,46 +96,49 @@
   background-position: 0 -154px;
 }
 
-#footer-main {
-  background: url(../img/footer/bg.gif) repeat-x 0 0 #62584b;
-  height: 25px;
-  position: relative;
-  padding: 4px 0 0;
-}
 
-#footer-main a {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 10px;
-  color: #fff;
-}
+@include respond-to("!mobile") {
+  #footer-main {
+    background: url(../img/footer/bg.gif) repeat-x 0 0 #62584b;
+    height: 25px;
+    position: relative;
+    padding: 4px 0 0;
+  }
 
-#footer-main ul {
-  text-align: center;
-  margin: 0;
-}
+  #footer-main a {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #fff;
+  }
 
-#footer-main li {
-  padding: 0 9px 0 0;
-  display: inline;
-  margin: 0 0 0 3px;
-  border-right: 2px solid #a1a1a1;
-}
+  #footer-main ul {
+    text-align: center;
+    margin: 0;
+  }
 
-#footer-main li:last-child {
-  border-right: none;
-}
+  #footer-main li {
+    padding: 0 9px 0 0;
+    display: inline;
+    margin: 0 0 0 3px;
+    border-right: 2px solid #a1a1a1;
+  }
 
-#footer-left,
-#footer-right {
-  position: absolute;
-  top: 5px;
-  left: 30px;
-}
+  #footer-main li:last-child {
+    border-right: none;
+  }
 
-#footer-right {
-  right: 30px;
-  left: auto;
+  #footer-left,
+  #footer-right {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+  }
+
+  #footer-right {
+    right: 30px;
+    left: auto;
+  }
 }
 
 div.region-footer-nav > section > ul.menu > li {
@@ -178,4 +183,53 @@ div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
   line-height: 16px;
   background-color: none;
   background-image: none;
+}
+
+@include respond-to("mobile") {
+
+  #footer-main {
+    background: #bfbfbf;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bfbfbf), color-stop(17%, #ededed), color-stop(100%, #ededed));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%);
+    /* IE10+ */
+    background: linear-gradient(top, #bfbfbf 0%, #ededed 7%, #ededed 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#ededed',GradientType=0 );
+    /* IE6-9 */
+    padding: 20px 0 0 0;
+  }
+  #footer-main a {
+    color: #484848;
+    margin: 0 0 5px 0;
+  }
+  #footer-main ul {
+    text-align: center;
+    margin: 0 15px;
+  }
+  #footer-main li {
+    list-style: none;
+    display: inline-block;
+  }
+  #footer-main li a {
+    padding: 5px 10px;
+    float: left;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 2px #b1b1b1;
+  }
+  #footer-left {
+    text-align: center;
+    padding: 10px 0;
+  }
+  #footer-right {
+    display: none;
+  }
 }

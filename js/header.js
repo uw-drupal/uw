@@ -242,21 +242,6 @@ jQuery(window).load(function() {
       }
     });
 
-    $('[data-toggle=collapse]').click(function() {
-
-      var $this   = $(this)
-        , $target = $($this.data('target'))
-
-      // initial click hack
-      if ( !$target.attr('style') )
-        $target.hide()
-
-      $target.stop().css({'visibility':'visible','height':'auto'}).slideToggle()
-      return false;
-
-    })
-
-
   /*
    * Responsive
    */
