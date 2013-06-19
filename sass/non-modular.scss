@@ -388,25 +388,13 @@ ol li {
 // FIXME: these hdpi styles should be moved to their respective modules
 
 @media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) {
-  .wordmark {
-    background: url("../img/mobile-header/logo2x.png") no-repeat 0 0 transparent !important;
-    background-size: 230px 35px;
-  }
   #listicon-wrapper {
-    background: url("../img/mobile-header/dropdowns2x.png") no-repeat -29px 0px transparent !important;
+    background: url("../img/mobile-header/dropdowns2x.png") no-repeat -29px 0px transparent;
     background-size: 66px 32px;
   }
   #searchicon-wrapper {
-    background: url("../img/mobile-header/dropdowns2x.png") no-repeat 10px 0px transparent !important;
+    background: url("../img/mobile-header/dropdowns2x.png") no-repeat 10px 0px transparent;
     background-size: 66px 32px;
-  }
-  #thin-strip ul {
-    background: url("../img/mobile-header/gridLinesX2.png") center center no-repeat #f8f8f8;
-    background-size: 295px 315px;
-  }
-  #thin-strip li a {
-    background-image: url("../img/mobile-header/sprite2x.png");
-    background-size: 77px 750px;
   }
 }
 
@@ -1006,10 +994,6 @@ ol li {
   }
   body .rightside .inner-wrap {
     float: left;
-  }
-  body #thin-strip div {
-    width: 768px;
-    margin: 0 auto;
   }
   body .patch {
     left: 25px;
