@@ -6,7 +6,8 @@ base theme = bootstrap
 engine = phptemplate
 
 scripts[] = js/header.js
-scripts[] = js/bootstrap-hover-dropdown.min.js
+
+modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
 
 stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
