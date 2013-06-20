@@ -112,17 +112,13 @@
         <span class="search-options-notch"></span>
       </div>
 
-      <!--div class="search-flash">
-        <h6>Tip: Click the notch for search options</h6>
-        <span class="search-options-notch"></span>
-      </div-->
       <?php endif; ?>
     </div>
     <a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
   </div><!-- #header -->
 
-  <div id="thin-strip">
-    <div>
+  <div class="thinstrip">
+    <div class="thinstrip-inner">
       <ul role="navigation">
         <li><a href="http://www.washington.edu/">UW Home</a></li>
         <li><a href="http://www.washington.edu/home/directories.html">Directories</a></li>
@@ -136,7 +132,7 @@
         <li class="visible-phone"><a href="http://www.gohuskies.com/">UW Athletics</a></li>
       </ul>
     </div>
-  </div><!-- #thin-strip -->
+  </div><!-- .thinstrip -->
 
 
   <nav id="access" role="navigation" aria-label="Main menu">
@@ -152,15 +148,15 @@
         <span class="navbar-caret" style="position:absolute;"></span>
         <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
-        <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
-
-        <?php if (!empty($primary_nav)): ?>
-          <div class="nav-collapse collapse">
-            <nav id="access" role="navigation" aria-label="Main menu">
-              <?php print render($primary_nav); ?>
-            </nav>
-          </div>
-        <?php endif; ?>
+        <!-- Everything you want collapsed on smaller screens goes here -->
+        <div class="nav-collapse collapse">
+          <nav id="access" role="navigation" aria-label="Main menu">
+            <?php if (!empty($primary_nav)): ?>
+               <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
+          </nav>
+        </div>
 
       </div>
     </div>

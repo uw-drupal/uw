@@ -1,0 +1,818 @@
+@import "_common";
+
+#sidebar ul {
+  margin-left: 0;
+}
+
+#sidebar li {
+  list-style: none;
+}
+
+.widget {
+  margin: 0 0 25px 0;
+}
+
+.widget img {
+  margin: 0 0 10px;
+}
+
+.widget_recent_entries h2,
+.widget_categories h2,
+.widget_archive h2,
+.widget_links h2,
+.widget_archive h2,
+.widget_links h2,
+.popular-posts h2,
+.widget_yarpp_widget h2,
+.widget_uw_showcase h2,
+.widget_mailchimp_subscribe h2,
+.widget_text h2,
+.subpage_menu h2,
+.pagelet_widget h2,
+.widget_uw_rss_widget h2,
+#masonry h2 {
+  background: url(../img/widgets/headline-background.jpg) no-repeat -16px -148px transparent;
+  padding: 32px 0 5px;
+}
+
+.pagelet_widget h2 {
+  background-position: -16px -295px;
+}
+
+.widget_links h2 {
+  background-position: -16px -148px;
+}
+
+.documents h2 {
+  background-position: -16px -154px;
+}
+
+.video h2 {
+  background-position: -16px -295px;
+}
+
+.announcements h2 {
+  background-position: -16px -454px;
+}
+
+.widget_recent_entries h2 {
+  background-position: -16px -578px;
+}
+
+.widget_categories h2 {
+  background-position: -16px -154px;
+}
+
+.widget_archive h2 {
+  background-position: -16px -295px;
+}
+
+.popular-posts {
+  background-position: -16px -295px;
+}
+
+.widget_yarpp_widget h2 {
+  background-position: -16px -578px;
+}
+
+.widget_categories select {
+  width: 100%;
+}
+
+.widget_links li {
+  margin: 0 0 10px;
+}
+
+.widget_links a {
+  font-size: 16px;
+  display: block;
+  line-height: 21px;
+}
+
+#sidebar .video li {
+  background: url(../img/widgets/widget-sprite.png) no-repeat 2px -201px transparent;
+  padding: 2px 0 2px 25px;
+}
+
+#sidebar .announcements li {
+  margin: 0 0 0 20px;
+}
+
+.widget_search {
+  margin-bottom: 15px;
+}
+
+.widget_search div {
+  position: relative;
+}
+
+.screen-reader-text {
+  position: absolute;
+  z-index: -1;
+  top: 12px;
+  left: 25px;
+}
+
+#s {
+  border-radius: 30px;
+  padding: 9px 0 9px 38px;
+  width: 83%;
+  color: #444;
+  box-shadow: inset 1px 1px 5px #d3d3d3;
+  -webkit-box-shadow: inset 1px 1px 5px #d3d3d3;
+  -moz-box-shadow: inset 1px 1px 5px #d3d3d3;
+  border: none;
+}
+
+::-webkit-input-placeholder {
+  color: #888888;
+}
+
+:-moz-placeholder {
+  color: #888888;
+}
+
+#searchsubmit {
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  background: url(../img/header/header-sprite.png) no-repeat -103px 2px transparent;
+  box-shadow: none;
+  border: none;
+  display: block;
+  text-indent: -999px;
+  overflow: hidden;
+  padding: 5px 16px;
+  height: 28px;
+  width: 32px;
+}
+
+.widget_nav_menu h2,
+.subpage_menu h2 {
+  font-size: 21px;
+  color: #39275b;
+  line-height: 26px;
+  padding: 0 0 30px 0;
+  margin: 0;
+  background: url(../img/side-menu-bg.gif) no-repeat bottom center transparent;
+}
+
+.widget_nav_menu h2 a,
+.subpage_menu h2 a {
+  font-size: 21px;
+  color: #39275b;
+  border: none;
+}
+
+.widget_nav_menu h2 a,
+.subpage_menu h2 a {
+  padding-left: 13px;
+  background: url(../img/arrow.png) no-repeat -25px -11px transparent;
+  margin-left: -14px;
+}
+
+.widget_nav_menu a,
+.subpage_menu a {
+  text-decoration: none;
+  border-bottom: 1px solid #f4f4f4;
+  display: block;
+  color: #484848;
+  font-size: 13px;
+  padding: 2px 0 2px;
+  margin-bottom: 4px;
+}
+
+#sidebar .menu a:hover {
+  font-weight: bold;
+}
+
+#sidebar .widgettitle a:hover {
+  color: #919191;
+}
+
+.widget_nav_menu li,
+.subpage_menu li {
+  border-left: 4px solid #fff;
+  margin-left: -10px;
+  padding-left: 10px;
+  position: relative;
+  -moz-transition: color 0.1s linear;
+  -o-transition: border 0.1s linear;
+  -webkit-transition: border 0.1s linear;
+  transition: border 0.1s linear;
+}
+
+.widget_nav_menu li:hover,
+.subpage_menu li:hover {
+  border-left: 4px solid #d7a900;
+}
+
+.widget_nav_menu li:last-child a,
+.subpage_menu li:last-child a,
+.related-posts li:last-child {
+  border: none;
+}
+
+.menu .sub-menu {
+  display: none;
+  z-index: 999;
+  top: -20px;
+  position: absolute;
+  right: 250px;
+  width: 200px;
+  background-color: white;
+  background-color: white;
+  box-shadow: 0 0 8px #b5b5b5;
+  -moz-box-shadow: 0 0 8px #b5b5b5;
+  -webkit-box-shadow: 0 0 8px #b5b5b5;
+  padding: 20px 15px 15px 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.menu .menu-item:hover .sub-menu {
+  display: block;
+}
+
+.menu .menu-item .sub-menu:after {
+  content: " ";
+  background: url("../img/misc/menu-notch.png") no-repeat -3px 0 transparent;
+  color: #F4F4F4;
+  display: block;
+  width: 15px;
+  height: 30px;
+  position: absolute;
+  font-size: 17px;
+  top: 20px;
+  right: -15px;
+}
+
+.sub-menu li:last-child a {
+  border-bottom: none;
+}
+
+#nc-left-col .widget ul li,
+#sidebar .announcements ul li,
+.entry-content ul li,
+.widget_text ul li,
+.widget_uw_showcase ul li,
+.pagelet_widget ul li,
+.widget_uw_rss_widget ul li {
+  margin-left: 0;
+  margin-bottom: 5px;
+  background: url("../img/bullet-gold.png") no-repeat left 7px transparent;
+  padding-left: 12px;
+}
+
+li {
+  list-style: none;
+}
+
+ol li {
+  list-style: decimal;
+  margin-left: 18px;
+}
+
+.more,
+.rss-more {
+  background: url("../img/misc/bullet.png") right center no-repeat;
+  padding-right: 10px;
+  padding: 6px 17px 6px 10px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+}
+
+.comment {
+  list-style: none;
+}
+
+.commentlist {
+  margin: 0;
+}
+
+.commentlist .children {
+  margin: 0 0 0 20px;
+}
+
+.comment-body {
+  border-left: 3px solid #efefef;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.depth-1 {
+  border-bottom: 1px dotted #dddddd;
+}
+
+.reply {
+  text-align: right;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.comment-author img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.comment-body p {
+  padding: 10px 0;
+}
+
+#comments,
+#respond h3 {
+  font-size: 16px;
+  padding: 40px 15px 0 25px;
+  display: block;
+  clear: both;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 20px;
+}
+
+#respond h3 {
+  padding: 40px 15px 15px 0;
+}
+
+.nocomments {
+  display: none;
+}
+
+.entry-meta {
+  margin: 10px 0;
+}
+
+.pull-right {
+  border: 2px solid;
+  padding: 3px 12px;
+  border-radius: 30px;
+  background-color: #00B424;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+}
+
+.pull-right .pull-right {
+  padding: 0;
+  border: 0;
+}
+
+.pull-right a {
+  color: white;
+}
+
+.three-col {
+  margin: 0 17px;
+}
+
+// high-dpi styles
+// FIXME: these hdpi styles should be moved to their respective modules
+
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) {
+  #listicon-wrapper {
+    background: url("../img/mobile-header/dropdowns2x.png") no-repeat -29px 0px transparent;
+    background-size: 66px 32px;
+  }
+  #searchicon-wrapper {
+    background: url("../img/mobile-header/dropdowns2x.png") no-repeat 10px 0px transparent;
+    background-size: 66px 32px;
+  }
+}
+
+// FIXME: desktop styles below need to be "smacked"
+@media (min-width: 768px) {
+  .undefined {
+    position: relative;
+  }
+  .alignleft {
+    float: left;
+    margin: 5px 20px 15px 0;
+    position: relative;
+  }
+  .alignright {
+    float: right;
+    margin: 5px 0 15px 20px;
+    position: relative;
+  }
+  .wp-media-credit {
+    text-align: right;
+    font-size: 11px;
+    margin: 5px 10px -10px 0;
+    font-style: italic;
+  }
+  .wp-caption-text {
+    margin-left: 5px;
+    margin-top: 15px;
+    font-size: 12px;
+    margin-right: 15px;
+    line-height: 16px;
+  }
+  .image-magnifier {
+    width: 49px;
+    padding: 10px 5px 9px 32px;
+    background: url("../img/misc/misc-sprite.png") no-repeat 0 0 transparent;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    line-height: 11px;
+    font-weight: bold;
+    visibility: hidden;
+  }
+  .image-fullsize {
+    text-transform: uppercase;
+    padding: 5px 0;
+    font-weight: bold;
+    text-align: center;
+    width: 123px !important;
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #555;
+    opacity: 0.5;
+    @include border-radius(3px);
+    font-size: 11px;
+  }
+  .alignleft:hover .image-magnifier,
+  .alignright:hover .image-magnifier {
+    visibility: visible;
+  }
+  .type-page ul,
+  .type-post ul {
+    overflow: hidden;
+  }
+  .info-box {
+    border-left: 4px solid #ddd;
+    width: 245px;
+    float: right;
+    padding: 10px 0 0 20px;
+    margin: 0 0 15px 30px;
+  }
+  .info-box-large ul {
+    margin-left: -10px;
+  }
+  .info-box-large {
+    padding: 25px 10px 15px;
+    margin: 15px 0 15px 40px;
+    width: 200px;
+    border-left: none;
+    border-top: 3px solid #d7a900;
+    border-bottom: 3px solid #d7a900;
+  }
+  .info-box-large .wp-caption-text {
+    margin: 0 10px 10px 0;
+    padding: 5px 0 5px 10px;
+    background-color: #EEE;
+  }
+  .entry-content .info-box-large h2 {
+    margin-top: 0;
+  }
+  #header {
+    z-index: 4;
+    position: relative;
+    width: 960px;
+    left: 50%;
+    margin-left: -480px;
+    height: 100px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .main-search {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+  }
+  // Override bootstrap default input element styles to ensure fields aren't
+  // too wide.
+  #sidebar input, #sidebar textarea, #sidebar .uneditable-input {
+    width: 191px;
+  }
+  input[type="submit"].formbutton {
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    background: url(../img/header/header-sprite.png) no-repeat -103px 2px transparent;
+    @include box-shadow(none);
+    border: none;
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    padding: 5px 16px;
+    height: 28px;
+    width: 32px;
+  }
+  input[type="text"].wTextInput {
+    @include border-radius(30px);
+    padding: 9px 0 9px 38px;
+    width: 175px;
+    color: #999;
+    @include box-shadow(0 0 8px #8f8f8f);
+    border: none;
+    @include transition(width 400ms ease, background 400ms ease);
+  }
+  .wTextInput:focus,
+  input[type="text"].wTextInput:focus {
+    width: 225px;
+  }
+  #search .search-toggle {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 51px;
+    width: 25px;
+    height: 25px;
+    background: url("../img/misc/super-search-handle.png") no-repeat center center #e4e4e4;
+    @include border-radius(25px);
+    @include box-shadow(0 0 10px #bebebe);
+  }
+  #ie7 #search .search-toggle,
+  #ie8 #search .search-toggle {
+    background: url("../img/misc/ie7-ie8-super-search-handle.png") no-repeat center center #e4e4e4;
+  }
+  #ie7 #search .search-toggle.close-toggle,
+  #ie8 #search .search-toggle.close-toggle {
+    background: url("../img/misc/ie7-ie8-super-search-handle-close.png") no-repeat center center #e4e4e4;
+  }
+  #search .search-toggle.close-toggle {
+    background: url("../img/misc/super-search-handle-close.png") no-repeat center center #e4e4e4;
+  }
+  #search .search-toggle:hover {
+    cursor: pointer;
+    @include box-shadow(0 0 10px #bebebe);
+  }
+  #search .search-options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    width: 130px;
+    z-index: 999;
+    background-color: white;
+    @include box-shadow(0 0 8px #b5b5b5);
+    padding: 20px 15px 15px 30px;
+    @include border-radius(5px);
+  }
+  #search .search-options-notch {
+    background: url("../img/misc/super-search-notch.png") no-repeat -3px 0 transparent;
+    color: #F4F4F4;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    font-size: 17px;
+    top: -15px;
+    right: 25px;
+  }
+  #search .search-options label {
+    padding: 5px;
+  }
+  #search .search-options label:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+  }
+  #search .search-flash {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    z-index: 999;
+    background-color: white;
+    padding: 8px;
+    @include box-shadow(0 0 8px #b5b5b5);
+    @include border-radius(5px);
+  }
+  .header-image {
+    margin-top: -200px;
+    display: block;
+    height: 145px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #d6e8fa;
+  }
+  .assistive-text {
+    position: absolute !important;
+    z-index: -1;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  #header a.assistive-text:active,
+  #header a.assistive-text:focus {
+    padding: 6px 21px;
+    z-index: 3;
+    background: #EEE;
+    border-bottom: 1px solid #ddd;
+    color: #1982D1;
+    clip: auto !important;
+    font-size: 12px;
+    position: absolute;
+    text-decoration: underline;
+    top: -30px;
+    left: 9.9%;
+  }
+  #access {
+    position: relative;
+    z-index: 3;
+  }
+  #sidebar {
+    padding: 10px 0 0 55px;
+  }
+  .right-bar .post-thumbnail.widget p {
+    clear: both;
+    display: block;
+    font-size: 12px;
+    margin: 0 15px 0 0;
+    padding: 5px 5px 5px 10px;
+    background-color: #F4F4F4;
+  }
+  .attachment-post-thumbnail.wp-post-image {
+    margin: 0;
+  }
+  .right-bar .post-thumbnail.widget {
+    margin-top: 20px;
+  }
+  .right-bar,
+  .stripe-top,
+  .stripe-bottom {
+    background: url(../img/side-stripe.png) no-repeat 0 0 transparent;
+  }
+  .right-bar {
+    background-repeat: repeat-y;
+    background-position: -89px 0;
+    position: relative;
+    min-height: 375px;
+  }
+  .stripe-top,
+  .stripe-bottom {
+    margin-top: -20px;
+    background-position: 0 0;
+    width: 40px;
+    height: 214px;
+    position: absolute;
+  }
+  .stripe-bottom {
+    bottom: 0;
+    background-position: left bottom;
+  }
+  #content {
+    padding: 30px 0 30px 0;
+  }
+  #primary {
+    position: relative;
+    width: 1024px;
+    margin: 0 auto;
+    background-color: #FFF;
+    @include box-shadow(0 0 7px lightgrey);
+    border-radius: 5px;
+  }
+  #arrow-mark {
+    position: absolute;
+    left: -7px;
+    top: 35px;
+    background: url(../img/arrow.png) no-repeat 0 0 transparent;
+    width: 32px;
+    height: 50px;
+    display: block;
+  }
+  .slideshowpro-wrapper object {
+    width: 100% !important;
+    height: 442px !important;
+  }
+  .blog.featured-image #arrow-mark {
+    left: auto;
+    top: auto;
+    position: static;
+    margin: -17px 0px 0 -55px;
+    width: 675px;
+    height: 102px;
+  }
+  .parallax-viewport {
+    position: relative;
+    overflow: hidden;
+  }
+  .parallax-layer {
+    position: absolute;
+  }
+  #parallax {
+    margin: 1.5em 0px;
+    overflow: hidden;
+    position: relative;
+    height: 450px;
+  }
+  .four-oh-four {
+    padding: 0 0 50px;
+  }
+  .author h3 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .author img {
+    float: left;
+    padding: 0 25px 15px 0;
+  }
+  .author .author-posts .span8 {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ddd;
+  }
+  .author .author-posts h2 {
+    margin: 40px 0 20px;
+  }
+  .category .entry-header {
+    clear: both;
+  }
+  .single #arrow-mark {
+    top: 55px;
+  }
+  div.author-info {
+    font-size: 14px;
+    margin: 10px 0 30px;
+    border-left: 4px solid #ddd;
+    padding: 0 0 0 15px;
+  }
+  .date {
+    margin-bottom: 0.6em;
+  }
+  p small {
+    font-size: 13px;
+  }
+  .story-tags {
+    margin-top: -15px;
+  }
+  body.single h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .three-col {
+    float: left;
+    border-radius: 5px;
+    width: 170px;
+  }
+  .post-info {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .post-info p {
+    float: left;
+    font-weight: bold;
+  }
+  .post-info p.author-info {
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid #ddd;
+    font-weight: normal;
+  }
+}
+
+// FIXME: tablet styles below need to be "smacked"
+@include respond-to("tablet") {
+  #access {
+    overflow: hidden;
+  }
+  body #primary {
+    width: 768px;
+    margin: 0 auto;
+  }
+  body .rightside .inner-wrap {
+    float: left;
+  }
+  body .patch {
+    left: 25px;
+  }
+  body #header {
+    width: 768px;
+    margin-left: -400px;
+  }
+  .main-search {
+    right: 0;
+  }
+  #search .search-toggle {
+    right: 7px;
+  }
+  body #nc-left-col .featured img {
+    width: 228px;
+  }
+  body.blog.featured-image #arrow-mark {
+    background-size: 78%;
+    margin: -5px 0px 10px -31px;
+  }
+  #branding {
+    height: 150px !important;
+  }
+  /* Override bootstrap default input element styles to ensure fields aren't
+     too wide. */
+  #sidebar input, #sidebar textarea, #sidebar .uneditable-input {
+    width: 119px;
+  }
+}

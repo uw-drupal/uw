@@ -6,14 +6,10 @@ base theme = bootstrap
 engine = phptemplate
 
 scripts[] = js/header.js
-scripts[] = js/bootstrap-hover-dropdown.min.js
 
-stylesheets[all][] = css/style.css
-stylesheets[all][] = css/desktop.css
-stylesheets[all][] = css/hidpi.css
-stylesheets[all][] = css/mobile.css
-stylesheets[all][] = css/tablet.css
-stylesheets[all][] = css/alert.css
+modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
+
+stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
 
 regions[help] = Help

@@ -92,7 +92,7 @@ jQuery(document).ready(function($){
           html += '<li class="header-forcast"><a href="http://www.atmos.washington.edu/weather/forecast/">';
           html += 'Seattle '+temp;
           html += '</a></li>';
-          $('#thin-strip').find('ul').append(html)
+          $('.thinstrip ul').append(html);
         }
       });
 
@@ -100,7 +100,7 @@ jQuery(document).ready(function($){
       linkRotator = $('#linkRotator'),
       ul = linkRotator.find('ul').first(),
       linkImage = $('#linkArrowIcon'),
-      topnav = $('#thin-strip'),
+      topnav = $('.thinstrip'),
       search = $('#search form'),
       links = linkImage.attr('src'),
       closeImage = $('#menuClose');
@@ -170,7 +170,7 @@ jQuery(document).ready(function($){
 
     return false;
 
-  }).on('transitionend webkitTransitionEnd mozTransitionEnd oTransitionEnd', '#thin-strip, form.main-search', function(e) {
+  }).on('transitionend webkitTransitionEnd mozTransitionEnd oTransitionEnd', '.thinstrip, form.main-search', function(e) {
 
     var $this = $(this)
 
@@ -191,7 +191,7 @@ jQuery(window).load(function() {
   /**
    * Header Strip
    */
-  var $thin    = $('#thin-strip')
+  var $thin    = $('.thinstrip')
       , strip  = $thin.clone().removeAttr('style').addClass('thin-fixed')
       , search = $('#search form')
       , win    = $(window)
@@ -241,21 +241,6 @@ jQuery(window).load(function() {
         }
       }
     });
-
-    $('[data-toggle=collapse]').click(function() {
-
-      var $this   = $(this)
-        , $target = $($this.data('target'))
-
-      // initial click hack
-      if ( !$target.attr('style') )
-        $target.hide()
-
-      $target.stop().css({'visibility':'visible','height':'auto'}).slideToggle()
-      return false;
-
-    })
-
 
   /*
    * Responsive
