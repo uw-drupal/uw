@@ -99,7 +99,7 @@
   background-size: 18%;
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@include respond-to("tablet") {
   #uwalert-alert-message h1, #uwalert-alert-message p {
     color: white;
     padding: 5px 0 0 200px;
@@ -110,7 +110,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include respond-to("mobile") {
   .alert-steel div, .alert-orange div, .alert-red div, .alert-blue divs {
     background-position: center -40px;
   }

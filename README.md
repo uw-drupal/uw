@@ -39,6 +39,14 @@ cd DRUPAL_ROOT
 git submodule add git://github.com/uw-drupal/bootstrap.git sites/all/themes/bootstrap/bootstrap
 ```
 
+To enable mouseover functionality of the main dropdown menu, you will need to download and install the modernizr drupal module.
+
+* Download modernizr module (`drush dl modernizr`)
+* Download a [Modernizr custom build](http://www.modernizr.com/download/) (with Touch Events checked)
+* Copy modernizr-X.Y.min.js to sites/all/modules/modernizr/js/modernizr.min.js
+* If you have the Libraries API module installed, use the path * sites/all/libraries/modernizr/modernizr.min.js instead.
+* Enable the module (`drush en -y modernizr`)
+
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
 
 ## Theme Options
