@@ -244,7 +244,7 @@
     <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
   </ul>
   <div id="footer-left">
-    <a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
+    <a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>
   </div>
 </footer>
 
