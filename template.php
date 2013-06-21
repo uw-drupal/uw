@@ -31,6 +31,20 @@ function _uw_alter_menu(&$menu) {
   }
 }
 
+/**
+ * Preprocess variables for region.tpl.php
+ *
+ * @see region.tpl.php
+ */
+function uw_preprocess_region(&$variables, $hook) {
+  // remove "well" class added in bootstrap base theme
+  if ($variables['region'] == 'sidebar_first') {
+    if(($key = array_search('well', $variables['classes_array'])) !== false) {
+        unset($variables['classes_array'][$key]);
+    }
+  }
+}
+
 function uw_preprocess_page(&$variables) {
   global $theme_path;
   $base_path = base_path();
