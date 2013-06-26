@@ -472,19 +472,24 @@ ol li {
   .entry-content .info-box-large h2 {
     margin-top: 0;
   }
+
   #header {
-    z-index: 4;
     position: relative;
+    height: 100px;
     width: 960px;
     left: 50%;
     margin-left: -480px;
-    height: 100px;
+    z-index: 4;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @include respond-to("!large") {
+      height: 110px;
+    }
   }
 
   .main-search {

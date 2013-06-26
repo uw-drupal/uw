@@ -7,6 +7,9 @@
   p {
     font-size: 15px;
   }
+  article {
+    padding: 0 15px;
+  }
   #primary {
     position: inherit;
     width: inherit;
@@ -142,9 +145,6 @@
   }
   #sidebar {
     padding: 15px;
-  }
-  .entry-content, .entry-meta, .post-content, #respond {
-    padding: 0 15px;
   }
   #respond input[type="text"], #respond textarea {
     width: 95%;

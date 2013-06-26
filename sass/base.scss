@@ -1,8 +1,9 @@
 @import "_common";
 
 body {
-  padding-top: 0;
-  background: url(../img/header/bg-stripe.gif) repeat-x 197px 0 white;
+  @include respond-to("!mobile") {
+    background: url(../img/header/bg-stripe.gif) repeat-x 197px 0 white;
+  }
 }
 
 h1,
