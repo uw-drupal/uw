@@ -48,6 +48,11 @@ function uw_preprocess_region(&$variables, $hook) {
 function uw_preprocess_block(&$variables) {
   if ($variables['block']->region == 'sidebar_first') {
     $variables['classes_array'][] = 'widget';
+
+    // menus get a special class
+    if ($variables['block']->module == 'menu_block') {
+      $variables['classes_array'][] = 'widget_nav_menu';
+    }
   }
 }
 
