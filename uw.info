@@ -5,6 +5,9 @@ core = 7.x
 base theme = bootstrap
 engine = phptemplate
 
+scripts[] = js/alert.js
+scripts[] = js/branding.js
+scripts[] = js/weather.js
 scripts[] = js/header.js
 
 modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js

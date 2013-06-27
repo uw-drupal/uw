@@ -1,100 +1,13 @@
-jQuery(document).ready(function($){
+jQuery(function($) {
 
-  //prevent ios nav bar from popping down
-  $('[href=#]').removeAttr('href');
-  $('table').addClass('table') //for bootstrap
+  $('table').addClass('table'); // for bootstrap
 
-    /*
-     * UW Alert Banner
-     */
-    var data = {
-      number:1,
-      type:'post',
-      status:'publish'
-    }
+  $('[href=#]').removeAttr('href'); //prevent ios nav bar from popping down
 
-    var alert_url =  window.location.hash.indexOf('alert') === -1 ?
-          "https://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/?callback=?" :
-          'https://public-api.wordpress.com/rest/v1/sites/en.blog.wordpress.com/posts/?callback=?';
-
-    $.getJSON(alert_url, data,
-        function(res){
-          if ( !res || res.found < 1)
-            return;
-
-          var post  = res.posts[0]
-            , cats  = post.categories
-            , slugs = []
-            , css   = ''
-
-          var colors = ['red', 'orange', 'blue', 'steel'];
-
-          $.each(cats, function(i,val) {
-            slugs += '|'+val.slug
-          })
-          for (var i = 0; i < colors.length; i += 1) {
-            if(slugs.indexOf(colors[i]) != -1 ) {
-              css = 'uwalert-'+colors[i].toLowerCase();
-            }
-          };
-
-          if ( window.location.hash.indexOf('alert') != -1 )
-            css = window.location.hash.replace('#','')
-
-          if( css.length === 0 ){
-            return false;
-          }
-
-          var anchor  = $('<a/>').attr({'href': 'http://emergency.uw.edu', 'title':post.title}).html('More info')
-            , excerpt = post.excerpt.replace(' [...]', '... '+anchor.prop('outerHTML'))
-            , html    = $('<div id="uwalert-alert-message" class="'+css+'" />')
-                          .html('<div><h1>'+post.title+'</h1>'+excerpt+'</div>')
-            , adjust  = $('body').hasClass('admin-bar') ? $('#wpadminbar').height() : 0;
-
-          $('body')
-            .prepend(html)
-            .data('alert-height', $('#uwalert-alert-message').outerHeight() + adjust )
-
-          var mini = $('<a id="alert-mini" class="hidden-phone"/>')
-                        .attr({href:'#',title:post.title})
-                        .click(function() {
-                          $('body').data('scrolling',true).animate({scrollTop:0}, {duration:500, easing:'swing', complete:function() {$('body').data('scrolling',false)}})
-                          $(this).slideUp()
-                          return false;
-                        }).html('Campus Alert: '+post.title).addClass(css)
-
-          $('body').append(mini)
-
-        },
-        function(){
-
-    });
-
-
-    /**
-     * Header weather widget
-     */
-      var data = {
-        q:'http://www.atmos.washington.edu/rss/home.rss',
-        v:'2.0'
-      }
-      $.ajax({
-        url: 'https://ajax.googleapis.com/ajax/services/feed/load?callback=?',
-        dataType: 'jsonp',
-        data: data,
-        success: function(json) {
-          var icon = $.trim(json.responseData.feed.entries[2].title.split('|')[1]);
-          var weat = $.trim(json.responseData.feed.entries[1].title.split('|')[1]);
-          var temp = $.trim(json.responseData.feed.entries[0].title.split('|')[1]);
-          var html = '<li class="header-weather"><a href="http://www.atmos.washington.edu/weather/forecast/" title="Forecast is '+weat+'">';
-          html += '<img src="//uw.edu/news/wp-content/themes/uw/img/weather/top-nav/'+icon+'.png" alt="Forecast is '+weat+'"/>';
-          html += '</a></li>';
-          html += '<li class="header-forcast"><a href="http://www.atmos.washington.edu/weather/forecast/">';
-          html += 'Seattle '+temp;
-          html += '</a></li>';
-          $('.thinstrip ul').append(html);
-        }
-      });
+  // hide mobile safari url bar
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 0);
 
   var lip = $('#lip'),
       linkRotator = $('#linkRotator'),
@@ -125,16 +38,7 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
-
-  $('#q').on('focus', function() {
-    window.scrollTo(0,0)
-  })
-
-  if ( $(window).width() < 768 ) {
-    search.css('visibility','hidden')
-    topnav.css('visibility','hidden')
-  }
-
+  // TODO: figure this out and separate out
   $('body').on('touchstart click', '#searchicon-wrapper, #listicon-wrapper', function() {
     var $this = $(this)
       , $nav  = [search, topnav]
@@ -170,94 +74,28 @@ jQuery(document).ready(function($){
 
     return false;
 
-  }).on('transitionend webkitTransitionEnd mozTransitionEnd oTransitionEnd', '.thinstrip, form.main-search', function(e) {
-
-    var $this = $(this)
-
-    //if ( !$this.data('open') && !$this.height() && $this.not('.thin-fixed'))
-      //$this.css('visibility','hidden')
-
-  })
-
-});
-
-jQuery(window).load(function() {
-  $ = jQuery.noConflict();
-  // hide mobile safari url bar
-  setTimeout(function(){
-    window.scrollTo(0, 0);
-  }, 0);
-
-  /**
-   * Header Strip
-   */
-  var $thin    = $('.thinstrip')
-      , strip  = $thin.clone().removeAttr('style').addClass('thin-fixed')
-      , search = $('#search form')
-      , win    = $(window)
-      , bod    = $('body')
-
-
-    bod.append(strip.hide())
-    strip.data('otop',bod.hasClass('top'))
-    win.bind('scroll', function() {
-
-      var top    = $(this).scrollTop()
-        , pos = bod.hasClass('admin-bar') ? 28 : 0
-        , adjust = bod.data('alert-height') || pos
-        , $mini = $('#alert-mini')
-
-      if ( $(this).width() < 768 )
-        return false
-
-      if ( top < 180 + adjust){
-        strip.css('top',-28).hide().data('showing',false)
-        $mini.hide()
-      }
-
-      if ( top > 220 + adjust && !strip.data('showing') ) {
-        strip.show().animate({top:strip.data('otop')+pos},{duration:300, easing:'swing'}).data('showing',true)
-      }
-
-      if ( $mini.length != 0 && !bod.data('scrolling') )
-      {
-        if ( top < 300 + adjust)
-          $mini.slideUp()
-
-        if ( top > 330 + adjust)
-          $mini.slideDown()
-      }
-    });
-
-/*
- * Dropdowns
- */
-    // override and allow top-level menu clicks (vs. bootstrap toggle behavior)
-    $('.dropdown').click(function(e) {
-      if ($(this).hasClass('open') ) {
-        var href = $('a', this).attr('href');
-        if (typeof href !== 'undefined') {
-          window.location.href = href;
-        }
-      }
-    });
+  });
 
   /*
-   * Responsive
+   * Dropdowns
    */
-  $(window).resize(function() {
-    var w = $(this).width()
-    if ( w > 767 ) {
-      search.removeAttr('style')
-      $thin.removeAttr('style')
-      strip.css('visibility','visible')
+  // override and allow top-level menu clicks (vs. bootstrap toggle behavior)
+  $('.dropdown').click(function(e) {
+    if ($(this).hasClass('open') ) {
+      var href = $('a', this).attr('href');
+      if (typeof href !== 'undefined') {
+        window.location.href = href;
+      }
     }
+  });
+
+  /** 'enhanced'-search (dev) **/
+
+  // scroll to top when focusing search query
+  $('#q').on('focus', function() {
+    window.scrollTo(0,0)
   })
 
-});
-
-/** 'enhanced'-search (dev) **/
-jQuery(document).ready(function($) {
   var $inputs  = $('#search ').find('input[type=radio]')
     , soptions = $('.search-options')
     , $toggle  = $('.search-toggle')
@@ -307,4 +145,4 @@ jQuery(document).ready(function($) {
     //soptions.fadeIn();
   })
 
-})
+});
