@@ -1,13 +1,13 @@
+/**
+ * Header weather widget
+ */
+
 // #### START D7 behaviors wrapper #######
 (function ($) {
 
   Drupal.behaviors.uw_weather = {
     attach: function (context, settings) {
 // #######################################
-
-/**
- * Header weather widget
- */
 
 // only call in the document context
 if (context != document) {

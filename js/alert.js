@@ -1,13 +1,13 @@
+/*
+ * UW Alert Banner
+ */
+
 // #### START D7 behaviors wrapper #######
 (function ($) {
 
   Drupal.behaviors.uw_alert = {
     attach: function (context, settings) {
 // #######################################
-
-/*
- * UW Alert Banner
- */
 
 // only call in the document context
 if (context != document) {
