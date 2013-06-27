@@ -45,6 +45,12 @@ function uw_preprocess_region(&$variables, $hook) {
   }
 }
 
+function uw_preprocess_block(&$variables) {
+  if ($variables['block']->region == 'sidebar_first') {
+    $variables['classes_array'][] = 'widget';
+  }
+}
+
 function uw_preprocess_page(&$variables) {
   global $theme_path;
   $base_path = base_path();
