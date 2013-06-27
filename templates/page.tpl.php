@@ -209,9 +209,7 @@
 
         <div id="secondary" class="span4 right-bar" role="complementary">
           <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <div id="sidebar">
-            <?php print render($page['sidebar_first']); ?>
-          </div><!-- #sidebar -->
+          <?php print render($page['sidebar_first']); ?>
         </div> <!-- #secondary -->
 
       <?php endif; ?>
