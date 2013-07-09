@@ -182,16 +182,19 @@
 
 <div id="primary">
 
-  <div id="tabs">
-    <?php if ($tabs): ?>
-      <div class="tabs"><?php print render($tabs); ?></div>
-    <?php endif; ?>
-  </div>
-
   <div id="content" role="main" class="container">
 
     <div class="row show-grid">
-      <div class="span8 column">
+
+      <?php
+        if ($page['sidebar_first']) {
+          $content_width = 8;
+        } else {
+          $content_width = 12;
+        }
+      ?>
+
+      <div class="span<?php echo $content_width; ?> column">
 
         <header class="entry-header">
           <?php print render($title_prefix); ?>
@@ -202,6 +205,13 @@
         </header>
 
         <span id="arrow-mark"></span>
+
+        <div id="tabs">
+          <?php if ($tabs): ?>
+            <div class="tabs"><?php print render($tabs); ?></div>
+          <?php endif; ?>
+        </div>
+
         <?php print render($page['content']); ?>
       </div> <!-- #content .column -->
 
