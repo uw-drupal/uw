@@ -29,5 +29,6 @@ settings[band_color] = purple
 settings[show_patch] = 1
 settings[show_search] = 1
 settings[search_default_site] = this site
+settings[sidebar_location] = right
 settings[default_header] = 1
 settings[toggle_secondary_menu] = 0

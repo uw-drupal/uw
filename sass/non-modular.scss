@@ -451,6 +451,51 @@
     position: relative;
     z-index: 3;
   }
+  .attachment-post-thumbnail.wp-post-image {
+    margin: 0;
+  }
+  .left-bar .post-thumbnail.widget p {
+    clear: both;
+    display: block;
+    font-size: 12px;
+    margin: 0 15px 0 0;
+    padding: 5px 5px 5px 10px;
+    background-color: #F4F4F4;
+  }
+  .left-bar .post-thumbnail.widget {
+    margin-top: 20px;
+  }
+  .left-bar {
+    background: url(../img/side-stripe-l.png) no-repeat 0 0 transparent;
+  }
+  .left-bar {
+    background-repeat: repeat-y;
+    background-position: 255px 0;
+    position: relative;
+    min-height: 375px;
+  }
+
+  .left-bar .region {
+  	padding: 10px 55px 0 0;
+  }
+  .left-bar .stripe-top,
+  .left-bar .stripe-bottom {
+    background: url(../img/side-stripe-l.png) no-repeat 0 0 transparent;
+    margin: -20px 0 0 255px;
+    background-position: -89px 0;
+    width: 40px;
+    height: 214px;
+    position: absolute;
+  }
+  .left-bar .stripe-bottom {
+    bottom: 0;
+    background-position: right bottom;
+	margin-left: 261px;
+  }
+  .left-bar #arrow-mark {
+    left: 273px;
+	top: 10px;
+  }
   .right-bar .post-thumbnail.widget p {
     clear: both;
     display: block;
@@ -459,16 +504,11 @@
     padding: 5px 5px 5px 10px;
     background-color: #F4F4F4;
   }
-  .attachment-post-thumbnail.wp-post-image {
-    margin: 0;
-  }
   .right-bar .post-thumbnail.widget {
     margin-top: 20px;
   }
-  .right-bar,
-  .stripe-top,
-  .stripe-bottom {
-    background: url(../img/side-stripe.png) no-repeat 0 0 transparent;
+  .right-bar {
+    background: url(../img/side-stripe-r.png) no-repeat 0 0 transparent;
   }
   .right-bar {
     background-repeat: repeat-y;
@@ -476,17 +516,23 @@
     position: relative;
     min-height: 375px;
   }
-  .stripe-top,
-  .stripe-bottom {
+  .right-bar .stripe-top,
+  .right-bar .stripe-bottom {
+    background: url(../img/side-stripe-r.png) no-repeat 0 0 transparent;
     margin-top: -20px;
     background-position: 0 0;
     width: 40px;
     height: 214px;
     position: absolute;
   }
-  .stripe-bottom {
+  .right-bar .stripe-bottom {
     bottom: 0;
     background-position: left bottom;
+  }
+  .right-bar #arrow-mark {
+    left: -689px;
+    top: 10px;
+
   }
   #content {
     padding: 30px 0 30px 0;
@@ -499,7 +545,9 @@
     @include box-shadow(0 0 7px lightgrey);
     border-radius: 5px;
   }
+  
   #arrow-mark {
+    z-index: 99;
     position: absolute;
     left: -7px;
     top: 35px;

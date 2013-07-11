@@ -194,6 +194,12 @@
         }
       ?>
 
+      <?php
+        if ( ($page['sidebar_first']) && (theme_get_setting('sidebar_location')=='left') ) {
+          write_nav_sidebar($page,theme_get_setting('sidebar_location'));
+        }
+      ?>
+
       <div class="span<?php echo $content_width; ?> column">
 
         <header class="entry-header">
@@ -204,7 +210,7 @@
           <?php print render($title_suffix); ?>
         </header>
 
-        <span id="arrow-mark"></span>
+        <!--<span id="arrow-mark"></span> -->
 
         <div id="tabs">
           <?php if ($tabs): ?>
@@ -215,14 +221,11 @@
         <?php print render($page['content']); ?>
       </div> <!-- #content .column -->
 
-      <?php if ($page['sidebar_first']): ?>
-
-        <div id="secondary" class="span4 right-bar" role="complementary">
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_first']); ?>
-        </div> <!-- #secondary -->
-
-      <?php endif; ?>
+      <?php
+        if ( ($page['sidebar_first']) && (theme_get_setting('sidebar_location')=='right') ) {
+          write_nav_sidebar($page,theme_get_setting('sidebar_location'));
+        }
+      ?>
 
     </div><!-- .row.show-grid -->
 
@@ -256,3 +259,14 @@
   </div>
 </footer>
 
+<?php
+function write_nav_sidebar($page,$sidebar_position) {
+?>
+        <div id="secondary" class="span4 <?php echo $sidebar_position; ?>-bar" role="complementary">
+          <span id="arrow-mark"></span>
+          <div class="stripe-top"></div><div class="stripe-bottom"></div>
+          <?php print render($page['sidebar_first']); ?>
+        </div> <!-- #secondary -->
+<?php
+}
+?>
