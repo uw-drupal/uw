@@ -55,19 +55,27 @@ Some options are available to control the look of the theme—look under the App
 
 ### Options
 
-* Show patch (enabled by default)
-* Patch color (W logo)
-	* gold (default), purple
-* Show search (enabled by default)
-* Search default site
-	* this site (default), or UW
-* Band color
-	* purple (default), tan
-* Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)
-* Header image
+
+* Search Options
+  * Show/Hide Search Box
+  * Set Search Scope (search your site only, or  all UW)
+
+* UW "Patch & Band" Logo Options
+  * Show/Hide the block "W" patch
+  * Set Color of Block "W" Patch (gold/purple)
+  * Set Color of the "band" (purple/tan)
+
+* Header Image Settings (Masthead Background)
   * Specify a path within your Drupal's file folder or upload an image from your computer
   * 1280x193 JPG image recommended
     * Note: the image repeats, so you should check that your left and right seams blend nicely, or make your image wider
+
+* Content Area Options
+  * Sidebar display location (left/right) 
+
+* Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)
+
+
 
 ## Menus
 
