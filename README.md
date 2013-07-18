@@ -11,40 +11,27 @@ larger) Drupal community if you need a hand!
 
 ## Getting Started
 
-First, download (or clone) the theme into your Drupal 7 theme folder.
+First, download and enable the bootstrap theme:
 
 ```
-cd sites/all/themes
-git clone git://github.com/uw-drupal/UW-Drupal-Theme.git
-```
-
-You'll also need to download and enable the bootstrap theme:
-
-```
-drush dl bootstrap
+drush dl bootstrap-7.x-2.1
 drush en -y bootstrap
-```
-
-Download the customized [Bootstrap library](https://github.com/uw-drupal/bootstrap) and clone it to `sites/all/themes/bootstrap/bootstrap`
 
 ```
-cd sites/all/themes/bootstrap
-git clone git://github.com/uw-drupal/bootstrap.git
-```
 
-or, as a git submodule:
+Next, download (or clone) UW-Drupal-Theme into your Drupal 7 theme folder.
 
 ```
-cd DRUPAL_ROOT
-git submodule add git://github.com/uw-drupal/bootstrap.git sites/all/themes/bootstrap/bootstrap
+cd $DRUPAL_ROOT/sites/all/themes
+git clone git://github.com/uw-drupal/UW-Drupal-Theme.git
 ```
 
 To enable mouseover functionality of the main dropdown menu, you will need to download and install the modernizr drupal module.
 
 * Download modernizr module (`drush dl modernizr`)
 * Download a [Modernizr custom build](http://www.modernizr.com/download/) (with Touch Events checked)
-* Copy modernizr-X.Y.min.js to sites/all/modules/modernizr/js/modernizr.min.js
-* If you have the Libraries API module installed, use the path * sites/all/libraries/modernizr/modernizr.min.js instead.
+* Copy modernizr-X.Y.min.js to `sites/all/modules/modernizr/js/modernizr.min.js`
+* If you have the Libraries API module installed, use the path `sites/all/libraries/modernizr/modernizr.min.js` instead.
 * Enable the module (`drush en -y modernizr`)
 
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
@@ -106,3 +93,7 @@ See "UW-ME-README.txt" in the themes folder for additional instructions on insta
 If you need to customize the stylesheets further or make other changes, we recommend creating a sub-theme.  See [Creating a sub-theme](http://drupal.org/node/225125) at drupal.org.  With this approach, you can continue to pull in changes and enhancements for the UW Drupal Theme without overriding your own customizations.
 
 Developers interested in contributing to this theme should see the [project wiki](https://github.com/uw-drupal/UW-Drupal-Theme/wiki) for additional info.
+
+## Caveats
+
+* jquery_update is not compatible with this theme—a newer version of jQuery is loaded via `uw_js_alter` so you should disable jquery_update if you have it enabled.

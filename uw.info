@@ -1,9 +1,26 @@
 name = UW
 description = UW Drupal Theme
-version = VERSION
+version = 7.x-0.9
 core = 7.x
 base theme = bootstrap
-engine = phptemplate
+
+;**********************************
+; METHOD 1: Bootstrap Source Files
+;**********************************
+; ; Scripts
+; ; Uncomment the bootstrap js you need
+; scripts[] = 'bootstrap/js/bootstrap-affix.js'
+; scripts[] = 'bootstrap/js/bootstrap-alert.js'
+; scripts[] = 'bootstrap/js/bootstrap-button.js'
+; scripts[] = 'bootstrap/js/bootstrap-carousel.js'
+; scripts[] = 'bootstrap/js/bootstrap-collapse.js'
+; scripts[] = 'bootstrap/js/bootstrap-dropdown.js'
+; scripts[] = 'bootstrap/js/bootstrap-modal.js'
+; scripts[] = 'bootstrap/js/bootstrap-tooltip.js'
+; scripts[] = 'bootstrap/js/bootstrap-popover.js'
+; scripts[] = 'bootstrap/js/bootstrap-scrollspy.js'
+; scripts[] = 'bootstrap/js/bootstrap-transition.js'
+; scripts[] = 'bootstrap/js/bootstrap-typeahead.js'
 
 scripts[] = js/alert.js
 scripts[] = js/branding.js
@@ -13,6 +30,13 @@ scripts[] = js/search.js
 scripts[] = js/weather.js
 
 modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
+
+; Disable the CDN as we are using our own source files.
+settings[cdn_bootstrap] = 0
+
+; Bootstrap source
+stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = bootstrap/css/bootstrap-responsive.css
 
 stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
