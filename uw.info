@@ -4,23 +4,8 @@ version = 7.x-0.9
 core = 7.x
 base theme = bootstrap
 
-;**********************************
-; METHOD 1: Bootstrap Source Files
-;**********************************
-; ; Scripts
-; ; Uncomment the bootstrap js you need
-; scripts[] = 'bootstrap/js/bootstrap-affix.js'
-; scripts[] = 'bootstrap/js/bootstrap-alert.js'
-; scripts[] = 'bootstrap/js/bootstrap-button.js'
-; scripts[] = 'bootstrap/js/bootstrap-carousel.js'
-; scripts[] = 'bootstrap/js/bootstrap-collapse.js'
-; scripts[] = 'bootstrap/js/bootstrap-dropdown.js'
-; scripts[] = 'bootstrap/js/bootstrap-modal.js'
-; scripts[] = 'bootstrap/js/bootstrap-tooltip.js'
-; scripts[] = 'bootstrap/js/bootstrap-popover.js'
-; scripts[] = 'bootstrap/js/bootstrap-scrollspy.js'
-; scripts[] = 'bootstrap/js/bootstrap-transition.js'
-; scripts[] = 'bootstrap/js/bootstrap-typeahead.js'
+; Bootstrap javascripts
+scripts[] = 'bootstrap/js/bootstrap.min.js'
 
 scripts[] = js/alert.js
 scripts[] = js/branding.js
