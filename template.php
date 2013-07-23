@@ -3,6 +3,11 @@
 $theme_path = drupal_get_path('theme', 'uw');
 require_once $theme_path . '/includes/theme.inc';
 
+function uw_id_safe($string) {
+  // Replace with dashes anything that isn't A-Z, numbers, dashes, or underscores.
+  return strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', $string));
+}
+
 function uw_js_alter(&$javascript) {
   // Swap out jQuery to use an updated version of the library.
   $javascript['misc/jquery.js']['data'] = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
@@ -19,12 +24,16 @@ function uw_preprocess_html(&$variables) {
 function _uw_alter_menu(&$menu) {
   foreach (element_children($menu) as $_key) {
     $link = &$menu[$_key];
+    $link['#attributes']['role'] = 'presentation';
+    $link['#localized_options']['attributes']['role'] = array('menuitem');
     if (isset($link['#below']) && count($link['#below'])) {
       $link['#attributes']['aria-haspopup'] = 'true';
-      $link['#localized_options']['attributes']['role'] = array('menuitem');
       $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
       # unset links below second level
       foreach (element_children($link['#below']) as $__key) {
+        $below_link = &$link['#below'][$__key];
+        $below_link['#attributes']['role'] = 'presentation';
+        $below_link['#localized_options']['attributes']['role'] = array('menuitem');
         unset($link['#below'][$__key]['#below']);
       }
     }
@@ -92,9 +101,9 @@ function uw_preprocess_page(&$variables) {
 function uw_menu_tree(&$variables) {
   $role = "";
   if (strpos($variables['tree'], 'menuitem') !== false) {
-    $role = "menubar";
+    $role = 'role="menubar"';
   }
-  return t('<ul class="menu nav" role="!role">', array('!role' => $role)) . $variables['tree'] . '</ul>';
+  return t('<ul class="menu nav" !role>', array('!role' => $role)) . $variables['tree'] . '</ul>';
 }
 
 /**
