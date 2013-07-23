@@ -78,6 +78,11 @@ function uw_preprocess_page(&$variables) {
       _uw_alter_menu($block);
     }
   }
+  foreach ($variables['page']['footer_nav'] as $key => &$block) {
+    if (strpos($key, 'menu_') !== false) {
+      _uw_alter_menu($block);
+    }
+  }
 
   # add fallback jquery
   drupal_add_js("window.jQuery || document.write('<script src=\"$base_path$theme_path/js/jquery-1.8.3.min.js\"><' + '/script>');", array('type' => 'inline', 'group' => JS_LIBRARY, 'weight' => -19.9999999, 'every_page' => TRUE));
