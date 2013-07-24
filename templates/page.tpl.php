@@ -80,9 +80,8 @@
     <?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php echo $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
     <?php endif; ?>
     <a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
-    <a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
-
     <?php if ($show_search): ?>
+    <a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
     <div id="search">
       <form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
         <span class="wfield">
@@ -112,17 +111,13 @@
         <span class="search-options-notch"></span>
       </div>
 
-      <!--div class="search-flash">
-        <h6>Tip: Click the notch for search options</h6>
-        <span class="search-options-notch"></span>
-      </div-->
-      <?php endif; ?>
     </div>
+    <?php endif; ?>
     <a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
   </div><!-- #header -->
 
-  <div id="thin-strip">
-    <div>
+  <div class="thinstrip">
+    <div class="thinstrip-inner">
       <ul role="navigation">
         <li><a href="http://www.washington.edu/">UW Home</a></li>
         <li><a href="http://www.washington.edu/home/directories.html">Directories</a></li>
@@ -136,36 +131,35 @@
         <li class="visible-phone"><a href="http://www.gohuskies.com/">UW Athletics</a></li>
       </ul>
     </div>
-  </div><!-- #thin-strip -->
+  </div><!-- .thinstrip -->
 
 
-  <nav id="access" role="navigation" aria-label="Main menu">
-    <h3 class="assistive-text">Main menu</h3>
+  <h3 class="assistive-text">Main menu</h3>
 
-    <div id="navbar-menu" class="navbar">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" title="Open Navigation" href="#menu" tabindex="0" role="button" aria-haspopup="true">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="navbar-inner">
+  <div id="navbar-menu" class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" title="Open Navigation" href="#menu" tabindex="0" role="button" aria-haspopup="true">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
         <span class="navbar-caret" style="position:absolute;"></span>
         <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
-        <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
-
-        <?php if (!empty($primary_nav)): ?>
-          <div class="nav-collapse collapse">
-            <nav id="access" role="navigation" aria-label="Main menu">
-              <?php print render($primary_nav); ?>
-            </nav>
-          </div>
-        <?php endif; ?>
-
+        <!-- Everything you want collapsed on smaller screens goes here -->
+        <div class="nav-collapse collapse">
+          <nav id="access" role="navigation" aria-label="Main menu">
+            <?php if (!empty($primary_nav)): ?>
+               <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if ($page['dropdowns']): print render($page['dropdowns']); endif; ?> <!-- [TODO]: need uw_dropdowns() port -->
+          </nav>
+        </div>
       </div>
     </div>
-
-  </nav><!-- #access -->
+  </div>
 
   <?php if (!empty($secondary_nav) || !empty($page['navigation'])): ?>
     <div class="nav-collapse collapse">
@@ -186,16 +180,25 @@
 
 <div id="primary">
 
-  <div id="tabs">
-    <?php if ($tabs): ?>
-      <div class="tabs"><?php print render($tabs); ?></div>
-    <?php endif; ?>
-  </div>
-
   <div id="content" role="main" class="container">
 
     <div class="row show-grid">
-      <div class="span8 column">
+
+      <?php
+        if ($page['sidebar_first']) {
+          $content_width = 8;
+        } else {
+          $content_width = 12;
+        }
+      ?>
+
+      <?php
+        if ( ($page['sidebar_first']) && (theme_get_setting('sidebar_location')=='left') ) {
+          write_nav_sidebar($page,theme_get_setting('sidebar_location'));
+        }
+      ?>
+
+      <div class="span<?php echo $content_width; ?> column">
 
         <header class="entry-header">
           <?php print render($title_prefix); ?>
@@ -205,20 +208,22 @@
           <?php print render($title_suffix); ?>
         </header>
 
-        <span id="arrow-mark"></span>
+        <!--<span id="arrow-mark"></span> -->
+
+        <div id="tabs">
+          <?php if ($tabs): ?>
+            <div class="tabs"><?php print render($tabs); ?></div>
+          <?php endif; ?>
+        </div>
+
         <?php print render($page['content']); ?>
       </div> <!-- #content .column -->
 
-      <?php if ($page['sidebar_first']): ?>
-
-        <div id="secondary" class="span4 right-bar" role="complementary">
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <div id="sidebar">
-            <?php print render($page['sidebar_first']); ?>
-          </div><!-- #sidebar -->
-        </div> <!-- #secondary -->
-
-      <?php endif; ?>
+      <?php
+        if ( ($page['sidebar_first']) && (theme_get_setting('sidebar_location')=='right') ) {
+          write_nav_sidebar($page,theme_get_setting('sidebar_location'));
+        }
+      ?>
 
     </div><!-- .row.show-grid -->
 
@@ -248,7 +253,18 @@
     <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
   </ul>
   <div id="footer-left">
-    <a href="http://www.washington.edu/">&copy; 2012 University of Washington</a>
+    <a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>
   </div>
 </footer>
 
+<?php
+function write_nav_sidebar($page,$sidebar_position) {
+?>
+        <div id="secondary" class="span4 <?php echo $sidebar_position; ?>-bar" role="complementary">
+          <span id="arrow-mark"></span>
+          <div class="stripe-top"></div><div class="stripe-bottom"></div>
+          <?php print render($page['sidebar_first']); ?>
+        </div> <!-- #secondary -->
+<?php
+}
+?>

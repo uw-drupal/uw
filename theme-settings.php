@@ -45,18 +45,17 @@ $form['uw']['search']['show_search'] = array(
     ),
   );
 
-  $form['uw']['patch'] = array(
+  $form['uw']['patch_band'] = array(
     '#type' => 'fieldset',
-    '#title' => t('UW Logo Patch'),
+    '#title' => t('UW "Patch & Band" Logo Options'),
   );
 
-$form['uw']['patch']['show_patch'] = array(
+$form['uw']['patch_band']['show_patch'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show patch (W logo)'),
     '#default_value' => theme_get_setting('show_patch'),
   );
-
-  $form['uw']['patch']['patch_color'] = array(
+  $form['uw']['patch_band']['patch_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Patch color (W logo)'),
     '#default_value' => theme_get_setting('patch_color'),
@@ -68,12 +67,7 @@ $form['uw']['patch']['show_patch'] = array(
       ),
     ),
   );
-
-  $form['uw']['logo_band'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('UW Logo Band'),
-  );
-  $form['uw']['logo_band']['band_color'] = array(
+  $form['uw']['patch_band']['band_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Band color'),
     '#default_value' => theme_get_setting('band_color'),
@@ -82,7 +76,7 @@ $form['uw']['patch']['show_patch'] = array(
 
   $form['uw']['header'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Header image settings'),
+    '#title' => t('Header image settings (masthead background)'),
   );
   $form['uw']['header']['default_header'] = array(
     '#type' => 'checkbox',
@@ -112,6 +106,21 @@ $form['uw']['patch']['show_patch'] = array(
     '#maxlength' => 40,
     '#description' => t("If you don't have direct file access to the server, use this field to upload your header.")
   );
+
+
+
+  $form['uw']['content_options'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content Area Options'),
+    '#description' => t('Configuration options controlling how the content display area should render.'),
+  );
+  $form['uw']['content_options']['sidebar_location'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Location of sidebar navigation menu'),
+    '#default_value' => theme_get_setting('sidebar_location'),
+    '#options' => drupal_map_assoc(array('left', 'right')),
+  );
+
 
   $form['#validate'][] = 'uw_theme_settings_validate';
   $form['#submit'][] = 'uw_theme_settings_submit';

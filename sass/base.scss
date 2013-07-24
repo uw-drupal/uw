@@ -1,0 +1,109 @@
+@import "_common";
+
+body {
+  @include respond-to("!mobile") {
+    background: url(../img/header/bg-stripe.gif) repeat-x 197px 0 white;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #39275b;
+}
+
+h1 {
+  margin: 10px 0 25px;
+  font-size: 2.65em;
+  font-weight: 400;
+  line-height: 1.1em;
+}
+
+h2,
+h3,
+h4 {
+  margin-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: 0;
+  font-size: 1.7em;
+}
+
+h1 i,
+h1 em {
+  font-weight: 400;
+  font-family: Baskerville, "Times New Roman", Times, serif;
+  text-transform: lowercase;
+  font-size: 1.1em;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 26px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  font-weight: 300;
+}
+
+h3 {
+  color: #5c441f;
+  font-size: 1.3em;
+  line-height: 26px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 24px;
+}
+
+h4 em {
+  color: #6b6b6b;
+  font-family: Baskerville, "Times New Roman", Times, serif;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+a {
+  color: #407ba0;
+}
+
+a:focus {
+  color: #005580;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+  margin-bottom: 1.5em;
+}
+
+li {
+  line-height: 21px;
+}
+
+img {
+  // FIXME: why is this !important?
+  height: auto !important;
+}
+
+object,
+embed,
+iframe {
+  margin: 10px 0 15px;
+  display: block;
+  // FIXME: why is this !important?
+  max-width: 100% !important;
+}
+
+hr {
+  clear: both;
+}

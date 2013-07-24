@@ -1,0 +1,77 @@
+Admissions {"url":"http:","expanded":true}
+-Undergraduates {"url":"http://www.washington.edu/discover/admissions/"}
+-Graduates {"url":"http://www.grad.washington.edu/admissions/programs-degrees.shtml"}
+-Paying for college {"url":"http://www.washington.edu/students/osfa/"}
+-Husky Promise {"url":"http://huskypromise.washington.edu"}
+-Financial aid estimator {"url":"http://www.washington.edu/students/osfa/prospectiveug/aid.est.1.html"}
+-Continuing Education {"url":"http://www.pce.uw.edu/"}
+-Summer quarter {"url":"http://www.summer.washington.edu/summer/"}
+
+Academics {"url":"http:","expanded":true}
+-Academic calendar {"url":"http://www.washington.edu/students/reg/calendar.html"}
+-Colleges/Schools {"url":"http://www.washington.edu/discover/academics/"}
+-Departments {"url":"http://www.washington.edu/discover/academics/departments/"}
+-Undergraduate learning {"url":"http://www.washington.edu/uaa/"}
+-Graduate School {"url":"http://www.grad.washington.edu/"}
+-Course catalog {"url":"http://www.washington.edu/students/crscat/"}
+-Undergraduate majors {"url":"http://www.washington.edu/uaa/advising/majors/majoff.php"}
+-Online learning {"url":"http://www.pce.uw.edu/online-learning/"}
+-Evening degree program {"url":"http://www.evedegree.washington.edu/edp/"}
+-English language programs {"url":"http://www.outreach.washington.edu/international/ioelp.asp"}
+-Study abroad {"url":"http://ipeweb.admin.washington.edu/"}
+-Graduation requirements {"url":"http://www.washington.edu/students/timeschd/genedinq.html"}
+-Libraries {"url":"http://www.lib.washington.edu/"}
+
+Campus Life {"url":"http:","expanded":true}
+-Husky Card {"url":"http://www.hfs.washington.edu/huskycard/"}
+-Dining {"url":"http://www.hfs.washington.edu/dining/"}
+-Student housing {"url":"http://www.washington.edu/discover/housing/"}
+-Student groups {"url":"http://depts.washington.edu/sao/"}
+-The HUB {"url":"http://depts.washington.edu/sauf/"}
+-Husky sports {"url":"http://www.gohuskies.com"}
+-IMA {"url":"http://depts.washington.edu/ima/"}
+-Diversity {"url":"http://www.washington.edu/diversity/"}
+-Hall Health {"url":"http://depts.washington.edu/hhpccweb/"}
+-Counseling Center {"url":"http://depts.washington.edu/counsels/"}
+-University Book Store {"url":"http://www.bookstore.washington.edu/"}
+-Computing support {"url":"http://www.washington.edu/itconnect/basics.html"}
+-UW Police {"url":"http://www.washington.edu/admin/police/"}
+-Holidays {"url":"http://www.washington.edu/admin/hr/holidays/holidays.html"}
+
+Leadership {"url":"http:","expanded":true}
+-Board of Regents {"url":"http://www.washington.edu/regents/"}
+-President’s office {"url":"http://www.washington.edu/president/"}
+-Provost’s office {"url":"http://www.washington.edu/provost/"}
+-Vice presidents {"url":"http://www.washington.edu/vp/"}
+-Vice provosts {"url":"http://www.washington.edu/provost/viceprovosts.html"}
+-Deans and chancellors {"url":"http://www.washington.edu/discover/leadership/deans-and-chancellors"}
+-Government Relations {"url":"http://www.washington.edu/externalaffairs/govrelations/"}
+-Faculty Senate {"url":"http://www.washington.edu/faculty/facsen/"}
+-ASUW {"url":"http://www.asuw.org/"}
+-GPSS {"url":"http://www.gpss.washington.edu/"}
+-RHSA {"url":"https://www.hfs.washington.edu/RHSA/"}
+
+Portals {"url":"http:","expanded":true}
+-Business & Industry {"url":"http://www.washington.edu/discover/partnerships"}
+-Diversity {"url":"http://www.washington.edu/diversity/"}
+-Educational Excellence {"url":"http://www.washington.edu/discover/educationalexcellence"}
+-Global Affairs {"url":"http://www.washington.edu/globalaffairs"}
+-Creating Global Citizens {"url":"http://www.washington.edu/discover/globalcitizens"}
+-Healthy Lives {"url":"http://www.washington.edu/discover/healthylives"}
+-Innovation Serving Society {"url":"http://www.washington.edu/discover/innovation"}
+-Research {"url":"http://www.washington.edu/research/"}
+-Sustainability of the Earth {"url":"http://www.washington.edu/discover/sustainability"}
+-UW Foundation {"url":"http://www.washington.edu/giving/"}
+
+Visit the UW {"url":"http:","expanded":true}
+-Planning a visit {"url":"http://www.washington.edu/discover/visit/"}
+-Things to do {"url":"http://www.washington.edu/discover/visit/uw-events"}
+-Tours {"url":"http://admit.washington.edu/Visit/GuidedTour"}
+
+Connect with us {"url":"http:","expanded":true}
+-Facebook {"url":"http://www.facebook.com/UofWA"}
+-YouTube {"url":"http://www.youtube.com/user/uwhuskies"}
+-iTunes {"url":"http://depts.washington.edu/itunes/"}
+-Twitter {"url":"http://twitter.com/UW"}
+-m.UW {"url":"http://www.washington.edu/mobile/"}
+-LinkedIn {"url":"http://www.linkedin.com/company/university-of-washington"}

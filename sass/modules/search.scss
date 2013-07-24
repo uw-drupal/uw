@@ -1,0 +1,147 @@
+@import "_common";
+
+@include respond-to("!mobile") {
+  .main-search {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+  }
+
+  input[type="submit"].formbutton {
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    background: url(../img/header/header-sprite.png) no-repeat -103px 2px transparent;
+    @include box-shadow(none);
+    border: none;
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    padding: 5px 16px;
+    height: 28px;
+    width: 32px;
+  }
+
+  input[type="text"].wTextInput {
+    @include border-radius(30px);
+    padding: 9px 0 9px 38px;
+    width: 175px;
+    color: #999;
+    @include box-shadow(0 0 8px #8f8f8f);
+    border: none;
+    @include transition(width 400ms ease, background 400ms ease);
+  }
+
+  .wTextInput:focus,
+  input[type="text"].wTextInput:focus {
+    width: 225px;
+  }
+
+  #search .search-toggle {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 51px;
+    width: 25px;
+    height: 25px;
+    background: url("../img/misc/super-search-handle.png") no-repeat center center #e4e4e4;
+    @include border-radius(25px);
+    @include box-shadow(0 0 10px #bebebe);
+  }
+
+  #ie7 #search .search-toggle,
+  #ie8 #search .search-toggle {
+    background: url("../img/misc/ie7-ie8-super-search-handle.png") no-repeat center center #e4e4e4;
+  }
+
+  #ie7 #search .search-toggle.close-toggle,
+  #ie8 #search .search-toggle.close-toggle {
+    background: url("../img/misc/ie7-ie8-super-search-handle-close.png") no-repeat center center #e4e4e4;
+  }
+
+  #search .search-toggle.close-toggle {
+    background: url("../img/misc/super-search-handle-close.png") no-repeat center center #e4e4e4;
+  }
+
+  #search .search-toggle:hover {
+    cursor: pointer;
+    @include box-shadow(0 0 10px #bebebe);
+  }
+
+  #search .search-options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    width: 130px;
+    z-index: 999;
+    background-color: white;
+    @include box-shadow(0 0 8px #b5b5b5);
+    padding: 20px 15px 15px 30px;
+    @include border-radius(5px);
+  }
+
+  #search .search-options-notch {
+    background: url("../img/misc/super-search-notch.png") no-repeat -3px 0 transparent;
+    color: #F4F4F4;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    font-size: 17px;
+    top: -15px;
+    right: 25px;
+  }
+
+  #search .search-options label {
+    padding: 5px;
+  }
+
+  #search .search-options label:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  #search .search-flash {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    z-index: 999;
+    background-color: white;
+    padding: 8px;
+    @include box-shadow(0 0 8px #b5b5b5);
+    @include border-radius(5px);
+  }
+
+  #searchsubmit {
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    background: url(../img/header/header-sprite.png) no-repeat -103px 2px transparent;
+    box-shadow: none;
+    border: none;
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    padding: 5px 16px;
+    height: 28px;
+    width: 32px;
+  }
+
+  .widget_search {
+    margin-bottom: 15px;
+  }
+
+  .widget_search div {
+    position: relative;
+  }
+}
+
+@include respond-to("tablet") {
+  .main-search {
+    right: 0;
+  }
+  #search .search-toggle {
+    right: 7px;
+  }
+}
