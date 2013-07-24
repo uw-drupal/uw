@@ -20,21 +20,29 @@ function uw_preprocess_html(&$variables) {
 
 # helper function processes menu render arrays
 # - insert some aria and role attributes
-# - add [data-hover="dropdown"] for dropdown hover functionality
-function _uw_alter_menu(&$menu) {
+function _uw_alter_menu(&$menu, $dropdown = false) {
+  # correct $menu if menu_block menu
+  if (isset($menu['#block']) && $menu['#block']->module === 'menu_block') {
+    $menu = &$menu['#content'];
+  }
   foreach (element_children($menu) as $_key) {
     $link = &$menu[$_key];
     $link['#attributes']['role'] = 'presentation';
-    $link['#localized_options']['attributes']['role'] = array('menuitem');
+    $link['#localized_options']['attributes']['role'] = 'menuitem';
     if (isset($link['#below']) && count($link['#below'])) {
-      $link['#attributes']['aria-haspopup'] = 'true';
-      $link['#localized_options']['attributes']['data-hover'] = array('dropdown');
-      # unset links below second level
+      # dropdowns get special treatment
+      if ($dropdown) {
+        $link['#attributes']['aria-haspopup'] = 'true';
+        $link['#localized_options']['attributes']['data-hover'] = 'dropdown';
+      }
       foreach (element_children($link['#below']) as $__key) {
         $below_link = &$link['#below'][$__key];
         $below_link['#attributes']['role'] = 'presentation';
-        $below_link['#localized_options']['attributes']['role'] = array('menuitem');
-        unset($link['#below'][$__key]['#below']);
+        $below_link['#localized_options']['attributes']['role'] = 'menuitem';
+        # if dropdown, unset links below second level
+        if ($dropdown) {
+          unset($link['#below'][$__key]['#below']);
+        }
       }
     }
   }
@@ -71,16 +79,19 @@ function uw_preprocess_page(&$variables) {
 
   # modify dropdown menus: primary_nav and any menu_* in the dropdowns region
   if (isset($variables['primary_nav']) && is_array($variables['primary_nav'])) {
-    _uw_alter_menu($variables['primary_nav']);
+    _uw_alter_menu($variables['primary_nav'], true);
   }
-  foreach ($variables['page']['dropdowns'] as $key => &$block) {
-    if (strpos($key, 'menu_') !== false) {
-      _uw_alter_menu($block);
-    }
-  }
-  foreach ($variables['page']['footer_nav'] as $key => &$block) {
-    if (strpos($key, 'menu_') !== false) {
-      _uw_alter_menu($block);
+
+  # find all blocks that are prefixed "menu_"
+  # and process those menus with _uw_alter_menu
+  foreach (element_children($variables['page']) as $key) {
+    $element = &$variables['page'][$key];
+    if (is_array($element) && count($element)) {
+      foreach ($element as $_key => &$block) {
+        if (strpos($_key, 'menu_') !== false) {
+          _uw_alter_menu($block, $key === 'dropdowns');
+        }
+      }
     }
   }
 
@@ -106,6 +117,7 @@ function uw_preprocess_page(&$variables) {
 function uw_menu_tree(&$variables) {
   $role = "";
   if (strpos($variables['tree'], 'menuitem') !== false) {
+    // FIXME: menubar should only be used on horizontal menus (?)
     $role = 'role="menubar"';
   }
   return t('<ul class="menu nav" !role>', array('!role' => $role)) . $variables['tree'] . '</ul>';

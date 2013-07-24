@@ -22,10 +22,10 @@ function uw_menu_link(array $variables) {
   if (isset($element['#below']) && !empty($element['#below'])) {
     $element['#localized_options']['attributes']['tabindex'] = '0';
     $safe_id = uw_id_safe($element['#title']);
-    $element['#localized_options']['attributes']['id'] = "menu-$safe_id";
+    $element['#localized_options']['attributes']['id'] = "link-$safe_id";
     // add our own wrapper
     unset($element['#below']['#theme_wrappers']);
-    $sub_menu = '<ul class="dropdown-menu" role="menu" aria-labelledby="menu-' . $safe_id . '" aria-hidden="true">' . drupal_render($element['#below']) . '</ul>';
+    $sub_menu = '<ul id="menu-' . $safe_id . '" class="dropdown-menu" role="menu" aria-labelledby="link-' . $safe_id . '" aria-hidden="true">' . drupal_render($element['#below']) . '</ul>';
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
     $element['#localized_options']['attributes']['data-toggle'] = 'dropdown';
 
@@ -41,8 +41,8 @@ function uw_menu_link(array $variables) {
       $element['#title'] .= '<span class="caret"></span>';
     }
 
-    // Set dropdown trigger element to # to prevent inadvertant page loading with submenu click
     $element['#localized_options']['attributes']['data-target'] = '#';
+    $element['#localized_options']['attributes']['data-menu-id'] = 'menu-' . $safe_id;
   }
   else {
     // tabindex="-1" for > first-level menu items
