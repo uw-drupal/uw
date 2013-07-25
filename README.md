@@ -16,7 +16,6 @@ First, download and enable the bootstrap theme:
 ```
 drush dl bootstrap-7.x-2.1
 drush en -y bootstrap
-
 ```
 
 Next, download (or clone) UW-Drupal-Theme into your Drupal 7 theme folder.
@@ -42,7 +41,6 @@ Some options are available to control the look of the theme—look under the App
 
 ### Options
 
-
 * Search Options
   * Show/Hide Search Box
   * Set Search Scope (search your site only, or  all UW)
@@ -62,10 +60,7 @@ Some options are available to control the look of the theme—look under the App
 
 * Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)
 
-
-
 ## Menus
-
 
 ### Dropdown Main Menu
 
@@ -74,19 +69,20 @@ The main menu is displayed in the *Dropdowns* region by default. You can remove 
 ### Expanded Footer Menu
 
 If you'd like a nested footer menu similar to the one found on UW Homepage:
+
 1. Create a new menu at /admin/structure/menu
 2. Add 5 or 6 parent items and nested child items:
-	* Parent Item One
-		* Child item A
-		* Child item B
-		* Child item C
-	* Parent Item Two
-		* Child item D
-		* Child item E
-		…
-3. Add your new menu to the "Footer Nav" region at /admin/structure/blocks
+    * Parent Item One
+        * Child item A
+	* Child item B
+	* Child item C
+    * Parent Item Two
+        * Child item D
+        * Child item E
+        …
+3. Add your new menu to the "Footer Nav" region at `admin/structure/blocks`
 
-See "UW-ME-README.txt" in the themes folder for additional instructions on installing the header and footer menus which appear on the UW Homepage.
+See "UW-MENU-README.md" in the themes folder for additional instructions on installing the header and footer menus which appear on the UW Homepage.
 
 ## Further Changes and Customizations
 
