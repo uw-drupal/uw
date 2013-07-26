@@ -18,7 +18,7 @@ drush dl bootstrap-7.x-2.1
 drush en -y bootstrap
 ```
 
-Next, download (or clone) UW-Drupal-Theme into your Drupal 7 theme folder.
+Next, [download the latest release](https://github.com/uw-drupal/UW-Drupal-Theme/releases) or clone UW-Drupal-Theme into your Drupal 7 theme folder.
 
 ```
 cd $DRUPAL_ROOT/sites/all/themes
