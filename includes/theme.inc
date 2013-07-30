@@ -6,12 +6,11 @@
 
 # THEME_menu_link implementation
 function uw_menu_link(array $variables) {
-
   $element = $variables['element'];
   $sub_menu = '';
 
-  # normal menu style for menu_block__main_menu blocks
-  if (in_array('menu_link__menu_block__main_menu', (array)$element['#theme'])) {
+  # normal menu style for blocks with theme key menu_link__menu_block
+  if (in_array('menu_link__menu_block', (array)$element['#theme'])) {
     # don't include "Home" links
     if ($element['#title'] == 'Home') {
       return;
