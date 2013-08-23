@@ -29,3 +29,13 @@
   }
 
 }
+
+li.expanded a.active-trail
+{
+  border-left:2px solid #ffd700;
+}
+
+li > a.active{
+  background-color:#fcf9dc;
+  border-left:2px solid #ffd700;
+}

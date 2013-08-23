@@ -133,3 +133,10 @@ function uw_form_search_block_form_alter(&$form, &$form_state) {
   // with the known, desired classes.
   $form['#attributes']['class'] = array('form-search', 'content-search');
 }
+
+function uw_pubcookie_login() {
+	$pc_login_link = $GLOBALS['base_path'] . pubcookie_login_link() . '?destination=' . drupal_get_path_alias();
+  $links = "<a href='$pc_login_link'>&copy;</a> ";
+	$links .= l( date('Y') . ' University of Washington' , 'http://www.washington.edu');
+	return $links;
+}

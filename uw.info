@@ -1,6 +1,6 @@
 name = UW
 description = UW Drupal Theme
-version = 7.x-0.9
+version = 7.x-1.0
 core = 7.x
 base theme = bootstrap
 
@@ -13,6 +13,7 @@ scripts[] = js/navigation.js
 scripts[] = js/misc.js
 scripts[] = js/search.js
 scripts[] = js/weather.js
+scripts[] = js/menu-columns.js
 
 modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
 
@@ -28,8 +29,10 @@ stylesheets[print][] = css/print.css
 
 regions[help] = Help
 regions[dropdowns] = Dropdowns
-regions[sidebar_first] = Right sidebar
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
 regions[content] = Content
+regions[footer_left] = Footer Left
 regions[header] = Header
 regions[footer_nav] = Footer Nav
 
