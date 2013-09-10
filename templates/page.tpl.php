@@ -186,6 +186,8 @@
 
       <?php
 			  $content_width = 12;
+				$sidebar_width = 0;
+				
         if ($page['sidebar_first'] && $page['sidebar_second']) {
           $content_width = 6;
 					$sidebar_width = 3;
