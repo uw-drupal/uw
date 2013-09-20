@@ -10,7 +10,14 @@ function uw_menu_link(array $variables) {
   $sub_menu = '';
 
   # normal menu style for blocks with theme key menu_link__menu_block
-  if (in_array('menu_link__menu_block', (array)$element['#theme'])) {
+  $is_bootstrap = !in_array('menu_link__menu_block', (array)$element['#theme']);
+
+  $delta = variable_get('dropdown_menu_block_delta');
+  if (isset($element['#bid']) && $element['#bid']['delta'] == $delta) {
+    $is_bootstrap = true;
+  }
+
+  if (!$is_bootstrap) {
     # don't include "Home" links
     if ($element['#title'] == 'Home') {
       return;
