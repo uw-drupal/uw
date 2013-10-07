@@ -9,11 +9,12 @@
 }
 
 #footerBG {
+  position: relative;
+  top: -35px;
   clear: both;
-  margin-top: -35px;
-  padding: 124px 0 50px 0;
+  padding: 124px 0 20px 0;
   overflow: hidden;
-  background: url(../img/footer.jpg) no-repeat center top transparent;
+  background: url(../img/footer-fs8.png) no-repeat center top transparent;
 }
 
 #footer {
