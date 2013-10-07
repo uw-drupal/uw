@@ -42,7 +42,6 @@ Some options are available to control the look of the theme—look under the App
 
 ### Options
 
-
 * Search Options
   * Show/Hide Search Box
   * Set Search Scope (search your site only, or  all UW)
@@ -57,15 +56,9 @@ Some options are available to control the look of the theme—look under the App
   * 1280x193 JPG image recommended
     * Note: the image repeats, so you should check that your left and right seams blend nicely, or make your image wider
 
-* Content Area Options
-  * Sidebar display location (left/right) 
-
 * Logo (wordmark) option allows a custom wordmark image. 800x200 PNG image recommended (displays at 400x100, optimized for high-dpi displays)
 
-
-
 ## Menus
-
 
 ### Dropdown Main Menu
 

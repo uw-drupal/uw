@@ -77,7 +77,7 @@
     <div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
     <div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to sidebar content">Skip to sidebar content</a></div>
 
-    <?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php echo $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
+    <?php if ($show_patch): ?><a class="patch" href="http://www.washington.edu/"><img id="logo_w" src="<?php print $base_path . path_to_theme() ?>/img/header/logo_w-fs8.png" alt="University of Washington" /></a>
     <?php endif; ?>
     <a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
     <?php if ($show_search): ?>
@@ -184,36 +184,15 @@
 
     <div class="row show-grid">
 
-      <?php
-			  $content_width = 12;
-				$sidebar_width = 0;
-				
-        if ($page['sidebar_first'] && $page['sidebar_second']) {
-          $content_width = 6;
-					$sidebar_width = 3;
-				}else{
-						if ($page['sidebar_first'] || $page['sidebar_first'] ){
-							$content_width = 8;
-							$sidebar_width = 4;
-					}
-				}
-				
-      ?>
-
-      <?php
-        if ( $page['sidebar_first'] ) { ?>
-
-        <div id="secondary" class="span<?php echo $sidebar_width ?> -bar" role="complementary">
+      <?php if ($page['sidebar_first']): ?>
+        <div id="secondary" class="span<?php print $sidebar_width ?> left-bar" role="complementary">
           <span id="arrow-mark"></span>
           <div class="stripe-top"></div><div class="stripe-bottom"></div>
           <?php print render($page['sidebar_first']); ?>
         </div> <!-- #secondary -->
+      <?php endif; ?>
 
-			<?php
-				}
-      ?>
-
-      <div class="span<?php echo $content_width; ?> column">
+      <div class="span<?php print $content_width; ?> column">
 
         <header class="entry-header">
           <?php print render($title_prefix); ?>
@@ -234,17 +213,13 @@
         <?php print render($page['content']); ?>
       </div> <!-- #content .column -->
 
-      <?php
-        if ( $page['sidebar_second'] ) { ?>
-        <div id="secondary" class="span<?php echo $sidebar_width ?> -bar" role="complementary">
+      <?php if ($page['sidebar_second']): ?>
+        <div id="secondary" class="span<?php print $sidebar_width ?> right-bar" role="complementary">
           <span id="arrow-mark"></span>
           <div class="stripe-top"></div><div class="stripe-bottom"></div>
           <?php print render($page['sidebar_second']); ?>
         </div> <!-- #secondary -->
-
-			<?php
-				}
-      ?>
+      <?php endif; ?>
 
     </div><!-- .row.show-grid -->
 
@@ -274,26 +249,10 @@
     <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
   </ul>
   <div id="footer-left">
-	<?php
-		if ( $page['footer_left'] ) {
-			print render($page['footer_left']);	
-		}else{
-			print '<a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>';
-		}
-	?>
-
-    
+  <?php if ($page['footer_left']): ?>
+    <?php print render($page['footer_left']); ?>
+  <?php else: ?>
+    <a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>
+  <?php endif; ?>
   </div>
 </footer>
-
-<?php
-function write_nav_sidebar($page,$sidebar_position) {
-?>
-        <div id="secondary" class="span4 <?php echo $sidebar_position; ?>-bar" role="complementary">
-          <span id="arrow-mark"></span>
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_first']); ?>
-        </div> <!-- #secondary -->
-<?php
-}
-?>

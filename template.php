@@ -64,7 +64,7 @@ function uw_preprocess_region(&$variables, $hook) {
 }
 
 function uw_preprocess_block(&$variables) {
-  if ($variables['block']->region == 'sidebar_first') {
+  if ($variables['block']->region == 'sidebar_first' || $variables['block']->region == 'sidebar_second') {
     $variables['classes_array'][] = 'widget';
 
     // menus get a special class
@@ -107,6 +107,30 @@ function uw_preprocess_page(&$variables) {
   $variables['search_default_site'] = theme_get_setting('search_default_site');
   $variables['default_header'] = theme_get_setting('default_header');
   $variables['header_path'] = file_create_url(theme_get_setting('header_path'));
+
+  $page = $variables['page'];
+
+  // calculate content and sidebar widths
+  $sidebar_first_exists = isset($page['sidebar_first']) && !empty($page['sidebar_first']);
+  $sidebar_second_exists = isset($page['sidebar_second']) && !empty($page['sidebar_second']);
+
+  $content_width = 12;
+  $sidebar_width = 0;
+
+  if ($sidebar_first_exists && $sidebar_second_exists) {
+    $content_width = 6;
+    $sidebar_width = 3;
+  } else {
+    if ($sidebar_first_exists || $sidebar_second_exists) {
+      $content_width = 8;
+      $sidebar_width = 4;
+    }
+  }
+
+  $variables['sidebar_first_exists'] = $sidebar_first_exists;
+  $variables['sidebar_second_exists'] = $sidebar_second_exists;
+  $variables['content_width'] = $content_width;
+  $variables['sidebar_width'] = $sidebar_width;
 }
 
 /**
