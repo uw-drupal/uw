@@ -399,107 +399,38 @@
   .attachment-post-thumbnail.wp-post-image {
     margin: 0;
   }
-  .left-bar .post-thumbnail.widget p {
+
+  .post-thumbnail.widget p {
     clear: both;
     display: block;
     font-size: 12px;
     margin: 0 15px 0 0;
     padding: 5px 5px 5px 10px;
     background-color: #F4F4F4;
-  }
-  .left-bar .post-thumbnail.widget {
-    margin-top: 20px;
-  }
-  .left-bar {
-    background: url(../img/side-stripe-l.png) no-repeat 0 0 transparent;
-  }
-  .left-bar {
-    background-repeat: repeat-y;
-    background-position: 255px 0;
-    position: relative;
-    min-height: 375px;
-  }
-
-  .left-bar .region {
-  	padding: 10px 55px 0 0;
-  }
-  .left-bar .stripe-top,
-  .left-bar .stripe-bottom {
-    background: url(../img/side-stripe-l.png) no-repeat 0 0 transparent;
-    margin: -20px 0 0 255px;
-    background-position: -89px 0;
-    width: 40px;
-    height: 214px;
-    position: absolute;
-  }
-  .left-bar .stripe-bottom {
-    bottom: 0;
-    background-position: right bottom;
-	margin-left: 261px;
-  }
-  .left-bar #arrow-mark {
-    left: 273px;
-	top: 10px;
-  }
-  .right-bar .post-thumbnail.widget p {
-    clear: both;
-    display: block;
-    font-size: 12px;
-    margin: 0 15px 0 0;
-    padding: 5px 5px 5px 10px;
-    background-color: #F4F4F4;
-  }
-  .right-bar .post-thumbnail.widget {
-    margin-top: 20px;
-  }
-  .right-bar {
-    background: url(../img/side-stripe-r.png) no-repeat 0 0 transparent;
-  }
-  .right-bar {
-    background-repeat: repeat-y;
-    background-position: -89px 0;
-    position: relative;
-    min-height: 375px;
-  }
-  .right-bar .stripe-top,
-  .right-bar .stripe-bottom {
-    background: url(../img/side-stripe-r.png) no-repeat 0 0 transparent;
-    margin-top: -20px;
-    background-position: 0 0;
-    width: 40px;
-    height: 214px;
-    position: absolute;
-  }
-  .right-bar .stripe-bottom {
-    bottom: 0;
-    background-position: left bottom;
-  }
-  .right-bar #arrow-mark {
-    left: -689px;
-    top: 10px;
-
   }
   #content {
-    padding: 30px 0 30px 0;
+    background-color: white;
   }
-  #primary {
+  .container-primary {
     position: relative;
-    width: 1024px;
     margin: 0 auto;
-    background-color: #FFF;
+    padding: 20px 0;
+    background-color: white;
     @include box-shadow(0 0 7px lightgrey);
-    border-radius: 5px;
+    @include border-radius(5px);
+    z-index: 1;
   }
 
   #arrow-mark {
     position: absolute;
     left: -7px;
-    top: 35px;
+    top: 28px;
     background: url(../img/arrow.png) no-repeat 0 0 transparent;
     width: 32px;
     height: 50px;
     display: block;
   }
+
   .slideshowpro-wrapper object {
     width: 100% !important;
     height: 442px !important;
@@ -591,16 +522,38 @@
     border-left: 1px solid #ddd;
     font-weight: normal;
   }
+
+  // divider shadow
+  .two-sidebars .divider:before,
+  .sidebar-first .divider:before {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    @include border-radius(5px, 200px);
+    @include box-shadow(0 0 15px rgba(black, 0.25));
+    content: "";
+  }
+  .two-sidebars .divider:after,
+  .sidebar-second .divider:after {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    @include border-radius(5px, 200px);
+    @include box-shadow(0 0 15px rgba(black, 0.25));
+    content: "";
+  }
 }
 
 // FIXME: tablet styles below need to be "smacked"
 @include respond-to("tablet") {
   #access {
     overflow: hidden;
-  }
-  body #primary {
-    width: 768px;
-    margin: 0 auto;
   }
   body .rightside .inner-wrap {
     float: left;

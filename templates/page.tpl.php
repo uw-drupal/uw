@@ -178,53 +178,47 @@
 
 <?php print $messages; ?>
 
-<div id="primary">
+<div class="container container-primary">
 
-  <div id="content" role="main" class="container">
+   <div class="row show-grid">
 
-    <div class="row show-grid">
+     <?php if ($page['sidebar_first']): ?>
+       <div class="span<?php print $sidebar_width ?> sidebar sidebar-left" role="complementary">
+         <?php print render($page['sidebar_first']); ?>
+       </div> <!-- #secondary -->
+     <?php endif; ?>
 
-      <?php if ($page['sidebar_first']): ?>
-        <div id="secondary" class="span<?php print $sidebar_width ?> left-bar" role="complementary">
-          <span id="arrow-mark"></span>
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_first']); ?>
-        </div> <!-- #secondary -->
-      <?php endif; ?>
+     <div id="content" role="main" class="span<?php print $content_width; ?> column">
+       <div class="divider inner">
+         <header class="entry-header">
+           <?php print render($title_prefix); ?>
+           <?php if (!empty($title)): ?>
+             <h1 class="entry-title"><?php print $title; ?></h1>
+           <?php endif; ?>
+           <?php print render($title_suffix); ?>
+         </header>
 
-      <div class="span<?php print $content_width; ?> column">
+         <div id="tabs">
+           <?php if ($tabs): ?>
+             <div class="tabs"><?php print render($tabs); ?></div>
+           <?php endif; ?>
+         </div>
 
-        <header class="entry-header">
-          <?php print render($title_prefix); ?>
-          <?php if (!empty($title)): ?>
-            <h1 class="entry-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-        </header>
+         <span id="arrow-mark"></span>
 
-        <!--<span id="arrow-mark"></span> -->
+         <?php print render($page['content']); ?>
+       </div> <!-- #content .inner -->
+     </div> <!-- #content -->
 
-        <div id="tabs">
-          <?php if ($tabs): ?>
-            <div class="tabs"><?php print render($tabs); ?></div>
-          <?php endif; ?>
-        </div>
+     <?php if ($page['sidebar_second']): ?>
+       <div class="span<?php print $sidebar_width ?> sidebar sidebar-right" role="complementary">
+         <?php print render($page['sidebar_second']); ?>
+       </div> <!-- #secondary -->
+     <?php endif; ?>
 
-        <?php print render($page['content']); ?>
-      </div> <!-- #content .column -->
+   </div><!-- .row.show-grid -->
 
-      <?php if ($page['sidebar_second']): ?>
-        <div id="secondary" class="span<?php print $sidebar_width ?> right-bar" role="complementary">
-          <span id="arrow-mark"></span>
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_second']); ?>
-        </div> <!-- #secondary -->
-      <?php endif; ?>
-
-    </div><!-- .row.show-grid -->
-
-  </div><!-- #content -->
-</div> <!-- #primary-->
+ </div><!-- .container --> <!-- #primary-->
 
 
 <div id="footerBG">
