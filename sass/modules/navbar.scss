@@ -5,8 +5,26 @@
 }
 
 @include respond-to("large") {
+  // large dropdown menu styles
   .navbar {
     margin-bottom: 0;
+
+    .nav {
+      border-left: 1px solid #5d5d5d;
+      border-right: 1px solid #434343;
+
+      > li {
+        border-left: 1px solid #434343;
+        border-right: 1px solid #5d5d5d;
+        vertical-align: middle;
+
+        // Alter the padding a touch to give more space to longer text (prevent extraneous wrapping)
+        > a {
+          text-align: center;
+          padding: 9px 6px 12px 6px;
+        }
+      }
+    }
   }
   #navbar-menu {
     padding: 5px 0;
@@ -72,9 +90,6 @@
   .menu-block li:last-child a {
     border: none;
   }
-  header .nav>li {
-    background: url(../img/header/header-sprite.png) no-repeat 0 -265px transparent;
-  }
   header .nav>li:first-child {
     background: none;
   }
@@ -136,25 +151,13 @@
     height: 12px;
     display: none;
   }
-  .nav>li.uw-medicine {
-    text-indent: -99999px;
-    overflow: hidden;
-    width: 135px;
-    background: url(../img/header/header-sprite.png) no-repeat 10px -108px transparent;
-  }
-  .navbar .nav>li.uw-medicine>a {
-    cursor: pointer;
-  }
-  .nav>li.uw-medicine:hover {
-    background-position: 10px -142px;
-  }
   .dropdown-menu {
-    top: 42px;
     left: 0;
+    top: auto;
+    margin: 6px 0 0 0;
     padding: 20px 0 20px 20px;
     border: none;
     border-top: 4px solid #d7a900;
-    margin: -1px 0 0;
     background: rgba(255, 255, 255, 0.9);
     @include box-shadow(inset 0 0 7px #656565);
     @include border-radius(0);

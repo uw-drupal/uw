@@ -2,12 +2,6 @@
 
 @import "_common";
 
-#footer .menu-level-1>ul.nav>li {
-  float: left;
-  width: 140px;
-  margin-left: 20px;
-}
-
 #footerBG {
   position: relative;
   top: -35px;
@@ -35,13 +29,6 @@
 #footer h2 {
   font-size: 20px;
   margin: 0 0 45px 20px;
-}
-
-#footer .menu-level-1>ul.nav>li>a {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  line-height: 15px;
 }
 
 #footer a {
@@ -142,48 +129,17 @@
   }
 }
 
-div.region-footer-nav > section > ul.menu > li {
-  /* -- Header items: Admissions, Academics, Campus Life... --*/
-  float: left;
-  z-index: 0;
-  font-size: 12px;
-}
+.region-footer-nav .menu-level-1 > .nav {
+  padding: 0 10px;
 
-div.region-footer-nav > section > ul.menu > li > a,
-div.region-footer-nav > section > ul.menu > li > div {
-  margin-bottom: 9px;
-  font-weight: bolder;
-}
+  > li {
+    padding: 0 5px;
 
-div.region-footer-nav > section > ul.menu > li > a > span.caret,
-div.region-footer-nav > section > ul.menu > li > div > span.caret {
-  display: none;
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu {
-  /* -- the dropdown container -- */
-  border: none;
-  line-height: 100%;
-  top: 0px;
-  position: relative;
-  display: block;
-  box-shadow: none;
-  padding: 0px;
-  background-color: transparent;
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li {
-  /* -- the items in the dropdown -- */
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
-  /* -- links in the items in the dropdown -- */
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  line-height: 16px;
-  background-color: none;
-  background-image: none;
+    > a {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
 }
 
 @include respond-to("mobile") {

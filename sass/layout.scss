@@ -47,57 +47,25 @@
 // Everything Below responds only to the 'large' display
 @include respond-to("large") {
 
-// TODO: Make this CSS less specific (see GH https://github.com/uw-drupal/UW-Drupal-Theme/issues/65)
-// Overrides the menu displays and forces all list items into one row,
-// wrapping the individual items, rather than the whole list.
-// This accomodates wrapping more gracefully.
 
-  nav#access ul.nav,
-  #footer .menu-level-1 > ul.nav {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-  }
+  .nav {
 
-  nav#access ul.nav > li,
-  div#footer > div.menu-global-footer-container > div.region-footer-nav > section >  div.menu-level-1 > ul.nav > li {
-    display: table-cell;
-    float: none;
-    width: auto;
-  }
+    // Use table-cell layout in dropdowns and footer nav region:
+    // Overrides the menu displays and forces all list items into one row,
+    // wrapping the individual items, rather than the whole list.
+    // This accommodates wrapping more gracefully.
+    .navbar &,
+    .region-footer-nav .menu-level-1 > & {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
 
-  nav#access ul.nav > li {
-    text-align: center;
-  }
-
-  nav#access ul.nav > li > ul {
-    text-align: left;
-  }
-
-  //replace the sprite image with a CSS border to allow for multiple lines
-  nav#access ul.nav {
-    border-left: 1px solid #5d5d5d;
-    border-right: 1px solid #434343;
-  }
-
-  nav#access ul.nav > li {
-    background: none;
-    border-left: 1px solid #434343;
-    border-right: 1px solid #5d5d5d;
-  }
-
-  // Alter the padding a touch to give more space to longer text (prevent extraneous wrapping)
-  nav#access ul.nav > li > a {
-    padding: 9px 6px 12px 6px;
-  }
-
-  #footer .menu-level-1 > ul.nav > li {
-    padding: 0 10px;
-  }
-
-  ul.dropdown-menu {
-    top: auto;
-    margin-top: 6px;
+      > li {
+        display: table-cell;
+        float: none;
+        width: auto;
+      }
+    }
   }
 
 }
