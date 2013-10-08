@@ -348,9 +348,10 @@
   #header {
     position: relative;
     height: $header_height;
-    width: 960px;
-    left: 50%;
-    margin-left: -480px;
+    @include grid-span(12, 1);
+    @include respond-to("xlarge") {
+      @include grid-span(10, 2);
+    };
     z-index: 4;
     -webkit-touch-callout: none;
     -webkit-user-select: none;

@@ -164,82 +164,85 @@
   /* line 344, ../sass/non-modular.scss */
   .entry-content .info-box-large h2 { margin-top: 0; }
   /* line 348, ../sass/non-modular.scss */
-  #header { position: relative; height: 110px; width: 960px; left: 50%; margin-left: -480px; z-index: 4; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-  /* line 363, ../sass/non-modular.scss */
+  #header { position: relative; height: 110px; width: 95.83333%; float: right; margin-left: 0; margin-right: 2.08333%; clear: none; z-index: 4; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+  /* line 364, ../sass/non-modular.scss */
   .header-image { margin-top: -200px; display: block; height: 145px; overflow: hidden; text-align: center; background-color: #d6e8fa; }
-  /* line 371, ../sass/non-modular.scss */
+  /* line 372, ../sass/non-modular.scss */
   .assistive-text { position: absolute !important; z-index: -1; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); }
-  /* line 378, ../sass/non-modular.scss */
+  /* line 379, ../sass/non-modular.scss */
   #header a.assistive-text:active, #header a.assistive-text:focus { padding: 6px 21px; z-index: 3; background: #EEE; border-bottom: 1px solid #ddd; color: #1982D1; clip: auto !important; font-size: 12px; position: absolute; text-decoration: underline; top: -30px; left: 9.9%; }
-  /* line 391, ../sass/non-modular.scss */
+  /* line 392, ../sass/non-modular.scss */
   #access { position: relative; z-index: 3; }
-  /* line 395, ../sass/non-modular.scss */
+  /* line 396, ../sass/non-modular.scss */
   .attachment-post-thumbnail.wp-post-image { margin: 0; }
-  /* line 399, ../sass/non-modular.scss */
+  /* line 400, ../sass/non-modular.scss */
   .post-thumbnail.widget p { clear: both; display: block; font-size: 12px; margin: 0 15px 0 0; padding: 5px 5px 5px 10px; background-color: #F4F4F4; }
-  /* line 407, ../sass/non-modular.scss */
+  /* line 408, ../sass/non-modular.scss */
   #content { background-color: white; }
-  /* line 410, ../sass/non-modular.scss */
+  /* line 411, ../sass/non-modular.scss */
   .container-primary { position: relative; margin: 0 auto; padding: 20px 0; background-color: white; -webkit-box-shadow: 0 0 7px lightgrey; -moz-box-shadow: 0 0 7px lightgrey; box-shadow: 0 0 7px lightgrey; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; z-index: 1; }
-  /* line 420, ../sass/non-modular.scss */
+  /* line 421, ../sass/non-modular.scss */
   #arrow-mark { position: absolute; left: -7px; top: 28px; background: url(../img/arrow.png) no-repeat 0 0 transparent; width: 32px; height: 50px; display: block; }
-  /* line 430, ../sass/non-modular.scss */
+  /* line 431, ../sass/non-modular.scss */
   .slideshowpro-wrapper object { width: 100% !important; height: 442px !important; }
-  /* line 434, ../sass/non-modular.scss */
+  /* line 435, ../sass/non-modular.scss */
   .blog.featured-image #arrow-mark { left: auto; top: auto; position: static; margin: -17px 0px 0 -55px; width: 675px; height: 102px; }
-  /* line 442, ../sass/non-modular.scss */
+  /* line 443, ../sass/non-modular.scss */
   .parallax-viewport { position: relative; overflow: hidden; }
-  /* line 446, ../sass/non-modular.scss */
+  /* line 447, ../sass/non-modular.scss */
   .parallax-layer { position: absolute; }
-  /* line 449, ../sass/non-modular.scss */
+  /* line 450, ../sass/non-modular.scss */
   #parallax { margin: 1.5em 0px; overflow: hidden; position: relative; height: 450px; }
-  /* line 455, ../sass/non-modular.scss */
+  /* line 456, ../sass/non-modular.scss */
   .four-oh-four { padding: 0 0 50px; }
-  /* line 458, ../sass/non-modular.scss */
+  /* line 459, ../sass/non-modular.scss */
   .author h3 { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 15px; line-height: 21px; }
-  /* line 463, ../sass/non-modular.scss */
+  /* line 464, ../sass/non-modular.scss */
   .author img { float: left; padding: 0 25px 15px 0; }
-  /* line 467, ../sass/non-modular.scss */
+  /* line 468, ../sass/non-modular.scss */
   .author .author-posts .span8 { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dotted #ddd; }
-  /* line 472, ../sass/non-modular.scss */
+  /* line 473, ../sass/non-modular.scss */
   .author .author-posts h2 { margin: 40px 0 20px; }
-  /* line 475, ../sass/non-modular.scss */
+  /* line 476, ../sass/non-modular.scss */
   .category .entry-header { clear: both; }
-  /* line 478, ../sass/non-modular.scss */
+  /* line 479, ../sass/non-modular.scss */
   .single #arrow-mark { top: 55px; }
-  /* line 481, ../sass/non-modular.scss */
+  /* line 482, ../sass/non-modular.scss */
   div.author-info { font-size: 14px; margin: 10px 0 30px; border-left: 4px solid #ddd; padding: 0 0 0 15px; }
-  /* line 487, ../sass/non-modular.scss */
+  /* line 488, ../sass/non-modular.scss */
   .date { margin-bottom: 0.6em; }
-  /* line 490, ../sass/non-modular.scss */
+  /* line 491, ../sass/non-modular.scss */
   p small { font-size: 13px; }
-  /* line 493, ../sass/non-modular.scss */
+  /* line 494, ../sass/non-modular.scss */
   .story-tags { margin-top: -15px; }
-  /* line 496, ../sass/non-modular.scss */
+  /* line 497, ../sass/non-modular.scss */
   body.single h1 { margin: 0; font-size: 30px; font-weight: 400; }
-  /* line 501, ../sass/non-modular.scss */
+  /* line 502, ../sass/non-modular.scss */
   .three-col { float: left; border-radius: 5px; width: 170px; }
-  /* line 506, ../sass/non-modular.scss */
+  /* line 507, ../sass/non-modular.scss */
   .post-info { display: block; width: 100%; overflow: hidden; }
-  /* line 511, ../sass/non-modular.scss */
+  /* line 512, ../sass/non-modular.scss */
   .post-info p { float: left; font-weight: bold; }
-  /* line 515, ../sass/non-modular.scss */
+  /* line 516, ../sass/non-modular.scss */
   .post-info p.author-info { padding-left: 10px; margin-left: 10px; border-left: 1px solid #ddd; font-weight: normal; }
-  /* line 524, ../sass/non-modular.scss */
+  /* line 525, ../sass/non-modular.scss */
   .two-sidebars .divider:before, .sidebar-first .divider:before { position: absolute; z-index: -1; left: 0; top: 0; width: 5px; height: 100%; -webkit-border-radius: 5px 200px; -moz-border-radius: 5px / 200px; border-radius: 5px / 200px; -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); content: ""; }
-  /* line 536, ../sass/non-modular.scss */
+  /* line 537, ../sass/non-modular.scss */
   .two-sidebars .divider:after, .sidebar-second .divider:after { position: absolute; z-index: -1; right: 0; top: 0; width: 5px; height: 100%; -webkit-border-radius: 5px 200px; -moz-border-radius: 5px / 200px; border-radius: 5px / 200px; -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); content: ""; } }
-@media (min-width: 768px) and (max-width: 979px) { /* line 551, ../sass/non-modular.scss */
+@media (min-width: 768px) and (min-width: 1200px) { /* line 348, ../sass/non-modular.scss */
+  #header { width: 79.16667%; float: left; margin-right: -100%; margin-left: 10.41667%; clear: none; } }
+
+@media (min-width: 768px) and (max-width: 979px) { /* line 552, ../sass/non-modular.scss */
   #access { overflow: hidden; }
-  /* line 554, ../sass/non-modular.scss */
+  /* line 555, ../sass/non-modular.scss */
   body .rightside .inner-wrap { float: left; }
-  /* line 557, ../sass/non-modular.scss */
+  /* line 558, ../sass/non-modular.scss */
   body .patch { left: 25px; }
-  /* line 560, ../sass/non-modular.scss */
+  /* line 561, ../sass/non-modular.scss */
   body #header { width: 768px; margin-left: -400px; }
-  /* line 564, ../sass/non-modular.scss */
+  /* line 565, ../sass/non-modular.scss */
   body #nc-left-col .featured img { width: 228px; }
-  /* line 567, ../sass/non-modular.scss */
+  /* line 568, ../sass/non-modular.scss */
   body.blog.featured-image #arrow-mark { background-size: 78%; margin: -5px 0px 10px -31px; }
-  /* line 571, ../sass/non-modular.scss */
+  /* line 572, ../sass/non-modular.scss */
   #branding { height: 150px !important; } }

@@ -1,5 +1,14 @@
 @import "_common";
 
+.thinstrip-inner {
+  @include respond-to("large") {
+    @include grid-span(12, 1);
+  }
+  @include respond-to("xlarge") {
+    @include grid-span(10, 2);
+  }
+}
+
 @include respond-to("!mobile") {
   .thinstrip ul {
     float: right;
@@ -24,8 +33,6 @@
   }
   .thinstrip-inner {
     height: 30px;
-    width: 960px;
-    margin: 0 auto;
   }
   .thinstrip li {
     float: left;
@@ -175,13 +182,6 @@
   .thinstrip li:nth-child(12) {
     background: none;
     margin: 0;
-  }
-}
-
-@include respond-to("tablet") {
-  .thinstrip-inner {
-    width: 768px;
-    margin: 0 auto;
   }
 }
 

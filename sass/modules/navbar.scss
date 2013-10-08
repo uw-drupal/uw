@@ -1,5 +1,9 @@
 @import "_common";
 
+.navbar {
+  clear: both;
+}
+
 @include respond-to("large") {
   .navbar {
     margin-bottom: 0;
