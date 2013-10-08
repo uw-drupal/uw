@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/uw-drupal/bootstrap-sass.git
+  revision: 8b68fe9e45202b71bc15ed3e09d9127e198f9863
+  branch: master
+  specs:
+    bootstrap-sass (2.3.2.1)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass!
   breakpoint (~> 2.0)
   compass (~> 0.12)
   singularitygs (~> 1.1)

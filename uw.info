@@ -21,8 +21,7 @@ modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
 settings[cdn_bootstrap] = 0
 
 ; Bootstrap source
-stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = bootstrap/css/bootstrap-responsive.css
+stylesheets[all][] = css/bootstrap-sass.css
 
 stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
