@@ -11,6 +11,10 @@ GEM
       sass (~> 3.1)
     fssm (0.2.10)
     sass (3.2.12)
+    singularitygs (1.1.2)
+      breakpoint (>= 2.0.1)
+      compass (>= 0.12.2)
+      sass (>= 3.2.1)
 
 PLATFORMS
   ruby
@@ -18,3 +22,4 @@ PLATFORMS
 DEPENDENCIES
   breakpoint (~> 2.0)
   compass (~> 0.12)
+  singularitygs (~> 1.1)
