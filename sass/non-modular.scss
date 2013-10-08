@@ -347,7 +347,7 @@
 
   #header {
     position: relative;
-    height: 100px;
+    height: $header_height;
     width: 960px;
     left: 50%;
     margin-left: -480px;
@@ -358,10 +358,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    @include respond-to("!large") {
-      height: 110px;
-    }
   }
 
   .header-image {

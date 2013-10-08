@@ -1,23 +1,30 @@
 @import "_common";
 
 @include respond-to("large") {
+  .navbar {
+    margin-bottom: 0;
+  }
   #navbar-menu {
     padding: 5px 0;
     background-color: #4b4b4b;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     @include box-shadow(0 0 8px #9c9c9c);
+    @include clearfix;
   }
   .navbar-inner {
     position: relative;
-    width: 995px;
-    margin: 0 auto;
     padding: 0;
     border: none;
     background-color: transparent;
     background-image: none;
     filter: none;
     @include box-shadow(none);
+    @include grid-span(12, 1);
+
+    @include respond-to("xlarge") {
+      @include grid-span(10, 2);
+    }
   }
   .navbar .nav>li>.dropdown-menu:before {
     top: -11px;

@@ -1,1 +1,5 @@
-li.expanded a.active-trail{border-left:2px solid #ffd700}li>a.active{background-color:#fcf9dc;border-left:2px solid #ffd700}
+/* line 5, ../../sass/modules/nav-sidebar.scss */
+li.expanded a.active-trail { border-left: 2px solid #ffd700; }
+
+/* line 9, ../../sass/modules/nav-sidebar.scss */
+li > a.active { background-color: #fcf9dc; border-left: 2px solid #ffd700; }

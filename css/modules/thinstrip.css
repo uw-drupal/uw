@@ -1,1 +1,78 @@
-@media (min-width: 768px){.thinstrip ul{float:right}.thinstrip{height:30px;position:absolute;top:0;left:0;right:0;background-color:#39275B;z-index:1;-webkit-box-shadow:0 0 6px #333;-moz-box-shadow:0 0 6px #333;box-shadow:0 0 6px #333;overflow:hidden}.thinstrip-fixed{position:fixed;top:0px}.thinstrip-fixed>.thinstrip-inner{background:url("../img/mobile-header/logo1x.png") no-repeat -35px -5px}.thinstrip-inner{height:30px;width:960px;margin:0 auto}.thinstrip li{float:left;list-style:none;padding:5px 10px 0 0}.thinstrip li a{color:#fff;font-size:73%;text-transform:uppercase;font-weight:bold}.thinstrip img{margin-top:-8px}.tan-band .thinstrip{background-color:#f3f2e9}.tan-band .thinstrip a{color:#555;text-shadow:1px 1px 1px #fff}.tan-band .thinstrip-fixed .thinstrip-inner{background:url(../img/header/header-sprite.png) no-repeat 10px -225px transparent}}@media (max-width: 767px){.main-search,.thinstrip{visibility:hidden}.main-search.activate,.thinstrip.activate{height:45px;transition:height .5s;-moz-transition:height .5s;-webkit-transition:height .52s;-o-transition:height .5s}.thinstrip.activate{height:340px;display:block !important}.thinstrip{height:0;overflow:hidden;z-index:9999;transition:height .5s;-moz-transition:height .5s;-webkit-transition:height .52s;-o-transition:height .5s;width:100%;visibility:hidden}.thinstrip span{background:url("../img/misc/arrow2.png") no-repeat scroll right -69px transparent;color:#FFFFFF;display:block;font-size:10px;height:32px;padding:8px 0 0;text-align:center;text-transform:uppercase;width:61px}.thinstrip .menuShow{display:block}.thinstrip ul{background:url("../img/mobile-header/gridLines.png") center center no-repeat #fff;height:325px;z-index:9999;box-shadow:inset 0 0 20px #d3d3d3;-webkit-box-shadow:inset 0 0 20px #d3d3d3;margin:5px;padding:0;border:1px solid #e1e1e1}.thinstrip li{float:left;list-style:none outside none;margin:20px 0 0;text-align:center;width:33%}.thinstrip a{clear:both;display:block}.thinstrip li a{color:#39275B;margin:0;font-size:.8em}.thinstrip li a:last-child{margin:5px 0 0 0}.thinstrip li a{padding:54px 0 0 0}.thinstrip li a{background-image:url("../img/mobile-header/sprite1x.png");background-repeat:no-repeat}.thinstrip li:nth-child(1) a{background-position:center 0}.thinstrip li:nth-child(2) a{background-position:center -173px}.thinstrip li:nth-child(3) a{background-position:center -267px}.thinstrip li:nth-child(4) a{background-position:center -364px}.thinstrip li:nth-child(5) a{background-position:center -446px}.thinstrip li:nth-child(6) a{background-position:center -690px}.thinstrip li:nth-child(7) a{background-position:center -530px}.thinstrip li:nth-child(9) a{background-position:center -83px}.thinstrip li:nth-child(10) a{background-position:center -530px}.thinstrip li:nth-child(11) a{background:none;padding:0}.thinstrip li:nth-child(12) a{background:none;padding:0;margin:0}.thinstrip li:nth-child(12){background:none;margin:0}}@media (min-width: 768px) and (max-width: 979px){.thinstrip-inner{width:768px;margin:0 auto}}@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5){.thinstrip ul{background:url("../img/mobile-header/gridLinesX2.png") center center no-repeat #f8f8f8;background-size:295px 315px}.thinstrip li a{background-image:url("../img/mobile-header/sprite2x.png");background-size:77px 750px}}
+@media (min-width: 768px) { /* line 4, ../../sass/modules/thinstrip.scss */
+  .thinstrip ul { float: right; }
+  /* line 7, ../../sass/modules/thinstrip.scss */
+  .thinstrip { height: 30px; position: absolute; top: 0; left: 0; right: 0; background-color: #39275B; z-index: 1; -webkit-box-shadow: 0 0 6px #333333; -moz-box-shadow: 0 0 6px #333333; box-shadow: 0 0 6px #333333; overflow: hidden; }
+  /* line 18, ../../sass/modules/thinstrip.scss */
+  .thinstrip-fixed { position: fixed; top: 0px; }
+  /* line 22, ../../sass/modules/thinstrip.scss */
+  .thinstrip-fixed > .thinstrip-inner { background: url("../img/mobile-header/logo1x.png") no-repeat -35px -5px; }
+  /* line 25, ../../sass/modules/thinstrip.scss */
+  .thinstrip-inner { height: 30px; width: 960px; margin: 0 auto; }
+  /* line 30, ../../sass/modules/thinstrip.scss */
+  .thinstrip li { float: left; list-style: none; padding: 5px 10px 0 0; }
+  /* line 35, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a { color: #fff; font-size: 73%; text-transform: uppercase; font-weight: bold; }
+  /* line 41, ../../sass/modules/thinstrip.scss */
+  .thinstrip img { margin-top: -8px; }
+  /* line 44, ../../sass/modules/thinstrip.scss */
+  .tan-band .thinstrip { background-color: #f3f2e9; }
+  /* line 47, ../../sass/modules/thinstrip.scss */
+  .tan-band .thinstrip a { color: #555; text-shadow: 1px 1px 1px #fff; }
+  /* line 51, ../../sass/modules/thinstrip.scss */
+  .tan-band .thinstrip-fixed .thinstrip-inner { background: url(../img/header/header-sprite.png) no-repeat 10px -225px transparent; } }
+@media (max-width: 767px) { /* line 57, ../../sass/modules/thinstrip.scss */
+  .main-search, .thinstrip { visibility: hidden; }
+  /* line 60, ../../sass/modules/thinstrip.scss */
+  .main-search.activate, .thinstrip.activate { height: 45px; transition: height .5s; -moz-transition: height .5s; /* Firefox 4 */ -webkit-transition: height .52s; /* Safari and Chrome */ -o-transition: height .5s; /* Opera */ /*visibility: visible;*/ }
+  /* line 71, ../../sass/modules/thinstrip.scss */
+  .thinstrip.activate { height: 340px; display: block !important; }
+  /* line 75, ../../sass/modules/thinstrip.scss */
+  .thinstrip { height: 0; overflow: hidden; z-index: 9999; transition: height .5s; -moz-transition: height .5s; /* Firefox 4 */ -webkit-transition: height .52s; /* Safari and Chrome */ -o-transition: height .5s; /* Opera */ width: 100%; visibility: hidden; }
+  /* line 89, ../../sass/modules/thinstrip.scss */
+  .thinstrip span { background: url("../img/misc/arrow2.png") no-repeat scroll right -69px transparent; color: #FFFFFF; display: block; font-size: 10px; height: 32px; padding: 8px 0 0; text-align: center; text-transform: uppercase; width: 61px; }
+  /* line 100, ../../sass/modules/thinstrip.scss */
+  .thinstrip .menuShow { display: block; }
+  /* line 103, ../../sass/modules/thinstrip.scss */
+  .thinstrip ul { background: url("../img/mobile-header/gridLines.png") center center no-repeat white; height: 325px; z-index: 9999; box-shadow: inset 0 0 20px #d3d3d3; -webkit-box-shadow: inset 0 0 20px #d3d3d3; margin: 5px; padding: 0; border: 1px solid #e1e1e1; }
+  /* line 113, ../../sass/modules/thinstrip.scss */
+  .thinstrip li { float: left; list-style: none outside none; margin: 20px 0 0; text-align: center; width: 33%; }
+  /* line 120, ../../sass/modules/thinstrip.scss */
+  .thinstrip a { clear: both; display: block; }
+  /* line 124, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a { color: #39275B; margin: 0; font-size: .8em; }
+  /* line 129, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a:last-child { margin: 5px 0 0 0; }
+  /* line 132, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a { padding: 54px 0 0 0; }
+  /* line 135, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a { background-image: url("../img/mobile-header/sprite1x.png"); background-repeat: no-repeat; }
+  /* line 139, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(1) a { background-position: center 0; }
+  /* line 142, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(2) a { background-position: center -173px; }
+  /* line 145, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(3) a { background-position: center -267px; }
+  /* line 148, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(4) a { background-position: center -364px; }
+  /* line 151, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(5) a { background-position: center -446px; }
+  /* line 154, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(6) a { background-position: center -690px; }
+  /* line 157, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(7) a { background-position: center -530px; }
+  /* line 160, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(9) a { background-position: center -83px; }
+  /* line 163, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(10) a { background-position: center -530px; }
+  /* line 166, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(11) a { background: none; padding: 0; }
+  /* line 170, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(12) a { background: none; padding: 0; margin: 0; }
+  /* line 175, ../../sass/modules/thinstrip.scss */
+  .thinstrip li:nth-child(12) { background: none; margin: 0; } }
+@media (min-width: 768px) and (max-width: 979px) { /* line 182, ../../sass/modules/thinstrip.scss */
+  .thinstrip-inner { width: 768px; margin: 0 auto; } }
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) { /* line 190, ../../sass/modules/thinstrip.scss */
+  .thinstrip ul { background: url("../img/mobile-header/gridLinesX2.png") center center no-repeat #f8f8f8; background-size: 295px 315px; }
+  /* line 194, ../../sass/modules/thinstrip.scss */
+  .thinstrip li a { background-image: url("../img/mobile-header/sprite2x.png"); background-size: 77px 750px; } }

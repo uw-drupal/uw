@@ -1,1 +1,84 @@
-@media (max-width: 767px){body{padding:0}p{font-size:15px}article{padding:0 15px}.container-primary{position:inherit;width:inherit;left:inherit;margin-left:inherit}#menu-primary-menu{padding:10px 0 0 0}.header-image,.skip-link,.assistive-text{display:none}#header{background:url("http://www.washington.edu/static/mobile/image/top_bg_z.jpg") repeat-x scroll center top #fff;position:relative}#listicon-wrapper,#searchicon-wrapper{background:url("../img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent;position:absolute;top:4px;right:10px;width:35px;height:30px;display:block;text-indent:-9999px;overflow:hidden}#searchicon-wrapper{right:50px;height:30px;background:url("../img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent}#headerMobile{position:relative;width:100%}#background{width:100%;background-color:#000;opacity:.5;position:absolute;display:none}#background.open{display:block}#weather{bottom:3px;color:#fff;font-size:11px;height:45px;left:10px;padding:0;position:absolute;text-transform:uppercase;width:48px;text-align:center;font-weight:bold}#weather a{color:#fff;line-height:11px;font-weight:bold;font-size:11px}#search{box-shadow:inset 0px -2px 4px #DDD;-webkit-box-shadow:inset 0px -2px 4px #DDD;background-color:#fff}.search-options{display:none}.main-search{height:0;overflow:hidden;margin:0 auto;width:95%;position:relative;transition:height .5s;-moz-transition:height .5s;-webkit-transition:height .52s;-o-transition:height .5s;-webkit-transform:translate3d(0, 0, 0)}.wfield{-webkit-box-shadow:inset 2px 2px 4px #888;box-shadow:inset 2px 2px 4px #888;-webkit-border-radius:20px;border-radius:20px;overflow:hidden;width:100%;height:30px;border:none;background:url("http://www.washington.edu/static/mobile/image/mag.gif") no-repeat right center #fff;margin-top:5px;display:block}.wfield input{-webkit-appearance:none;height:25px;padding:3px 0 5px 15px;border:none;width:100%;background:none;font-size:15px;color:#484848}#logo{text-align:center;height:44px}.formbutton{display:none}.widget_nav_menu a,.subpage_menu a{font-size:15px;padding:4px 0}.region-sidebar-first{padding:15px}#respond input[type="text"],#respond textarea{width:95%}#content .date,.author-info{margin-left:15px}.story-tags{display:none}.info-box{padding:10px 15px;margin:30px 0 30px 0;border-top:4px solid #D7A900;border-bottom:4px solid #D7A900;background-color:#F9F9F9}#s{width:90%;padding:9px 0 9px 10%}.image-magnifier{display:none}.alignleft,.alignright,.alignnone{min-width:225px !important;max-width:100% !important;margin:0 auto}.alignleft img,.alignright img,.alignnone img{height:auto !important;width:100% !important;min-width:225px !important;margin:1.6em 0 0}.wp-caption-text,.wp-media-credit{padding:5px 10px 10px;font-size:13px;line-height:16px;background-color:#F4F4F4}.wp-media-credit{padding:5px 15px 2px;text-align:right;font-style:italic;margin-bottom:0}.wp-media-credit:empty{display:none}body h1{padding:0 15px 0 10px;margin:16px 0 16px 0;border-left:4px solid #D7A900;display:block;font-size:24px;line-height:27px}h1 i,h1 em{font-size:31px}#disqus_thread{margin:0 15px}#footer{display:none}}
+@media (max-width: 767px) { /* line 4, ../sass/layout-mobile.scss */
+  body { padding: 0; }
+  /* line 7, ../sass/layout-mobile.scss */
+  p { font-size: 15px; }
+  /* line 10, ../sass/layout-mobile.scss */
+  article { padding: 0 15px; }
+  /* line 13, ../sass/layout-mobile.scss */
+  .container-primary { position: inherit; width: inherit; left: inherit; margin-left: inherit; }
+  /* line 19, ../sass/layout-mobile.scss */
+  #menu-primary-menu { padding: 10px 0 0 0; }
+  /* Stuff to Hide */
+  /* line 23, ../sass/layout-mobile.scss */
+  .header-image, .skip-link, .assistive-text { display: none; }
+  /* ============================================================================= Mobile Header Queries Rewrite ========================================================================== */
+  /* line 30, ../sass/layout-mobile.scss */
+  #header { background: url("http://www.washington.edu/static/mobile/image/top_bg_z.jpg") repeat-x scroll center top white; position: relative; }
+  /* line 34, ../sass/layout-mobile.scss */
+  #listicon-wrapper, #searchicon-wrapper { background: url("../img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent; position: absolute; top: 4px; right: 10px; width: 35px; height: 30px; display: block; text-indent: -9999px; overflow: hidden; }
+  /* line 45, ../sass/layout-mobile.scss */
+  #searchicon-wrapper { right: 50px; height: 30px; background: url("../img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent; }
+  /* ============================================================================= Mobile Header Queries ========================================================================== */
+  /* line 53, ../sass/layout-mobile.scss */
+  #headerMobile { position: relative; width: 100%; }
+  /* line 57, ../sass/layout-mobile.scss */
+  #background { width: 100%; background-color: #000; opacity: .5; position: absolute; display: none; }
+  /* line 64, ../sass/layout-mobile.scss */
+  #background.open { display: block; }
+  /* line 67, ../sass/layout-mobile.scss */
+  #weather { bottom: 3px; color: #fff; font-size: 11px; height: 45px; left: 10px; padding: 0; position: absolute; text-transform: uppercase; width: 48px; text-align: center; font-weight: bold; }
+  /* line 80, ../sass/layout-mobile.scss */
+  #weather a { color: #fff; line-height: 11px; font-weight: bold; font-size: 11px; }
+  /* line 86, ../sass/layout-mobile.scss */
+  #search { box-shadow: inset 0px -2px 4px #DDD; -webkit-box-shadow: inset 0px -2px 4px #DDD; background-color: #fff; }
+  /* line 91, ../sass/layout-mobile.scss */
+  .search-options { display: none; }
+  /* line 94, ../sass/layout-mobile.scss */
+  .main-search { height: 0; overflow: hidden; margin: 0 auto; width: 95%; position: relative; transition: height .5s; -moz-transition: height .5s; /* Firefox 4 */ -webkit-transition: height .52s; /* Safari and Chrome */ -o-transition: height .5s; /* Opera */ -webkit-transform: translate3d(0, 0, 0); }
+  /* line 109, ../sass/layout-mobile.scss */
+  .wfield { -webkit-box-shadow: inset 2px 2px 4px #888; box-shadow: inset 2px 2px 4px #888; -webkit-border-radius: 20px; border-radius: 20px; overflow: hidden; width: 100%; height: 30px; border: none; background: url("http://www.washington.edu/static/mobile/image/mag.gif") no-repeat right center white; margin-top: 5px; display: block; }
+  /* line 122, ../sass/layout-mobile.scss */
+  .wfield input { -webkit-appearance: none; height: 25px; padding: 3px 0 5px 15px; border: none; width: 100%; background: none; font-size: 15px; color: #484848; }
+  /* line 132, ../sass/layout-mobile.scss */
+  #logo { text-align: center; height: 44px; }
+  /* line 136, ../sass/layout-mobile.scss */
+  .formbutton { display: none; }
+  /* ============================================================================= Body Content Styles ========================================================================== */
+  /* line 142, ../sass/layout-mobile.scss */
+  .widget_nav_menu a, .subpage_menu a { font-size: 15px; padding: 4px 0; }
+  /* line 146, ../sass/layout-mobile.scss */
+  .region-sidebar-first { padding: 15px; }
+  /* line 149, ../sass/layout-mobile.scss */
+  #respond input[type="text"], #respond textarea { width: 95%; }
+  /* line 152, ../sass/layout-mobile.scss */
+  #content .date, .author-info { margin-left: 15px; }
+  /* line 155, ../sass/layout-mobile.scss */
+  .story-tags { display: none; }
+  /* line 158, ../sass/layout-mobile.scss */
+  .info-box { padding: 10px 15px; margin: 30px 0 30px 0; border-top: 4px solid #D7A900; border-bottom: 4px solid #D7A900; background-color: #F9F9F9; }
+  /* line 165, ../sass/layout-mobile.scss */
+  #s { width: 90%; padding: 9px 0 9px 10%; }
+  /* Image Handling */
+  /* line 171, ../sass/layout-mobile.scss */
+  .image-magnifier { display: none; }
+  /* line 174, ../sass/layout-mobile.scss */
+  .alignleft, .alignright, .alignnone { min-width: 225px !important; max-width: 100% !important; margin: 0 auto; }
+  /* line 179, ../sass/layout-mobile.scss */
+  .alignleft img, .alignright img, .alignnone img { height: auto !important; width: 100% !important; min-width: 225px !important; margin: 1.6em 0 0; }
+  /* line 185, ../sass/layout-mobile.scss */
+  .wp-caption-text, .wp-media-credit { padding: 5px 10px 10px; font-size: 13px; line-height: 16px; background-color: #F4F4F4; }
+  /* line 191, ../sass/layout-mobile.scss */
+  .wp-media-credit { padding: 5px 15px 2px; text-align: right; font-style: italic; margin-bottom: 0; }
+  /* line 197, ../sass/layout-mobile.scss */
+  .wp-media-credit:empty { display: none; }
+  /* Copy */
+  /* line 201, ../sass/layout-mobile.scss */
+  body h1 { padding: 0 15px 0 10px; margin: 16px 0 16px 0; border-left: 4px solid #D7A900; display: block; font-size: 24px; line-height: 27px; }
+  /* line 209, ../sass/layout-mobile.scss */
+  h1 i, h1 em { font-size: 31px; }
+  /* ----  Disqus ---- */
+  /* line 213, ../sass/layout-mobile.scss */
+  #disqus_thread { margin: 0 15px; }
+  /* ----  Thin Strip Footer ---- */
+  /* line 217, ../sass/layout-mobile.scss */
+  #footer { display: none; } }

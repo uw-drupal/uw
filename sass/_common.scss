@@ -1,6 +1,19 @@
 // compass imports
 @import "breakpoint";
+@import "singularitygs";
 @import "compass/css3";
+
+$header_height: 110px;
+
+// singularity grids
+$mobile-first: false;
+$breakpoint-default-feature: "max-width";
+
+$grids: 12;
+$grids: add-grid(6 at 767px);
+
+$gutters: 1;
+$gutter-styles: "split";
 
 // breakpoints https://github.com/Team-Sass/breakpoint
 // defaults to max-width
@@ -11,3 +24,6 @@ $breakpoints:
   "tablet" (768px 979px),
   "mobile" (max-width 767px),
   "!mobile" (min-width 768px);
+
+$legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true;

@@ -180,46 +180,41 @@
 
 <div class="container container-primary">
 
-   <div class="row show-grid">
+   <div id="content" role="main" class="span<?php print $content_width; ?> column">
+    <div class="divider inner">
+      <header class="entry-header">
+        <?php print render($title_prefix); ?>
+        <?php if (!empty($title)): ?>
+          <h1 class="entry-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </header>
 
-     <?php if ($page['sidebar_first']): ?>
-       <div class="span<?php print $sidebar_width ?> sidebar sidebar-left" role="complementary">
-         <?php print render($page['sidebar_first']); ?>
-       </div> <!-- #secondary -->
-     <?php endif; ?>
+      <div id="tabs">
+        <?php if ($tabs): ?>
+          <div class="tabs"><?php print render($tabs); ?></div>
+        <?php endif; ?>
+      </div>
 
-     <div id="content" role="main" class="span<?php print $content_width; ?> column">
-       <div class="divider inner">
-         <header class="entry-header">
-           <?php print render($title_prefix); ?>
-           <?php if (!empty($title)): ?>
-             <h1 class="entry-title"><?php print $title; ?></h1>
-           <?php endif; ?>
-           <?php print render($title_suffix); ?>
-         </header>
+      <span id="arrow-mark"></span>
 
-         <div id="tabs">
-           <?php if ($tabs): ?>
-             <div class="tabs"><?php print render($tabs); ?></div>
-           <?php endif; ?>
-         </div>
+      <?php print render($page['content']); ?>
+    </div> <!-- #content .inner -->
+  </div> <!-- #content -->
 
-         <span id="arrow-mark"></span>
+  <?php if ($page['sidebar_first']): ?>
+    <div class="sidebar sidebar-left" role="complementary">
+      <?php print render($page['sidebar_first']); ?>
+    </div>
+  <?php endif; ?>
 
-         <?php print render($page['content']); ?>
-       </div> <!-- #content .inner -->
-     </div> <!-- #content -->
+  <?php if ($page['sidebar_second']): ?>
+    <div class="sidebar sidebar-right" role="complementary">
+      <?php print render($page['sidebar_second']); ?>
+    </div>
+  <?php endif; ?>
 
-     <?php if ($page['sidebar_second']): ?>
-       <div class="span<?php print $sidebar_width ?> sidebar sidebar-right" role="complementary">
-         <?php print render($page['sidebar_second']); ?>
-       </div> <!-- #secondary -->
-     <?php endif; ?>
-
-   </div><!-- .row.show-grid -->
-
- </div><!-- .container --> <!-- #primary-->
-
+</div><!-- .container --> <!-- #primary-->
 
 <div id="footerBG">
   <div id="footer" role="navigation" aria-label="Global Footer Menu">
