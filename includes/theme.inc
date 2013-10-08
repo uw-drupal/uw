@@ -44,7 +44,6 @@ function uw_menu_link(array $variables) {
       // Generate as standard dropdown
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
-      $element['#title'] .= '<span class="caret"></span>';
     }
 
     $element['#localized_options']['attributes']['data-target'] = '#';
