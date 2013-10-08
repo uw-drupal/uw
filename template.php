@@ -40,9 +40,9 @@ function _uw_alter_menu(&$menu, $dropdown = false) {
         $below_link = &$link['#below'][$__key];
         $below_link['#attributes']['role'] = 'presentation';
         $below_link['#localized_options']['attributes']['role'] = 'menuitem';
-        # if dropdown, unset links below second level
+        # if dropdown, remove links below second level
         if ($dropdown) {
-          unset($link['#below'][$__key]['#below']);
+          $link['#below'][$__key]['#below'] = null;
         }
       }
     }
