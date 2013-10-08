@@ -55,7 +55,8 @@
     // wrapping the individual items, rather than the whole list.
     // This accommodates wrapping more gracefully.
     .navbar &,
-    .region-footer-nav .menu-level-1 > & {
+    .region-footer-nav .block-menu > &,
+    .region-footer-nav .menu-block-wrapper > & {
       display: table;
       table-layout: fixed;
       width: 100%;

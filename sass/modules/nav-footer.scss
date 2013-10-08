@@ -129,7 +129,8 @@
   }
 }
 
-.region-footer-nav .menu-level-1 > .nav {
+.region-footer-nav .block-menu > .nav,
+.region-footer-nav .menu-block-wrapper > .nav {
   padding: 0 10px;
 
   > li {
