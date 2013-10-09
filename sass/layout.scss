@@ -154,36 +154,35 @@ Layout diagram:
 
 }
 
-// fallback flexbox styles for legacy browsers
-
-%flex-parent-legacy {
+@mixin flex-parent-legacy {
   width: 100%;
   display: table;
   table-layout: fixed;
 }
 
-%flex-item-legacy {
+@mixin flex-item-legacy {
   float: none;
   display: table-cell;
 }
 
-.no-flexbox.no-flexboxlegacy {
+// fallback flexbox styles for legacy browsers
+  .no-flexbox.no-flexboxlegacy {
+    @include respond-to("large") {
+      .navbar .nav {
+        @include flex-parent-legacy;
 
-  .navbar .nav {
-    @extend %flex-parent-legacy;
-
-    > li {
-      @extend %flex-item-legacy;
-      vertical-align: middle;
+        > li {
+          @include flex-item-legacy;
+          vertical-align: middle;
+        }
+      }
     }
-  }
 
-  .flex-parent {
-    @extend %flex-parent-legacy;
-  }
+    .flex-parent {
+      @include flex-parent-legacy;
+    }
 
-  .flex-item {
-    @extend %flex-item-legacy;
-  }
-
+    .flex-item {
+      @include flex-item-legacy;
+    }
 }
