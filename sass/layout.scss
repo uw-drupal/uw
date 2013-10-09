@@ -54,12 +54,12 @@ Layout diagram:
   @include respond-to("large") {
     .sidebar-first & {
       // content size with first sidebar only
-      @include grid-span(8, 5);
+      @include grid-span(9, 4);
     }
 
     .sidebar-second & {
       // content size with second sidebar only
-      @include grid-span(8, 1);
+      @include grid-span(9, 1);
     }
 
     .two-sidebars & {
@@ -88,12 +88,12 @@ Layout diagram:
 @include respond-to("large") {
   .sidebar-first .sidebar-left {
     // left sidebar when right sidebar is disabled
-    @include grid-span(4, 1);
+    @include grid-span(3, 1);
   }
 
   .sidebar-second .sidebar-right {
     // right sidebar when left sidebar is disabled
-    @include grid-span(4, 9);
+    @include grid-span(3, 10);
   }
 
   .two-sidebars {
