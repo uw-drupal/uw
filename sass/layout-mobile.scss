@@ -182,21 +182,6 @@
     min-width: 225px !important;
     margin: 1.6em 0 0;
   }
-  .wp-caption-text, .wp-media-credit {
-    padding: 5px 10px 10px;
-    font-size: 13px;
-    line-height: 16px;
-    background-color: #F4F4F4;
-  }
-  .wp-media-credit {
-    padding: 5px 15px 2px;
-    text-align: right;
-    font-style: italic;
-    margin-bottom: 0;
-  }
-  .wp-media-credit:empty {
-    display: none;
-  }
   /* Copy */
   body h1 {
     padding: 0 15px 0 10px;
@@ -208,10 +193,6 @@
   }
   h1 i, h1 em {
     font-size: 31px;
-  }
-  /* ----  Disqus ---- */
-  #disqus_thread {
-    margin: 0 15px;
   }
   /* ----  Thin Strip Footer ---- */
   #footer {
