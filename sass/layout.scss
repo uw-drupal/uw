@@ -35,6 +35,7 @@ Layout diagram:
 
 #content {
   position: relative;
+  padding: 10px;
 
   @include respond-to("!mobile") {
     padding: 20px 0;

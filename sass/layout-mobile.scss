@@ -1,20 +1,8 @@
 @import "_common";
 
 @include respond-to("mobile") {
-  body {
-    padding: 0;
-  }
-  p {
-    font-size: 15px;
-  }
-  article {
-    padding: 0 15px;
-  }
-  #menu-primary-menu {
-    padding: 10px 0 0 0;
-  }
   /* Stuff to Hide */
-  .header-image, .skip-link, .assistive-text {
+  .skip-link, .assistive-text {
     display: none;
   }
   /* =============================================================================
@@ -141,15 +129,12 @@
     width: 90%;
     padding: 9px 0 9px 10%;
   }
-  .sharing li, .sharing-hidden li {}
-  /* Copy */
-  body h1 {
-    padding: 0 15px 0 10px;
-    margin: 16px 0 16px 0;
-    border-left: 4px solid #D7A900;
+  h1 {
     display: block;
-    font-size: 24px;
-    line-height: 27px;
+    margin: 16px 0 16px -10px;
+    padding: 0 10px;
+    border-left: 4px solid #D7A900;
+    @include font-size(1.75);
   }
   h1 i, h1 em {
     font-size: 31px;

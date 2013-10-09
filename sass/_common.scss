@@ -4,6 +4,7 @@
 @import "compass/css3";
 @import "colors";
 @import "flexbox";
+@import "bootstrap-variables";
 
 $header_height: 110px;
 
@@ -27,3 +28,11 @@ $breakpoints:
 
 $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true;
+
+// mixins
+
+@mixin font-size($font-size-ratio: 1, $line-height-ratio: 1.5) {
+  $font-size: $font-size-ratio * $baseFontSize;
+  font-size: $font-size;
+  line-height: $line-height-ratio * $font-size;
+}
