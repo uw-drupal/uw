@@ -145,8 +145,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <span class="navbar-caret" style="position:absolute;"></span>
-        <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
         <!-- Everything you want collapsed on smaller screens goes here -->
         <div class="nav-collapse collapse">
