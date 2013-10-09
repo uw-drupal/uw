@@ -163,14 +163,13 @@ Layout diagram:
 }
 
 %flex-item-legacy {
+  float: none;
   display: table-cell;
 }
 
 .no-flexbox.no-flexboxlegacy {
 
-  .navbar .nav,
-  .region-footer-nav .block-menu > .nav,
-  .region-footer-nav .menu-block-wrapper > .nav {
+  .navbar .nav {
     @extend %flex-parent-legacy;
 
     > li {
