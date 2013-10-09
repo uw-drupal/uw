@@ -178,7 +178,7 @@
 
 <div class="container container-primary">
 
-   <div id="content" role="main" class="span<?php print $content_width; ?> column">
+   <div id="content" role="main">
     <div class="divider inner">
       <header class="entry-header">
         <?php print render($title_prefix); ?>
