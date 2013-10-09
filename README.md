@@ -71,9 +71,7 @@ The main menu is displayed in the *Dropdowns* region by default.
 
 #### Using `menu_block` block in the Dropdowns region
 
-It is possible to use `menu_block` blocks for your dropdown menu instead. Uncheck "Main Menu" under appearance settings to prevent double display of the menu. Then, configure your `menu_block` block to display in the *Dropdowns* region. Find your block's $delta (configure page has link `admin/structure/block/manage/menu_block/$delta/configure`)
-
-Finally, run `drush vset dropdown_menu_block_delta $delta` which will manually set your preference to theme that specific menu block as a bootstrap dropdown.
+It is possible to use `menu_block` blocks for your dropdown menu instead. Uncheck "Main Menu" under appearance settings to prevent double display of the menu.
 
 ### Expanded Footer Menu
 
