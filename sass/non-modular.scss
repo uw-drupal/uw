@@ -1,5 +1,9 @@
 @import "_common";
 
+.container-primary {
+  background-color: white;
+}
+
 .widget img {
   margin: 0 0 10px;
 }
@@ -179,13 +183,8 @@
   }
 
   .container-primary {
-    position: relative;
-    margin: 0 auto;
-    padding: 20px 0;
-    background-color: white;
     @include box-shadow(0 0 7px lightgrey);
     @include border-radius(5px);
-    z-index: 1;
   }
 
   #arrow-mark {

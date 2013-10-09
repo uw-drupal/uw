@@ -1,7 +1,17 @@
-// Default Layout -- includes styles relating to position, width/height,
-// margin/padding
-//  - overrides styles provided by base bootstrap theme
-//  - tablet and mobile styles should go in their respective files
+/*
+Default Layout -- includes styles relating to position, width/height,
+ margin/padding
+  - overrides styles provided by base bootstrap theme
+  - tablet and mobile styles should go in their respective files
+
+Layout diagram:
+  Mobile: content
+          (first sidebar)
+          (second sidebar)
+  Tablet: (first sidebar), content
+          (second sidebar)
+  Large:  (first sidebar), content, (second sidebar)
+*/
 
 @import "_common";
 
@@ -9,18 +19,97 @@
   clear: both;
 }
 
-#content {
+.container-primary {
   position: relative;
   padding: 20px 0;
+  z-index: 1;
 
-  .inner {
-    padding: 0 40px;
+  @include respond-to("!mobile") {
+    @include grid-span(12, 1);
+  }
+
+  @include respond-to("xlarge") {
+    @include grid-span(10, 2);
+  }
+}
+
+#content {
+  position: relative;
+
+  @include respond-to("!mobile") {
+    padding: 20px 0;
+    .inner {
+      padding: 0 40px;
+    }
+  }
+
+  @include respond-to("tablet") {
+    .sidebar-first &,
+    .two-sidebars & {
+      // content size with first or both sidebars
+      @include grid-span(8, 5);
+    }
+  }
+
+  @include respond-to("large") {
+    .sidebar-first & {
+      // content size with first sidebar only
+      @include grid-span(8, 5);
+    }
+
+    .sidebar-second & {
+      // content size with second sidebar only
+      @include grid-span(8, 1);
+    }
+
+    .two-sidebars & {
+      // content size with both sidebars
+      @include grid-span(6, 4);
+    }
   }
 
 }
 
 // Sidebars
+
+@include respond-to("tablet") {
+  // note: grid is 6 columns for tablet and smaller
+
+  .sidebar-left {
+    // left sidebar with both sidebars
+    @include grid-span(4, 1);
+  }
+  .sidebar-right {
+    // right sidebar with both sidebars
+    @include grid-span(12, 1);
+  }
+}
+
+@include respond-to("large") {
+  .sidebar-first .sidebar-left {
+    // left sidebar when right sidebar is disabled
+    @include grid-span(4, 1);
+  }
+
+  .sidebar-second .sidebar-right {
+    // right sidebar when left sidebar is disabled
+    @include grid-span(4, 9);
+  }
+
+  .two-sidebars {
+    .sidebar-left {
+      // left sidebar size with both sidebars
+      @include grid-span(3, 1);
+    }
+    .sidebar-right {
+      // right sidebar size with both sidebars
+      @include grid-span(3, 10);
+    }
+  }
+}
+
 .sidebar {
+
   margin-top: 40px;
 
   .region {
@@ -44,34 +133,21 @@
 
 }
 
-// Everything Below responds only to the 'large' display
+// flexbox provides a better layout mechanism for a row of evenly divided children
+
 @include respond-to("large") {
 
+  .navbar .nav {
+    @include display-flex;
+    width: 100%;
 
-  .nav {
-
-    // Use flexbox layouts for dropdown links, with float fallback for legacy browsers
-    // This accommodates wrapping more gracefully.
-    .navbar &,
-    .region-footer-nav .block-menu > &,
-    .region-footer-nav .menu-block-wrapper > & {
-      width: 100%;
+    > li {
+      position: relative;
       @include display-flex;
-
-      > li {
-        position: relative;
-        display: block;
+      @include flex(1);
+      @include align-items(center);
+      > a {
         @include flex(1);
-      }
-    }
-
-    .navbar & {
-      > li {
-        @include display-flex;
-        @include align-items(center);
-        > a {
-          @include flex(1);
-        }
       }
     }
   }

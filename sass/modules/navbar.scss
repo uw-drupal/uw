@@ -18,12 +18,20 @@
 
     .nav {
       position: relative;
+      width: 100%;
+      @include display-flex;
       border-left: 1px solid #5d5d5d;
       border-right: 1px solid #434343;
 
       > li {
+        position: relative;
+        @include display-flex;
+        @include flex(1);
+        @include align-items(center);
+
         > a {
           // top level links
+          @include flex(1);
           border-left: 1px solid #434343;
           border-right: 1px solid #5d5d5d;
           text-align: center;

@@ -214,7 +214,7 @@
 
 </div><!-- .container --> <!-- #primary-->
 
-<div id="footerBG">
+<div id="footerBG" class="hidden-phone">
   <div id="footer" role="navigation" aria-label="Global Footer Menu">
     <h2>Explore <?php print empty($site_name) ? 'UW' : $site_name; ?></h2>
     <div class="menu-global-footer-container">
@@ -224,7 +224,7 @@
 </div>
 
 <footer id="footer-main" role="contentinfo">
-  <div id="footer-right">
+  <div id="footer-right" class="hidden-phone">
     <a href="http://www.seattle.gov/">Seattle, Washington</a>
   </div>
   <ul>

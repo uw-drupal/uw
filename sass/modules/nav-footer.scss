@@ -2,6 +2,34 @@
 
 @import "_common";
 
+.region-footer-nav .block-menu > .nav,
+.region-footer-nav .menu-block-wrapper > .nav {
+  > li {
+    position: relative;
+    padding: 10px 0;
+
+    > a {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    @include respond-to("large") {
+      @include float-span(2);
+
+      &:nth-child(6n + 1) {
+        clear: left;
+      }
+    }
+    @include respond-to("tablet") {
+      @include float-span(3);
+
+      &:nth-child(4n + 1) {
+        clear: left;
+      }
+    }
+  }
+}
+
 #footerBG {
   position: relative;
   top: -35px;
@@ -12,7 +40,6 @@
 }
 
 #footer {
-  min-width: 960px;
   width: 80%;
   margin: 0 auto;
 }
@@ -130,20 +157,6 @@
   }
 }
 
-.region-footer-nav .block-menu > .nav,
-.region-footer-nav .menu-block-wrapper > .nav {
-  padding: 0 10px;
-
-  > li {
-    padding: 0 5px;
-
-    > a {
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-  }
-}
-
 @include respond-to("mobile") {
 
   #footer-main {
@@ -187,8 +200,5 @@
   #footer-left {
     text-align: center;
     padding: 10px 0;
-  }
-  #footer-right {
-    display: none;
   }
 }
