@@ -17,19 +17,36 @@
     z-index: 10;
 
     .nav {
+      position: relative;
       border-left: 1px solid #5d5d5d;
       border-right: 1px solid #434343;
 
       > li {
-        border-left: 1px solid #434343;
-        border-right: 1px solid #5d5d5d;
-        vertical-align: middle;
-
-        // Alter the padding a touch to give more space to longer text (prevent extraneous wrapping)
         > a {
+          // top level links
+          border-left: 1px solid #434343;
+          border-right: 1px solid #5d5d5d;
           text-align: center;
+          color: #fff;
+          text-shadow: none;
+          padding: 10px 5px;
+        }
+
+        &.last > a {
+          border: 0;
+        }
+
+        .dropdown-menu:before {
+          top: -11px;
+          border-bottom-color: $color-secondary-bright;
+        }
+
+        .dropdown-menu:after {
+          top: -10px;
+          border-bottom-color: $color-secondary-bright;
         }
       }
+
     }
   }
 
@@ -41,36 +58,10 @@
     @include box-shadow(none);
   }
 
-  .navbar .nav > li > .dropdown-menu:before {
-    top: -11px;
-    border-bottom-color: $color-secondary-bright;
-  }
-
-  .navbar .nav > li > .dropdown-menu:after {
-    top: -10px;
-    border-bottom-color: $color-secondary-bright;
-  }
-
-  // top level links
-  .navbar .nav > li > a {
-    color: #fff;
-    text-shadow: none;
-    padding: 12px 6px;
-  }
-
-  .navbar .nav,
-  .dropup {
-    position: relative;
-  }
-
   .dropdown-menu > li > a {
     border-bottom: 1px solid #f1f1f1;
     padding: 4px 10px 4px 10px;
     color: $color-medium-gray;
-  }
-
-  .navbar nav li.last > a {
-    border: none;
   }
 
   .navbar .nav li.dropdown .active > a,

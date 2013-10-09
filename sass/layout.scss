@@ -50,23 +50,65 @@
 
   .nav {
 
-    // Use table-cell layout in dropdowns and footer nav region:
-    // Overrides the menu displays and forces all list items into one row,
-    // wrapping the individual items, rather than the whole list.
+    // Use flexbox layouts for dropdown links, with float fallback for legacy browsers
     // This accommodates wrapping more gracefully.
     .navbar &,
     .region-footer-nav .block-menu > &,
     .region-footer-nav .menu-block-wrapper > & {
-      display: table;
-      table-layout: fixed;
       width: 100%;
+      @include display-flex;
 
       > li {
-        display: table-cell;
-        float: none;
-        width: auto;
+        position: relative;
+        display: block;
+        @include flex(1);
       }
     }
+
+    .navbar & {
+      > li {
+        @include display-flex;
+        @include align-items(center);
+        > a {
+          @include flex(1);
+        }
+      }
+    }
+  }
+
+}
+
+// fallback flexbox styles for legacy browsers
+
+%flex-parent-legacy {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+%flex-item-legacy {
+  display: table-cell;
+}
+
+.no-flexbox.no-flexboxlegacy {
+
+  .navbar .nav,
+  .region-footer-nav .block-menu > .nav,
+  .region-footer-nav .menu-block-wrapper > .nav {
+    @extend %flex-parent-legacy;
+
+    > li {
+      @extend %flex-item-legacy;
+      vertical-align: middle;
+    }
+  }
+
+  .flex-parent {
+    @extend %flex-parent-legacy;
+  }
+
+  .flex-item {
+    @extend %flex-item-legacy;
   }
 
 }

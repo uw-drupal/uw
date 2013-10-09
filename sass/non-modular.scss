@@ -521,6 +521,7 @@
   }
 
   // divider shadow
+  // (replaces side-stripe images)
   .two-sidebars .divider:before,
   .sidebar-first .divider:before {
     position: absolute;
@@ -544,32 +545,5 @@
     @include border-radius(5px, 200px);
     @include box-shadow(0 0 15px rgba(black, 0.25));
     content: "";
-  }
-}
-
-// FIXME: tablet styles below need to be "smacked"
-@include respond-to("tablet") {
-  #access {
-    overflow: hidden;
-  }
-  body .rightside .inner-wrap {
-    float: left;
-  }
-  body .patch {
-    left: 25px;
-  }
-  body #header {
-    width: 768px;
-    margin-left: -400px;
-  }
-  body #nc-left-col .featured img {
-    width: 228px;
-  }
-  body.blog.featured-image #arrow-mark {
-    background-size: 78%;
-    margin: -5px 0px 10px -31px;
-  }
-  #branding {
-    height: 150px !important;
   }
 }
