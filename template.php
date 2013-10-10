@@ -68,7 +68,9 @@ function uw_preprocess_block(&$variables) {
     $variables['classes_array'][] = 'widget';
 
     // menus get a special class
-    if ($variables['block']->module == 'menu_block') {
+    $is_block_menu = in_array('block-menu', $variables['classes_array']);
+    $is_menu_block = $variables['block']->module == 'menu_block';
+    if ($is_menu_block || $is_block_menu) {
       $variables['classes_array'][] = 'menu';
     }
   }
