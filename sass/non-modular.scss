@@ -1,9 +1,5 @@
 @import "_common";
 
-.container-primary {
-  background-color: white;
-}
-
 .widget img {
   margin: 0 0 10px;
 }
@@ -183,18 +179,22 @@
   }
 
   .container-primary {
+    background-color: white;
     @include box-shadow(0 0 7px lightgrey);
     @include border-radius(5px);
   }
 
   #arrow-mark {
     position: absolute;
+    display: block;
     left: -7px;
     top: 28px;
-    background: url(../img/arrow.png) no-repeat 0 0 transparent;
     width: 32px;
     height: 50px;
-    display: block;
+    background: url(../img/arrow.png) no-repeat 0 0 transparent;
+    .sidebar-second & {
+      left: -32px;
+    }
   }
 
   // divider shadow

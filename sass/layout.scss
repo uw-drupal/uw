@@ -41,8 +41,12 @@ Layout diagram:
     padding: 20px 0;
     .inner {
       padding: 0 40px;
+      .sidebar-second & {
+        padding-left: 20px;
+      }
     }
   }
+
 
   @include respond-to("tablet") {
     .sidebar-first &,
