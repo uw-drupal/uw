@@ -24,62 +24,6 @@
   color: #888888;
 }
 
-.menu a.active-trail,
-.menu a.active {
-  font-weight: bold;
-}
-
-.widget_nav_menu {
-  h2 {
-    margin: 0;
-    padding: 0 0 30px 0;
-    background: image-url("side-menu-bg.gif") no-repeat bottom center transparent;
-  }
-
-  h2 a {
-    margin-left: -14px;
-    padding-left: 13px;
-    border: none;
-    font-size: 21px;
-    color: #39275b;
-    background: image-url("arrow.png") no-repeat -25px -11px transparent;
-  }
-
-  a {
-    display: block;
-    padding: 4px 0;
-    border-bottom: 1px solid #f4f4f4;
-    font-size: 13px;
-    color: #484848;
-    text-decoration: none;
-  }
-
-  li {
-    padding-left: 10px;
-  }
-
-  li a {
-    margin-left: -14px;
-    padding-left: 10px;
-    position: relative;
-    border-left: 4px solid #fff;
-    @include transition(background-color 0.15s linear);
-
-    &:hover {
-      border-left: 4px solid #d7a900;
-      background-color: #fcf9dc;
-    }
-  }
-}
-
-.region-sidebar-first .menu a:hover {
-  font-weight: bold;
-}
-
-.region-sidebar-first .widgettitle a:hover {
-  color: #919191;
-}
-
 .entry-content ul li {
   margin-left: 0;
   margin-bottom: 5px;

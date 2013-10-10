@@ -1,12 +1,65 @@
-@import "_common";
+// sidebar menu (nav) styles
 
-// Highlight active trail
-li.expanded a.active-trail
-{
-  border-left:2px solid #ffd700;
-}
+@import "common";
 
-li > a.active{
-  background-color:#fcf9dc;
-  border-left:2px solid #ffd700;
+.sidebar {
+  .menu {
+    h2 {
+      margin: 0;
+      padding: 0 0 30px 0;
+      background: image-url("side-menu-bg.gif") no-repeat bottom center transparent;
+      a {
+        margin-left: -14px;
+        padding-left: 13px;
+        border: none;
+        font-size: 21px;
+        color: #39275b;
+        background: image-url("arrow.png") no-repeat -25px -11px transparent;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 4px 0;
+      border-bottom: 1px solid #f4f4f4;
+      color: $color-dark-gray;
+      text-decoration: none;
+
+      &.active-trail,
+      &.active {
+        font-weight: bold;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
+    li {
+      padding-left: 10px;
+
+      &.expanded a.active-trail {
+        // Highlight active trail
+        border-left: 2px solid $color-secondary-bright;
+      }
+    }
+
+    li > a {
+      margin-left: -14px;
+      padding-left: 10px;
+      position: relative;
+      border-left: 4px solid #fff;
+      @include transition(background-color 0.15s linear);
+
+      &.active {
+        background-color: $color-secondary-bg-highlight;
+        border-left: 2px solid $color-secondary-bright;
+      }
+
+      &:hover {
+        border-left: 4px solid #d7a900;
+        background-color: $color-secondary-bg-highlight;
+      }
+    }
+  }
 }
