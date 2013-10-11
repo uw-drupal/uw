@@ -2,6 +2,8 @@
  * Branding: Header strip, patch, band, footer
  */
 
+// FIXME: clean this up
+
 // #### START D7 behaviors wrapper #######
 (function ($) {
 
@@ -14,43 +16,36 @@ if (context != document) {
   return;
 }
 
-var $thin    = $('.thinstrip'),
-    strip  = $thin.clone().removeAttr('style').addClass('thinstrip-fixed'),
-    search = $('#search form'),
-    win    = $(window),
-    bod    = $('body');
+var $thinstrip = $('.thinstrip'),
+  $thinstrip_fixed = $thinstrip.clone().removeAttr('style').addClass('thinstrip-fixed thinstrip-hidden visible-desktop'),
+  $body = $('body'),
+  is_visible = false;
 
-bod.append(strip.hide());
-strip.data('otop',bod.hasClass('top'));
+$body.append($thinstrip_fixed);
 
-win.bind('scroll', function() {
+var move_thinstrip = function () {
 
-  var top    = $(this).scrollTop(),
-    pos = bod.hasClass('admin-bar') ? 28 : 0,
-    adjust = bod.data('alert-height') || pos,
-    $mini = $('#alert-mini');
+  var top = $(this).scrollTop(),
+    adjust = $body.data('alert-height') || 0;
 
-  if ( $(this).width() < 768 )
+  if ($(this).width() < 768) {
     return false;
-
-  if ( top < 180 + adjust){
-    strip.css('top',-28).hide().data('showing',false);
-    $mini.hide();
   }
 
-  if ( top > 220 + adjust && !strip.data('showing') ) {
-    strip.show().animate({top:strip.data('otop')+pos},{duration:300, easing:'swing'}).data('showing',true);
+  if (top < 200 + adjust && is_visible) {
+    $thinstrip_fixed.addClass('thinstrip-hidden');
+    is_visible = false;
   }
 
-  if ( $mini.length !== 0 && !bod.data('scrolling') )
-  {
-    if ( top < 300 + adjust)
-      $mini.slideUp();
-
-    if ( top > 330 + adjust)
-      $mini.slideDown();
+  if (top > 240 + adjust && !is_visible) {
+    $thinstrip_fixed.removeClass('thinstrip-hidden');
+    is_visible = true;
   }
-});
+
+};
+
+// throttle scroll callback
+$(window).bind('scroll', move_thinstrip);
 
 // #### END D7 behaviors wrapper #########
     }

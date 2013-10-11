@@ -27,6 +27,7 @@ stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
 
 regions[help] = Help
+regions[thinstrip] = Thinstrip
 regions[dropdowns] = Dropdowns
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar

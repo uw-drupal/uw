@@ -13,7 +13,9 @@
     background: url("http://www.washington.edu/static/mobile/image/top_bg_z.jpg") repeat-x scroll center top white;
     position: relative;
   }
-  #listicon-wrapper, #searchicon-wrapper {
+
+  .thinstrip-toggle,
+  .search-toggle {
     background: url("../img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent;
     position: absolute;
     top: 4px;
@@ -24,7 +26,8 @@
     text-indent: -9999px;
     overflow: hidden;
   }
-  #searchicon-wrapper {
+
+  .search-toggle {
     right: 50px;
     height: 30px;
     background: url("../img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent;
@@ -74,19 +77,8 @@
     display: none;
   }
   .main-search {
-    height: 0;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 95%;
-    position: relative;
-    transition: height .5s;
-    -moz-transition: height .5s;
-    /* Firefox 4 */
-    -webkit-transition: height .52s;
-    /* Safari and Chrome */
-    -o-transition: height .5s;
-    /* Opera */
-    -webkit-transform: translate3d(0, 0, 0);
+    margin: 10px;
+    padding: 0;
   }
   .wfield {
     -webkit-box-shadow: inset 2px 2px 4px #888;

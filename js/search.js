@@ -16,7 +16,7 @@ if (context != document) {
 
 var $inputs = $('#search').find('input[type=radio]'),
   soptions = $('.search-options'),
-  $toggle = $('.search-toggle'),
+  $toggle = $('.search-options-toggle'),
   $flash = $('.search-flash'),
   $q = $('#q'),
   ie = $.browser.msie; //$('[id^=ie]')

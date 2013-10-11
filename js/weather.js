@@ -14,28 +14,39 @@ if (context != document) {
   return;
 }
 
-var data = {
-  q:'http://www.atmos.washington.edu/rss/home.rss',
-  v:'2.0'
+var params = {
+  q: 'http://www.atmos.washington.edu/rss/home.rss',
+  v: '2.0'
 };
 
-$.ajax({
-  url: 'https://ajax.googleapis.com/ajax/services/feed/load?callback=?',
-  dataType: 'jsonp',
-  data: data,
-  success: function(json) {
-    var icon = $.trim(json.responseData.feed.entries[2].title.split('|')[1]);
-    var weat = $.trim(json.responseData.feed.entries[1].title.split('|')[1]);
-    var temp = $.trim(json.responseData.feed.entries[0].title.split('|')[1]);
-    var html = '<li class="header-weather"><a href="http://www.atmos.washington.edu/weather/forecast/" title="Forecast is '+weat+'">';
-    html += '<img src="//uw.edu/news/wp-content/themes/uw/img/weather/top-nav/'+icon+'.png" alt="Forecast is '+weat+'"/>';
-    html += '</a></li>';
-    html += '<li class="header-forcast"><a href="http://www.atmos.washington.edu/weather/forecast/">';
-    html += 'Seattle '+temp;
-    html += '</a></li>';
-    $('.thinstrip ul').append(html);
-  }
-});
+var data = {
+  temp: null,
+  weather: null,
+  icon: null
+};
+
+var fetch_weather = function() {
+  $.ajax({
+    url: 'https://ajax.googleapis.com/ajax/services/feed/load',
+    dataType: 'jsonp',
+    data: params,
+    success: function(json) {
+      var entries = json.responseData.feed.entries, index = 0;
+      for (var prop in data) {
+        data[prop] = entries[index++].title.split(' | ')[1];
+      }
+      var $li = $('<li />');
+      $li.html(
+        '<a href="http://www.atmos.washington.edu/weather/forecast.php"><img src="//uw.edu/news/wp-content/themes/uw/img/weather/top-nav/' + data.icon + '.png" title="Current weather: ' + data.weather + '" alt="" /> Seattle ' + data.temp + '</a>'
+      );
+      $('.thinstrip ul').append($li);
+    }
+  });
+};
+
+// fetch now and every 9e5 milliseconds (15 minutes)
+fetch_weather();
+setInterval(fetch_weather, 9e5);
 
 // #### END D7 behaviors wrapper #########
     }
