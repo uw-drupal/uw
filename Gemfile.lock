@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/uw-drupal/bootstrap-sass.git
-  revision: 8b68fe9e45202b71bc15ed3e09d9127e198f9863
+  revision: e09af3de9a34049a28aded19c42810f9c25aa0f4
   branch: master
   specs:
     bootstrap-sass (2.3.2.1)
