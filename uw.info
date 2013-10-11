@@ -33,7 +33,6 @@ regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[content] = Content
 regions[footer_left] = Footer Left
-regions[header] = Header
 regions[footer_nav] = Footer Nav
 
 settings[patch_color] = gold
