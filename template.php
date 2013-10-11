@@ -10,7 +10,8 @@ function uw_id_safe($string) {
 
 function uw_js_alter(&$javascript) {
   // Swap out jQuery to use an updated version of the library.
-  $javascript['misc/jquery.js']['data'] = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
+  $javascript['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
+  $javascript['misc/jquery.js']['type'] = 'external';
   $javascript['misc/jquery.js']['version'] = null;
 }
 
@@ -39,9 +40,9 @@ function _uw_alter_menu(&$menu, $dropdown = false) {
         $below_link = &$link['#below'][$__key];
         $below_link['#attributes']['role'] = 'presentation';
         $below_link['#localized_options']['attributes']['role'] = 'menuitem';
-        # if dropdown, unset links below second level
+        # if dropdown, remove links below second level
         if ($dropdown) {
-          unset($link['#below'][$__key]['#below']);
+          $link['#below'][$__key]['#below'] = null;
         }
       }
     }
@@ -63,12 +64,14 @@ function uw_preprocess_region(&$variables, $hook) {
 }
 
 function uw_preprocess_block(&$variables) {
-  if ($variables['block']->region == 'sidebar_first') {
+  if ($variables['block']->region == 'sidebar_first' || $variables['block']->region == 'sidebar_second') {
     $variables['classes_array'][] = 'widget';
 
     // menus get a special class
-    if ($variables['block']->module == 'menu_block') {
-      $variables['classes_array'][] = 'widget_nav_menu';
+    $is_block_menu = in_array('block-menu', $variables['classes_array']);
+    $is_menu_block = $variables['block']->module == 'menu_block';
+    if ($is_menu_block || $is_block_menu) {
+      $variables['classes_array'][] = 'menu';
     }
   }
 }
@@ -98,9 +101,6 @@ function uw_preprocess_page(&$variables) {
   # add fallback jquery
   drupal_add_js("window.jQuery || document.write('<script src=\"$base_path$theme_path/js/jquery-1.8.3.min.js\"><' + '/script>');", array('type' => 'inline', 'group' => JS_LIBRARY, 'weight' => -19.9999999, 'every_page' => TRUE));
 
-  # add web fonts
-  drupal_add_css('https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C400%2C300', 'external');
-
   $variables['patch_color'] = theme_get_setting('patch_color');
   $variables['band_color'] = theme_get_setting('band_color');
   $variables['default_logo'] = theme_get_setting('default_logo');
@@ -109,6 +109,8 @@ function uw_preprocess_page(&$variables) {
   $variables['search_default_site'] = theme_get_setting('search_default_site');
   $variables['default_header'] = theme_get_setting('default_header');
   $variables['header_path'] = file_create_url(theme_get_setting('header_path'));
+
+  $page = $variables['page'];
 }
 
 /**
@@ -132,4 +134,11 @@ function uw_form_search_block_form_alter(&$form, &$form_state) {
   // There's probably a better way to do this, but we're just rebuilding 
   // with the known, desired classes.
   $form['#attributes']['class'] = array('form-search', 'content-search');
+}
+
+function uw_pubcookie_login() {
+	$pc_login_link = $GLOBALS['base_path'] . pubcookie_login_link() . '?destination=' . drupal_get_path_alias();
+  $links = "<a href='$pc_login_link'>&copy;</a> ";
+	$links .= l( date('Y') . ' University of Washington' , 'http://www.washington.edu');
+	return $links;
 }

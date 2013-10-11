@@ -1,0 +1,38 @@
+GIT
+  remote: git://github.com/uw-drupal/bootstrap-sass.git
+  revision: e09af3de9a34049a28aded19c42810f9c25aa0f4
+  branch: master
+  specs:
+    bootstrap-sass (2.3.2.1)
+      sass (~> 3.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    breakpoint (2.0.7)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
+    chunky_png (1.2.8)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-flexbox (1.1)
+      compass
+      sass
+    fssm (0.2.10)
+    sass (3.2.12)
+    singularitygs (1.1.2)
+      breakpoint (>= 2.0.1)
+      compass (>= 0.12.2)
+      sass (>= 3.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bootstrap-sass!
+  breakpoint (~> 2.0)
+  compass (~> 0.12)
+  compass-flexbox (~> 1.1)
+  singularitygs (~> 1.1)

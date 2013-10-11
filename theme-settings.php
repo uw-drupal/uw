@@ -108,20 +108,6 @@ $form['uw']['patch_band']['show_patch'] = array(
   );
 
 
-
-  $form['uw']['content_options'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Content Area Options'),
-    '#description' => t('Configuration options controlling how the content display area should render.'),
-  );
-  $form['uw']['content_options']['sidebar_location'] = array(
-    '#type'          => 'radios',
-    '#title'         => t('Location of sidebar navigation menu'),
-    '#default_value' => theme_get_setting('sidebar_location'),
-    '#options' => drupal_map_assoc(array('left', 'right')),
-  );
-
-
   $form['#validate'][] = 'uw_theme_settings_validate';
   $form['#submit'][] = 'uw_theme_settings_submit';
 

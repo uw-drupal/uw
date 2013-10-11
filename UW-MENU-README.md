@@ -1,4 +1,4 @@
-# Importing UW Top/Footer Menus
+# Importing Default UW Menus
 
 The UW Drupal Theme developers have created a means of importing the UW menus into your Drupal 7 installation. This technique requires the installation of the [menu_import module](http://drupal.org/project/menu_import).
 
@@ -20,23 +20,26 @@ drush en -y menu_import
 
 ## Importing the Menus
 
-* For each of the two menus (top, footer):
+* For each of the menus you would like to import (top, footer, thinstrip):
 	* Go to `admin/structure/menu`
 	* Click Add Menu
-		- Title: UW **[Top/Footer]** Menu
+		- Title: UW **[Top/Footer/Thinstrip]**
 		- Save
 	* Go to `admin/structure/menu`
 	  - Click the Import Menu Tab
 	  - Choose menu created in previous step
-	  - Browse for Menu file uw-[top/footer]-menu.txt
+	  - Browse for Menu file uw-[top/footer/thinstrip]-menu.txt
 	  - Options: Remove existing Menu Items
 	* Click Upload and Preview
 	* Click Import
 	* Go to `admin/structure/block`
-	* Scroll down to disabled and click configure next to the UW **[Top/Footer]** Menu block
-	   - Block title: \<none\>
-	   - Region Settings: Dropdowns for top menu, Footer for bottom menu
-       - Save Block
+	* Scroll down to disabled and click configure next to the UW **[Top/Footer/Thinstrip]** block
+	  - Block title: \<none\>
+	  - Region Settings:
+	    - Top menu: Dropdowns region
+	    - Footer menu: Footer Nav region
+	    - Thinstrip menu: Thinstrip region
+	* Save Block
 
 ## Menu Labels
 

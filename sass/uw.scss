@@ -18,3 +18,6 @@
 
 // non-modular styles
 @import "non-modular.scss"; // any half-assed or non-reusable styles are "non-modular" and should go here
+
+// web fonts
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700");

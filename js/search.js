@@ -16,10 +16,9 @@ if (context != document) {
 
 var $inputs = $('#search').find('input[type=radio]'),
   soptions = $('.search-options'),
-  $toggle = $('.search-toggle'),
+  $toggle = $('.search-options-toggle'),
   $flash = $('.search-flash'),
   $q = $('#q'),
-  query = encodeURIComponent($q.val()),
   ie = $.browser.msie; //$('[id^=ie]')
 
 var update_placeholder = function () {
@@ -40,7 +39,8 @@ $toggle.click(function () {
 $('#search form').submit(function () {
   var $this = $(this),
     $input = $inputs.filter(':checked'),
-    method = $input.val();
+    method = $input.val(),
+    query = encodeURIComponent($q.val());
 
     if (method === 'main')
       return true;

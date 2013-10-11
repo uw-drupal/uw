@@ -1,0 +1,10 @@
+UW Home {"url":"http:\/\/www.washington.edu\/"}
+Directories {"url":"http:\/\/www.washington.edu\/home\/directories.html"}
+Calendar {"url":"http:\/\/www.washington.edu\/discover\/visit\/uw-events"}
+Libraries {"url":"http:\/\/www.lib.washington.edu\/"}
+Maps {"url":"http:\/\/www.washington.edu\/maps"}
+My UW {"url":"http:\/\/myuw.washington.edu\/"}
+News {"url":"http:\/\/www.uw.edu\/news"}
+UW Bothell {"url":"http:\/\/www.bothell.washington.edu\/","hidden":true}
+UW Tacoma {"url":"http:\/\/www.tacoma.uw.edu\/","hidden":true}
+UW Athletics {"url":"http:\/\/www.gohuskies.com\/","hidden":true}
