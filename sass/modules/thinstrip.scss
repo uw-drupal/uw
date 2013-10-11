@@ -187,11 +187,11 @@
 
 // high-dpi
 @media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.5) {
-  .thinstrip ul {
+  .thinstrip-default ul {
     background: url("../img/mobile-header/gridLinesX2.png") center center no-repeat #f8f8f8;
     background-size: 295px 315px;
   }
-  .thinstrip li a {
+  .thinstrip-default li a {
     background-image: url("../img/mobile-header/sprite2x.png");
     background-size: 77px 750px;
   }
