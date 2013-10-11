@@ -16,7 +16,6 @@ First, download and enable the bootstrap theme:
 ```
 drush dl bootstrap-7.x-2.1
 drush en -y bootstrap
-
 ```
 
 Next, download (or clone) UW-Drupal-Theme into your Drupal 7 theme folder.
@@ -26,15 +25,21 @@ cd $DRUPAL_ROOT/sites/all/themes
 git clone git://github.com/uw-drupal/UW-Drupal-Theme.git
 ```
 
-To enable mouseover functionality of the main dropdown menu, you will need to download and install the modernizr drupal module.
+Finally, switch to the UW Drupal theme at Admin -> Appearance.
+
+### Optional: Modernizr
+
+Installing modernizr will allow you to support some optional extras:
+
+* Enable mouseover functionality of the main dropdown menu
+* Use table-cell layout fallback for browsers that don't support flexbox
+
+#### Download and Install
 
 * Download modernizr module (`drush dl modernizr`)
-* Download a [Modernizr custom build](http://www.modernizr.com/download/) (with Touch Events checked)
-* Copy modernizr-X.Y.min.js to `sites/all/modules/modernizr/js/modernizr.min.js`
-* If you have the Libraries API module installed, use the path `sites/all/libraries/modernizr/modernizr.min.js` instead.
+* Download uw-drupal's modernizr build from [uw-drupal/extras](https://raw.github.com/uw-drupal/extras/master/modernizr.min.js)
+* If you have the Libraries API module installed, copy modernizr.min.js to `sites/all/libraries/modernizr/modernizr.min.js`. Otherwise, copy to `sites/all/modules/modernizr/js/modernizr.min.js`.
 * Enable the module (`drush en -y modernizr`)
-
-Finally, switch to the UW Drupal theme at Admin -> Appearance.
 
 ## Theme Options
 
@@ -66,26 +71,25 @@ The main menu is displayed in the *Dropdowns* region by default.
 
 #### Using `menu_block` block in the Dropdowns region
 
-It is possible to use `menu_block` blocks for your dropdown menu instead. Uncheck "Main Menu" under appearance settings to prevent double display of the menu. Then, configure your `menu_block` block to display in the *Dropdowns* region. Find your block's $delta (configure page has link `admin/structure/block/manage/menu_block/$delta/configure`)
-
-Finally, run `drush vset dropdown_menu_block_delta $delta` which will manually set your preference to theme that specific menu block as a bootstrap dropdown.
+It is possible to use `menu_block` blocks for your dropdown menu instead. Uncheck "Main Menu" under appearance settings to prevent double display of the menu.
 
 ### Expanded Footer Menu
 
 If you'd like a nested footer menu similar to the one found on UW Homepage:
-1. Create a new menu at /admin/structure/menu
-2. Add 5 or 6 parent items and nested child items:
-	* Parent Item One
-		* Child item A
-		* Child item B
-		* Child item C
-	* Parent Item Two
-		* Child item D
-		* Child item E
-		…
-3. Add your new menu to the "Footer Nav" region at /admin/structure/blocks
 
-See "UW-ME-README.txt" in the themes folder for additional instructions on installing the header and footer menus which appear on the UW Homepage.
+1. Create a new menu at `admin/structure/menu`
+2. Add 5 or 6 parent items and nested child items:
+    * Parent Item One
+      * Child item A
+      * Child item B
+      * Child item C
+    * Parent Item Two
+      * Child item D
+      * Child item E
+      …
+3. Add your new menu to the "Footer Nav" region at `admin/structure/blocks`
+
+See "UW-MENU-README.md" in the themes folder for additional instructions on installing the header and footer menus which appear on the UW Homepage.
 
 ## Further Changes and Customizations
 

@@ -21,19 +21,18 @@ modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
 settings[cdn_bootstrap] = 0
 
 ; Bootstrap source
-stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = bootstrap/css/bootstrap-responsive.css
+stylesheets[all][] = css/bootstrap-sass.css
 
 stylesheets[all][] = css/uw.css
 stylesheets[print][] = css/print.css
 
 regions[help] = Help
+regions[thinstrip] = Thinstrip
 regions[dropdowns] = Dropdowns
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[content] = Content
 regions[footer_left] = Footer Left
-regions[header] = Header
 regions[footer_nav] = Footer Nav
 
 settings[patch_color] = gold

@@ -81,8 +81,8 @@
     <?php endif; ?>
     <a class="wordmark" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>"></a>
     <?php if ($show_search): ?>
-    <a title="Show search" role="button" href="#searchicon-wrapper" id="searchicon-wrapper" class="visible-phone" aria-haspopup="true">Search</a>
-    <div id="search">
+    <a title="Show/hide search" role="button" href="#search" data-toggle="collapse" data-target="#search" class="search-toggle visible-phone" aria-haspopup="true">Search</a>
+    <div id="search" class="collapse">
       <form role="search" class="main-search" action="http://www.washington.edu/search" id="searchbox_008816504494047979142:bpbdkw8tbqc" name="form1">
         <span class="wfield">
           <input value="008816504494047979142:bpbdkw8tbqc" name="cx" type="hidden">
@@ -93,18 +93,18 @@
           </span>
       </form>
 
-      <span class="search-toggle"></span>
+      <span class="search-options-toggle"></span>
       <div class="search-options">
         <label class="radio">
-          <input type="radio" name="search-toggle" value="main" <?php if ($search_default_site == 'UW'): ?>checked="checked"<?php endif; ?> data-placeholder="the UW">
+          <input type="radio" name="search-option" value="main" <?php if ($search_default_site == 'UW'): ?>checked="checked"<?php endif; ?> data-placeholder="the UW">
           UW.edu
         </label>
         <label class="radio">
-          <input type="radio" name="search-toggle" value="directory" data-placeholder="the Directory"/>
+          <input type="radio" name="search-option" value="directory" data-placeholder="the Directory"/>
           UW Directory
         </label>
         <label class="radio">
-          <input type="radio" name="search-toggle" value="site" data-site="<?php print url('', array('absolute'=>true)); ?>" <?php if ($search_default_site == 'this site'): ?>checked="checked"<?php endif; ?> data-placeholder="<?php print $site_name; ?>"/>
+          <input type="radio" name="search-option" value="site" data-site="<?php print url('', array('absolute'=>true)); ?>" <?php if ($search_default_site == 'this site'): ?>checked="checked"<?php endif; ?> data-placeholder="<?php print $site_name; ?>"/>
           This site
         </label>
 
@@ -113,23 +113,27 @@
 
     </div>
     <?php endif; ?>
-    <a title="Show menu" role="button" href="#listicon-wrapper" id="listicon-wrapper" class="visible-phone" aria-haspopup="true">Menu</a>
+    <a title="Show/hide menu" role="button" href="#thinstrip" data-toggle="collapse" data-target="#thinstrip" class="thinstrip-toggle visible-phone" aria-haspopup="true">Menu</a>
   </div><!-- #header -->
 
-  <div class="thinstrip">
+  <div id="thinstrip" class="thinstrip collapse <?php if (empty($page['thinstrip'])): ?>thinstrip-default<?php else: ?>thinstrip-custom<?php endif ?>">
     <div class="thinstrip-inner">
-      <ul role="navigation">
-        <li><a href="http://www.washington.edu/">UW Home</a></li>
-        <li><a href="http://www.washington.edu/home/directories.html">Directories</a></li>
-        <li><a href="http://www.washington.edu/discover/visit/uw-events">Calendar</a></li>
-        <li><a href="http://www.lib.washington.edu/">Libraries</a></li>
-        <li><a href="http://www.washington.edu/maps">Maps</a></li>
-        <li><a href="http://myuw.washington.edu/">My UW</a></li>
-        <li class="visible-desktop"><a href="http://www.bothell.washington.edu/">UW Bothell</a></li>
-        <li class="visible-desktop"><a href="http://www.tacoma.uw.edu/">UW Tacoma</a></li>
-        <li class="visible-phone"><a href="http://www.uw.edu/news">News</a></li>
-        <li class="visible-phone"><a href="http://www.gohuskies.com/">UW Athletics</a></li>
-      </ul>
+      <?php if (empty($page['thinstrip'])): ?>
+        <ul role="navigation">
+          <li><a href="http://www.washington.edu/">UW Home</a></li>
+          <li><a href="http://www.washington.edu/home/directories.html">Directories</a></li>
+          <li><a href="http://www.washington.edu/discover/visit/uw-events">Calendar</a></li>
+          <li><a href="http://www.lib.washington.edu/">Libraries</a></li>
+          <li><a href="http://www.washington.edu/maps">Maps</a></li>
+          <li><a href="http://myuw.washington.edu/">My UW</a></li>
+          <li class="visible-desktop"><a href="http://www.bothell.washington.edu/">UW Bothell</a></li>
+          <li class="visible-desktop"><a href="http://www.tacoma.uw.edu/">UW Tacoma</a></li>
+          <li class="visible-phone"><a href="http://www.uw.edu/news">News</a></li>
+          <li class="visible-phone"><a href="http://www.gohuskies.com/">UW Athletics</a></li>
+        </ul>
+      <?php else: ?>
+        <?php print render($page['thinstrip']); ?>
+      <?php endif; ?>
     </div>
   </div><!-- .thinstrip -->
 
@@ -145,8 +149,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <span class="navbar-caret" style="position:absolute;"></span>
-        <h3 class="visible-phone"><a href="<?php print $front_page; ?>"><?php print $site_name; ?></a></h3>
 
         <!-- Everything you want collapsed on smaller screens goes here -->
         <div class="nav-collapse collapse">
@@ -178,56 +180,45 @@
 
 <?php print $messages; ?>
 
-<div id="primary">
+<div class="container container-primary">
 
-  <div id="content" role="main" class="container">
+   <div id="content" role="main">
+    <div class="divider inner">
+      <header class="entry-header">
+        <?php print render($title_prefix); ?>
+        <?php if (!empty($title)): ?>
+          <h1 class="entry-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </header>
 
-    <div class="row show-grid">
+      <div id="tabs">
+        <?php if ($tabs): ?>
+          <div class="tabs"><?php print render($tabs); ?></div>
+        <?php endif; ?>
+      </div>
 
-      <?php if ($page['sidebar_first']): ?>
-        <div id="secondary" class="span<?php print $sidebar_width ?> left-bar" role="complementary">
-          <span id="arrow-mark"></span>
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_first']); ?>
-        </div> <!-- #secondary -->
-      <?php endif; ?>
+      <span id="arrow-mark"></span>
 
-      <div class="span<?php print $content_width; ?> column">
+      <?php print render($page['content']); ?>
+    </div> <!-- #content .inner -->
+  </div> <!-- #content -->
 
-        <header class="entry-header">
-          <?php print render($title_prefix); ?>
-          <?php if (!empty($title)): ?>
-            <h1 class="entry-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-        </header>
+  <?php if ($page['sidebar_first']): ?>
+    <div class="sidebar sidebar-left" role="complementary">
+      <?php print render($page['sidebar_first']); ?>
+    </div>
+  <?php endif; ?>
 
-        <!--<span id="arrow-mark"></span> -->
+  <?php if ($page['sidebar_second']): ?>
+    <div class="sidebar sidebar-right" role="complementary">
+      <?php print render($page['sidebar_second']); ?>
+    </div>
+  <?php endif; ?>
 
-        <div id="tabs">
-          <?php if ($tabs): ?>
-            <div class="tabs"><?php print render($tabs); ?></div>
-          <?php endif; ?>
-        </div>
+</div><!-- .container --> <!-- #primary-->
 
-        <?php print render($page['content']); ?>
-      </div> <!-- #content .column -->
-
-      <?php if ($page['sidebar_second']): ?>
-        <div id="secondary" class="span<?php print $sidebar_width ?> right-bar" role="complementary">
-          <span id="arrow-mark"></span>
-          <div class="stripe-top"></div><div class="stripe-bottom"></div>
-          <?php print render($page['sidebar_second']); ?>
-        </div> <!-- #secondary -->
-      <?php endif; ?>
-
-    </div><!-- .row.show-grid -->
-
-  </div><!-- #content -->
-</div> <!-- #primary-->
-
-
-<div id="footerBG">
+<div id="footerBG" class="hidden-phone">
   <div id="footer" role="navigation" aria-label="Global Footer Menu">
     <h2>Explore <?php print empty($site_name) ? 'UW' : $site_name; ?></h2>
     <div class="menu-global-footer-container">
@@ -237,7 +228,7 @@
 </div>
 
 <footer id="footer-main" role="contentinfo">
-  <div id="footer-right">
+  <div id="footer-right" class="hidden-phone">
     <a href="http://www.seattle.gov/">Seattle, Washington</a>
   </div>
   <ul>

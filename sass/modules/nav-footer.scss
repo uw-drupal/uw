@@ -2,10 +2,32 @@
 
 @import "_common";
 
-#footer .menu-level-1>ul.nav>li {
-  float: left;
-  width: 140px;
-  margin-left: 20px;
+.region-footer-nav .block-menu > .nav,
+.region-footer-nav .menu-block-wrapper > .nav {
+  > li {
+    position: relative;
+    padding: 10px 0;
+
+    > a {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    @include respond-to("large") {
+      @include float-span(2);
+
+      &:nth-child(6n + 1) {
+        clear: left;
+      }
+    }
+    @include respond-to("tablet") {
+      @include float-span(3);
+
+      &:nth-child(4n + 1) {
+        clear: left;
+      }
+    }
+  }
 }
 
 #footerBG {
@@ -14,11 +36,11 @@
   clear: both;
   padding: 124px 0 20px 0;
   overflow: hidden;
-  background: url(../img/footer-fs8.png) no-repeat center top transparent;
+  background: white url(../img/footer-fs8.png) no-repeat center top;
 }
 
 #footer {
-  width: 990px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -35,13 +57,6 @@
 #footer h2 {
   font-size: 20px;
   margin: 0 0 45px 20px;
-}
-
-#footer .menu-level-1>ul.nav>li>a {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  line-height: 15px;
 }
 
 #footer a {
@@ -142,50 +157,6 @@
   }
 }
 
-div.region-footer-nav > section > ul.menu > li {
-  /* -- Header items: Admissions, Academics, Campus Life... --*/
-  float: left;
-  z-index: 0;
-  font-size: 12px;
-}
-
-div.region-footer-nav > section > ul.menu > li > a,
-div.region-footer-nav > section > ul.menu > li > div {
-  margin-bottom: 9px;
-  font-weight: bolder;
-}
-
-div.region-footer-nav > section > ul.menu > li > a > span.caret,
-div.region-footer-nav > section > ul.menu > li > div > span.caret {
-  display: none;
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu {
-  /* -- the dropdown container -- */
-  border: none;
-  line-height: 100%;
-  top: 0px;
-  position: relative;
-  display: block;
-  box-shadow: none;
-  padding: 0px;
-  background-color: transparent;
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li {
-  /* -- the items in the dropdown -- */
-}
-
-div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
-  /* -- links in the items in the dropdown -- */
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  line-height: 16px;
-  background-color: none;
-  background-image: none;
-}
-
 @include respond-to("mobile") {
 
   #footer-main {
@@ -229,8 +200,5 @@ div.region-footer-nav > section > ul.menu > li ul.dropdown-menu > li > a {
   #footer-left {
     text-align: center;
     padding: 10px 0;
-  }
-  #footer-right {
-    display: none;
   }
 }

@@ -1,13 +1,125 @@
-// Default Layout -- includes styles relating to position, width/height,
-// margin/padding
-//  - overrides styles provided by base bootstrap theme
-//  - tablet and mobile styles should go in their respective files
+/*
+Default Layout -- includes styles relating to position, width/height,
+ margin/padding
+  - overrides styles provided by base bootstrap theme
+  - tablet and mobile styles should go in their respective files
+
+Layout diagram:
+  Mobile: content
+          (first sidebar)
+          (second sidebar)
+  Tablet: (first sidebar), content
+          (second sidebar)
+  Large:  (first sidebar), content, (second sidebar)
+*/
 
 @import "_common";
 
-// Sidebar
-.region-sidebar-first {
-  padding: 10px 0 0 55px;
+.container {
+  clear: both;
+}
+
+.container-primary {
+  position: relative;
+  padding: 20px 0;
+  z-index: 1;
+
+  @include respond-to("!mobile") {
+    @include grid-span(12, 1);
+  }
+
+  @include respond-to("xlarge") {
+    @include grid-span(10, 2);
+  }
+}
+
+#content {
+  position: relative;
+  padding: 10px;
+
+  @include respond-to("!mobile") {
+    padding: 20px 0;
+    .inner {
+      padding: 0 40px;
+      .sidebar-second & {
+        padding-left: 20px;
+      }
+    }
+  }
+
+
+  @include respond-to("tablet") {
+    .sidebar-first &,
+    .two-sidebars & {
+      // content size with first or both sidebars
+      @include grid-span(8, 5);
+    }
+  }
+
+  @include respond-to("large") {
+    .sidebar-first & {
+      // content size with first sidebar only
+      @include grid-span(9, 4);
+    }
+
+    .sidebar-second & {
+      // content size with second sidebar only
+      @include grid-span(9, 1);
+    }
+
+    .two-sidebars & {
+      // content size with both sidebars
+      @include grid-span(6, 4);
+    }
+  }
+
+}
+
+// Sidebars
+
+@include respond-to("tablet") {
+  // note: grid is 6 columns for tablet and smaller
+
+  .sidebar-left {
+    // left sidebar with both sidebars
+    @include grid-span(4, 1);
+  }
+  .sidebar-right {
+    // right sidebar with both sidebars
+    @include grid-span(12, 1);
+  }
+}
+
+@include respond-to("large") {
+  .sidebar-first .sidebar-left {
+    // left sidebar when right sidebar is disabled
+    @include grid-span(3, 1);
+  }
+
+  .sidebar-second .sidebar-right {
+    // right sidebar when left sidebar is disabled
+    @include grid-span(3, 10);
+  }
+
+  .two-sidebars {
+    .sidebar-left {
+      // left sidebar size with both sidebars
+      @include grid-span(3, 1);
+    }
+    .sidebar-right {
+      // right sidebar size with both sidebars
+      @include grid-span(3, 10);
+    }
+  }
+}
+
+.sidebar {
+
+  margin-top: 40px;
+
+  .region {
+    padding: 0 20px;
+  }
 
   section {
     margin-bottom: 40px;
@@ -21,90 +133,61 @@
   // Override bootstrap default input element styles to ensure fields aren't
   // too wide.
   input, textarea, .uneditable-input {
-    width: 191px;
+    max-width: 90%;
+  }
 
-    @include respond-to("tablet") {
-      width: 119px;
+}
+
+// flexbox provides a better layout mechanism for a row of evenly divided children
+
+@include respond-to("large") {
+
+  .navbar .nav {
+    @include display-flex;
+    width: 100%;
+
+    > li {
+      position: relative;
+      @include display-flex;
+      @include flex(1);
+      @include align-items(center);
+      > a {
+        @include flex(1);
+      }
     }
   }
 
 }
 
-// Everything Below responds only to the 'large' display
-@include respond-to("large") {
-
-
-
-
-// Overrides the menu displays and forces all list items into one row,
-// wrapping the individual items, rather than the whole list.
-// This accomodates wrapping more gracefully.
-
-
-  nav#access > ul.nav,
-  #footer .menu-level-1 > ul.nav {
-    width: 996px;
-    display: table;
-    table-layout: fixed;
-  }
-
-  nav#access > ul.nav > li,
-  div#footer > div.menu-global-footer-container > div.region-footer-nav > section >  div.menu-level-1 > ul.nav > li {
-    display: table-cell;
-    float: none ;
-    width: auto ;
-  }
-
-  nav#access > ul.nav > li {
-    text-align: center;
-  }
-
-  nav#access > ul.nav > li > ul {
-    text-align: left;
-  }
-
-  //replace the sprite image with a CSS border to allow for multiple lines
-  nav#access > ul.nav {
-    border-left: 1px solid #5d5d5d;
-    border-right: 1px solid #434343;
-  }
-
-  nav#access > ul.nav > li {
-    background: none;
-    border-left: 1px solid #434343;
-    border-right: 1px solid #5d5d5d;
-  }
-
-
-  // Alter the padding a touch to give more space to longer text (prevent extraneous wrapping)
-  nav#access > ul.nav > li > a {
-    padding: 9px 6px 12px 6px;
-  }
-
-
-  #footer .menu-level-1 > ul.nav > li {
-    padding: 0 10px;
-  }
-
-
-  // Make sure that the body content pushes downward if the navbar grows taller
-  header#branding {
-    height: auto;
-  }
-
-
-  // push the caret around to play nice
-  nav#access > ul.nav > li > a > span.caret {
-    position: absolute;
-    bottom: -13px;
-    left: 7px;
-  }
-
-  ul.dropdown-menu {
-    top: auto;
-    margin-top: 6px;
-  }
-
-
+@mixin flex-parent-legacy {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
 }
 
+@mixin flex-item-legacy {
+  float: none;
+  display: table-cell;
+}
+
+// fallback flexbox styles for legacy browsers
+  .no-flexbox.no-flexboxlegacy {
+    @include respond-to("large") {
+      .navbar .nav {
+        @include flex-parent-legacy;
+
+        > li {
+          @include flex-item-legacy;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .flex-parent {
+      @include flex-parent-legacy;
+    }
+
+    .flex-item {
+      @include flex-item-legacy;
+    }
+}

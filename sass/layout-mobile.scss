@@ -1,26 +1,8 @@
 @import "_common";
 
 @include respond-to("mobile") {
-  body {
-    padding: 0;
-  }
-  p {
-    font-size: 15px;
-  }
-  article {
-    padding: 0 15px;
-  }
-  #primary {
-    position: inherit;
-    width: inherit;
-    left: inherit;
-    margin-left: inherit;
-  }
-  #menu-primary-menu {
-    padding: 10px 0 0 0;
-  }
   /* Stuff to Hide */
-  .header-image, .skip-link, .assistive-text {
+  .skip-link, .assistive-text {
     display: none;
   }
   /* =============================================================================
@@ -31,7 +13,9 @@
     background: url("http://www.washington.edu/static/mobile/image/top_bg_z.jpg") repeat-x scroll center top white;
     position: relative;
   }
-  #listicon-wrapper, #searchicon-wrapper {
+
+  .thinstrip-toggle,
+  .search-toggle {
     background: url("../img/mobile-header/dropdowns1x.png") no-repeat -29px 0px transparent;
     position: absolute;
     top: 4px;
@@ -42,7 +26,8 @@
     text-indent: -9999px;
     overflow: hidden;
   }
-  #searchicon-wrapper {
+
+  .search-toggle {
     right: 50px;
     height: 30px;
     background: url("../img/mobile-header/dropdowns1x.png") no-repeat 7px 0px transparent;
@@ -92,19 +77,8 @@
     display: none;
   }
   .main-search {
-    height: 0;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 95%;
-    position: relative;
-    transition: height .5s;
-    -moz-transition: height .5s;
-    /* Firefox 4 */
-    -webkit-transition: height .52s;
-    /* Safari and Chrome */
-    -o-transition: height .5s;
-    /* Opera */
-    -webkit-transform: translate3d(0, 0, 0);
+    margin: 10px;
+    padding: 0;
   }
   .wfield {
     -webkit-box-shadow: inset 2px 2px 4px #888;
@@ -137,84 +111,20 @@
     display: none;
   }
   /* =============================================================================
-     Body Content Styles
-     ========================================================================== */
-  .widget_nav_menu a, .subpage_menu a {
-    font-size: 15px;
-    padding: 4px 0;
-  }
-  .region-sidebar-first {
-    padding: 15px;
-  }
-  #respond input[type="text"], #respond textarea {
-    width: 95%;
-  }
-  #content .date, .author-info {
-    margin-left: 15px;
-  }
-  .story-tags {
-    display: none;
-  }
-  .info-box {
-    padding: 10px 15px;
-    margin: 30px 0 30px 0;
-    border-top: 4px solid #D7A900;
-    border-bottom: 4px solid #D7A900;
-    background-color: #F9F9F9;
-  }
+   Body Content Styles
+  ========================================================================== */
   #s {
     width: 90%;
     padding: 9px 0 9px 10%;
   }
-  .sharing li, .sharing-hidden li {}
-  /* Image Handling */
-  .image-magnifier {
-    display: none;
-  }
-  .alignleft, .alignright, .alignnone {
-    min-width: 225px !important;
-    max-width: 100% !important;
-    margin: 0 auto;
-  }
-  .alignleft img, .alignright img, .alignnone img {
-    height: auto !important;
-    width: 100% !important;
-    min-width: 225px !important;
-    margin: 1.6em 0 0;
-  }
-  .wp-caption-text, .wp-media-credit {
-    padding: 5px 10px 10px;
-    font-size: 13px;
-    line-height: 16px;
-    background-color: #F4F4F4;
-  }
-  .wp-media-credit {
-    padding: 5px 15px 2px;
-    text-align: right;
-    font-style: italic;
-    margin-bottom: 0;
-  }
-  .wp-media-credit:empty {
-    display: none;
-  }
-  /* Copy */
-  body h1 {
-    padding: 0 15px 0 10px;
-    margin: 16px 0 16px 0;
-    border-left: 4px solid #D7A900;
+  h1 {
     display: block;
-    font-size: 24px;
-    line-height: 27px;
+    margin: 16px 0 16px -10px;
+    padding: 0 10px;
+    border-left: 4px solid #D7A900;
+    @include font-size(1.75);
   }
   h1 i, h1 em {
     font-size: 31px;
-  }
-  /* ----  Disqus ---- */
-  #disqus_thread {
-    margin: 0 15px;
-  }
-  /* ----  Thin Strip Footer ---- */
-  #footer {
-    display: none;
   }
 }

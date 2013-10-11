@@ -40,9 +40,9 @@ function _uw_alter_menu(&$menu, $dropdown = false) {
         $below_link = &$link['#below'][$__key];
         $below_link['#attributes']['role'] = 'presentation';
         $below_link['#localized_options']['attributes']['role'] = 'menuitem';
-        # if dropdown, unset links below second level
+        # if dropdown, remove links below second level
         if ($dropdown) {
-          unset($link['#below'][$__key]['#below']);
+          $link['#below'][$__key]['#below'] = null;
         }
       }
     }
@@ -68,8 +68,10 @@ function uw_preprocess_block(&$variables) {
     $variables['classes_array'][] = 'widget';
 
     // menus get a special class
-    if ($variables['block']->module == 'menu_block') {
-      $variables['classes_array'][] = 'widget_nav_menu';
+    $is_block_menu = in_array('block-menu', $variables['classes_array']);
+    $is_menu_block = $variables['block']->module == 'menu_block';
+    if ($is_menu_block || $is_block_menu) {
+      $variables['classes_array'][] = 'menu';
     }
   }
 }
@@ -109,28 +111,6 @@ function uw_preprocess_page(&$variables) {
   $variables['header_path'] = file_create_url(theme_get_setting('header_path'));
 
   $page = $variables['page'];
-
-  // calculate content and sidebar widths
-  $sidebar_first_exists = isset($page['sidebar_first']) && !empty($page['sidebar_first']);
-  $sidebar_second_exists = isset($page['sidebar_second']) && !empty($page['sidebar_second']);
-
-  $content_width = 12;
-  $sidebar_width = 0;
-
-  if ($sidebar_first_exists && $sidebar_second_exists) {
-    $content_width = 6;
-    $sidebar_width = 3;
-  } else {
-    if ($sidebar_first_exists || $sidebar_second_exists) {
-      $content_width = 8;
-      $sidebar_width = 4;
-    }
-  }
-
-  $variables['sidebar_first_exists'] = $sidebar_first_exists;
-  $variables['sidebar_second_exists'] = $sidebar_second_exists;
-  $variables['content_width'] = $content_width;
-  $variables['sidebar_width'] = $sidebar_width;
 }
 
 /**

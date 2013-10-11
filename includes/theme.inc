@@ -9,16 +9,11 @@ function uw_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  # normal menu style for blocks with theme key menu_link__menu_block
-  $is_bootstrap = !in_array('menu_link__menu_block', (array)$element['#theme']);
-
-  $delta = variable_get('dropdown_menu_block_delta');
-  if (isset($element['#bid']) && $element['#bid']['delta'] == $delta) {
-    $is_bootstrap = true;
-  }
+  // determine if this is a dropdown menu
+  $is_bootstrap = isset($element['#localized_options']['attributes']['data-hover']) && $element['#localized_options']['attributes']['data-hover'] === 'dropdown';
 
   if (!$is_bootstrap) {
-    # don't include "Home" links
+    # don't include "Home" links in regular menus
     if ($element['#title'] == 'Home') {
       return;
     }
@@ -44,7 +39,6 @@ function uw_menu_link(array $variables) {
       // Generate as standard dropdown
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
-      $element['#title'] .= '<span class="caret"></span>';
     }
 
     $element['#localized_options']['attributes']['data-target'] = '#';
