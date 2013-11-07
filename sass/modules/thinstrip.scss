@@ -68,6 +68,11 @@
   .thinstrip-fixed {
     position: fixed;
     top: 0px;
+    @include transition(top 0.25s ease-in-out, opacity 0.25s ease-in-out);
+  }
+  .thinstrip-hidden {
+    top: -28px;
+    @include opacity(0);
   }
   .thinstrip-fixed > .thinstrip-inner {
     background: url("../img/mobile-header/logo1x.png") no-repeat -35px -5px;
