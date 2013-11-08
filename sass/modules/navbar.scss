@@ -1,4 +1,4 @@
-@import "_common";
+@import "common";
 
 .navbar {
   clear: both;
@@ -7,14 +7,14 @@
 @include respond-to("large") {
   // large dropdown menu styles
   .navbar {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 10;
+    @include micro-clearfix;
     background: #444;
     @include background(
       linear-gradient(top, #666, #444)
     );
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    @include clearfix;
-    z-index: 10;
 
     .nav {
       position: relative;
@@ -28,20 +28,16 @@
         @include display-flex;
         @include flex(1);
         @include align-items(center);
+        border-left: 1px solid #434343;
+        border-right: 1px solid #5d5d5d;
 
         > a {
           // top level links
           @include flex(1);
-          border-left: 1px solid #434343;
-          border-right: 1px solid #5d5d5d;
           text-align: center;
           color: #fff;
           text-shadow: none;
           padding: 10px 5px;
-        }
-
-        &.last > a {
-          border: 0;
         }
 
         .dropdown-menu:before {
