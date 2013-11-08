@@ -57,22 +57,6 @@
 // FIXME: desktop styles below need to be "smacked"
 @media (min-width: 768px) {
 
-  #header {
-    position: relative;
-    height: $header_height;
-    @include grid-span(12, 1);
-    @include respond-to("xlarge") {
-      @include grid-span(10, 2);
-    };
-    z-index: 4;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
   .header-image {
     margin-top: -200px;
     display: block;
@@ -137,7 +121,7 @@
     height: 50px;
     background: url(../img/arrow.png) no-repeat 0 0 transparent;
     .sidebar-second & {
-      left: -32px;
+      left: -27px;
     }
   }
 

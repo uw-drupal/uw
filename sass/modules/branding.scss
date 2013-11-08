@@ -1,9 +1,10 @@
 @import "_common";
+@import "compass/css3/user-interface";
 
 @include respond-to("!mobile") {
+
   #branding {
     position: relative;
-    height: auto;
     margin-bottom: 20px;
     padding-top: 30px;
     background-image: image-url("header/cherries.jpg");
@@ -45,7 +46,21 @@
   .wordmark-white .wordmark {
     background-position: 0 -197px;
   }
+  #header {
+    position: relative;
+    width: 95%;
+    height: $header_height;
+    margin: 0 auto;
+    z-index: 4;
+    @include user-select(none);
+  }
 }
+
+@include respond-to("xlarge") {
+  #header {
+    width: 80%;
+  }
+};
 
 @include respond-to("mobile") {
   #branding {
