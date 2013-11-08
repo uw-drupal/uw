@@ -17,19 +17,21 @@ Layout diagram:
 
 .container {
   clear: both;
+  @include micro-clearfix;
 }
 
 .container-primary {
   position: relative;
+  margin: 0 auto;
   padding: 20px 0;
   z-index: 1;
 
   @include respond-to("!mobile") {
-    @include grid-span(12, 1);
+    width: 95%;
   }
 
   @include respond-to("xlarge") {
-    @include grid-span(10, 2);
+    width: 80%;
   }
 }
 
@@ -163,11 +165,13 @@ Layout diagram:
   width: 100%;
   display: table;
   table-layout: fixed;
+  *display: block; // for IE<=7
 }
 
 @mixin flex-item-legacy {
   float: none;
   display: table-cell;
+  *float: left; // for IE<=7
 }
 
 // fallback flexbox styles for legacy browsers
