@@ -1,6 +1,6 @@
 name = UW
 description = UW Drupal Theme
-version = 7.x-2.0-rc1
+version = 7.x-2.0-rc2
 core = 7.x
 base theme = bootstrap
 
