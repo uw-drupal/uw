@@ -40,6 +40,10 @@ drush en -y menu_import
 	    - Footer menu: Footer Nav region
 	    - Thinstrip menu: Thinstrip region
 	* Save Block
+	
+	Note: You may also import menus via drush:
+        drush menu-import /data/www/sites/all/themes/UW-Drupal-Theme/uw-menu-top.txt menu-uw-top-menu --clean-import
+
 
 ## Menu Labels
 
