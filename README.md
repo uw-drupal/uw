@@ -18,11 +18,11 @@ drush dl bootstrap-7.x-2.1
 drush en -y bootstrap
 ```
 
-Next, download (or clone) UW-Drupal-Theme into your Drupal 7 theme folder.
+Next, download (or clone) UW Drupal Theme into your Drupal 7 theme folder.
 
 ```
 cd $DRUPAL_ROOT/sites/all/themes
-git clone git://github.com/uw-drupal/UW-Drupal-Theme.git
+git clone git://github.com/uw-drupal/uw.git
 ```
 
 Finally, switch to the UW Drupal theme at Admin -> Appearance.
@@ -95,7 +95,7 @@ See "UW-MENU-README.md" in the themes folder for additional instructions on inst
 
 If you need to customize the stylesheets further or make other changes, we recommend creating a sub-theme.  See [Creating a sub-theme](http://drupal.org/node/225125) at drupal.org.  With this approach, you can continue to pull in changes and enhancements for the UW Drupal Theme without overriding your own customizations.
 
-Developers interested in contributing to this theme should see the [project wiki](https://github.com/uw-drupal/UW-Drupal-Theme/wiki) for additional info.
+Developers interested in contributing to this theme should see the [project wiki](https://github.com/uw-drupal/uw/wiki) for additional info.
 
 ## Caveats
 
