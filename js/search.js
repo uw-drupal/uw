@@ -41,6 +41,9 @@ $('#search form').submit(function () {
     $input = $inputs.filter(':checked'),
     method = $input.val(),
     query = encodeURIComponent($q.val());
+		
+		//alert( search_settings.type );
+		//alert( search_settings.cse_id );
 
     if (method === 'main')
       return true;
@@ -51,7 +54,20 @@ $('#search form').submit(function () {
   }
 
   if (method === 'site') {
-    window.location.href = $input.data('site') + 'search/node/' + query;
+		var this_site_url = '';
+		if (search_settings.this_site_url != '') this_site_url = '&hq=site:' + search_settings.this_site_url;
+		
+		if (search_settings.type == 'drupal'){
+			window.location.href = $input.data('site') + 'search/node/' + query;
+			
+		}else if (search_settings.type == 'google'){
+			window.location.href = 'http://www.google.com/search?' + 'q=' + query + this_site_url;
+			
+		}else if (search_settings.type == 'google_cse'){
+			window.location.href = 'https://www.google.com:443/cse/publicurl?cx=' + search_settings.cse_id + '&q=' + query;
+						
+		}
+	
     return false;
   }
   return true; //all else fails, just go to the normal search

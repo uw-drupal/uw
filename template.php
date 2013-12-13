@@ -142,3 +142,5 @@ function uw_pubcookie_login() {
 	$links .= l( date('Y') . ' University of Washington' , 'http://www.washington.edu');
 	return $links;
 }
+
+drupal_add_js("public://search-settings.js");

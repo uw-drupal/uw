@@ -12,6 +12,7 @@ scripts[] = js/branding.js
 scripts[] = js/navigation.js
 scripts[] = js/misc.js
 scripts[] = js/search.js
+
 scripts[] = js/weather.js
 scripts[] = js/menu-columns.js
 

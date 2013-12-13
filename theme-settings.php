@@ -36,15 +36,56 @@ $form['uw']['search']['show_search'] = array(
     '#type'          => 'radios',
     '#title'         => t('Default search site'),
     '#default_value' => theme_get_setting('search_default_site'),
-    '#options' => drupal_map_assoc(array('this site', 'UW')),
+    '#options' => drupal_map_assoc(array( 'UW', 'this site' )),
     '#states' => array(
-      // Hide the patch color settings if show_patch is unchecked
+      // Hide this search setting if show_search is unchecked
       'invisible' => array(
         'input[name="show_search"]' => array('checked' => FALSE),
       ),
     ),
   );
 
+  $form['uw']['search']['this_site_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('URL of "this site" (do not include http://)'),
+    '#default_value' => theme_get_setting('this_site_url'),		
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+		),
+  );
+
+  $form['uw']['search']['search_with'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Search "this site" with:'),
+    '#default_value' => theme_get_setting('search_with'),
+    '#options' => array( 'drupal'=>'Drupal' , 'google'=>'Google (search results may contain ads)' , 'google_cse'=>'Google CSE -- provide your <a href="http://google.com/cse">Custom Search Engine</a> ID below'),
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['uw']['search']['google_cse_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google CSE ID'),
+    '#default_value' => theme_get_setting('google_cse_id'),		
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+      'enabled' => array(
+        'input[name="search_with"]' => array('value' => 'google_cse'),
+      ),
+		),
+  );
+
+	
   $form['uw']['patch_band'] = array(
     '#type' => 'fieldset',
     '#title' => t('UW "Patch & Band" Logo Options'),
@@ -143,6 +184,11 @@ function uw_theme_settings_validate($form, &$form_state) {
       form_set_error('header_path', t('The custom header path is invalid.'));
     }
   }
+	
+	// If they checked CSE be sure they provided a CSE ID
+	if ( $form_state['values']['search_with'] == 'google_cse' && $form_state['values']['google_cse_id'] == '' ) {
+    form_set_error('google_cse_id', t('You selected "Google with your CSE" but did not provide a CSE Identifier.') );
+	}
 }
 
 /**
@@ -166,4 +212,17 @@ function uw_theme_settings_submit($form, &$form_state) {
   if (!empty($values['header_path'])) {
     $values['header_path'] = _system_theme_settings_validate_path($values['header_path']);
   }
+	
+	
+	//hq=' + site:f2.washington.edu + &
+	
+	$search_settings_content = "search_settings = new Object(); \n;";
+	$search_settings_content .= "search_settings.type = '" . $form_state['values']['search_with'] . "'; \n";
+	$search_settings_content .= "search_settings.cse_id = '" . $form_state['values']['google_cse_id'] . "'; \n";
+	$search_settings_content .= "search_settings.this_site_url = '" . $form_state['values']['this_site_url'] . "'; \n";
+	
+	file_save_data( $search_settings_content , "public://search-settings.js", $replace = FILE_EXISTS_REPLACE);
+  drupal_flush_all_caches();
+
+
 }
