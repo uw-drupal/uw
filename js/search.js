@@ -41,33 +41,30 @@ $('#search form').submit(function () {
     $input = $inputs.filter(':checked'),
     method = $input.val(),
     query = encodeURIComponent($q.val());
-		
-		//alert( search_settings.type );
-		//alert( search_settings.cse_id );
 
-    if (method === 'main')
-      return true;
+  if (method == 'main') {
+    return true;
+  }
 
-  if (method === 'directory') {
+  if (method == 'directory') {
     window.location.href = 'http://www.washington.edu/home/peopledir/?method=name&whichdir=both&term=' + query;
     return false;
   }
 
-  if (method === 'site') {
-		var this_site_url = '';
-		if (search_settings.this_site_url != '') this_site_url = '&hq=site:' + search_settings.this_site_url;
-		
-		if (search_settings.type == 'drupal'){
-			window.location.href = $input.data('site') + 'search/node/' + query;
-			
-		}else if (search_settings.type == 'google'){
-			window.location.href = 'http://www.google.com/search?' + 'q=' + query + this_site_url;
-			
-		}else if (search_settings.type == 'google_cse'){
-			window.location.href = 'https://www.google.com:443/cse/publicurl?cx=' + search_settings.cse_id + '&q=' + query;
-						
-		}
-	
+  if (method == 'site') {
+    var this_site_url = '';
+    if (settings.uw_search.this_site_url !== '') {
+      this_site_url = '&hq=site:' + settings.uw_search.this_site_url;
+    }
+
+    if (settings.uw_search.type == 'drupal') {
+      window.location.href = $input.data('site') + 'search/node/' + query;
+    } else if (settings.uw_search.type == 'google') {
+      window.location.href = 'http://www.google.com/search?' + 'q=' + query + this_site_url;
+    } else if (settings.uw_search.type == 'google_cse') {
+      window.location.href = 'https://www.google.com:443/cse/publicurl?cx=' + settings.uw_search.cse_id + '&q=' + query;
+    }
+
     return false;
   }
   return true; //all else fails, just go to the normal search

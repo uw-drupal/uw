@@ -98,6 +98,13 @@ function uw_preprocess_page(&$variables) {
     }
   }
 
+  # add search settings
+  drupal_add_js(array('uw_search' => array(
+    'type' => theme_get_setting('search_with'),
+    'this_site_url' => theme_get_setting('this_site_url'),
+    'cse_id' => theme_get_setting('google_cse_id'),
+  )), 'setting');
+
   # add fallback jquery
   drupal_add_js("window.jQuery || document.write('<script src=\"$base_path$theme_path/js/jquery-1.8.3.min.js\"><' + '/script>');", array('type' => 'inline', 'group' => JS_LIBRARY, 'weight' => -19.9999999, 'every_page' => TRUE));
 
@@ -142,5 +149,3 @@ function uw_pubcookie_login() {
 	$links .= l( date('Y') . ' University of Washington' , 'http://www.washington.edu');
 	return $links;
 }
-
-drupal_add_js("public://search-settings.js");
