@@ -21,6 +21,23 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
+  $form['uw']['extensions'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Extensions'),
+  );
+
+  $form['uw']['extensions']['weather_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Weather'),
+    '#default_value' => theme_get_setting('weather_enabled'),
+  );
+
+  $form['uw']['extensions']['menu_columns_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Menu Columns'),
+    '#default_value' => theme_get_setting('menu_columns_enabled'),
+  );
+
   $form['uw']['search'] = array(
     '#type' => 'fieldset',
     '#title' => t('Search Box'),

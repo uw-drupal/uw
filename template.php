@@ -98,6 +98,18 @@ function uw_preprocess_page(&$variables) {
     }
   }
 
+  # conditionally add theme extensions
+  $extensions = array(
+    'weather' => 'weather.js',
+    'menu_columns' => 'menu-columns.js',
+  );
+
+  foreach ($extensions as $name => $file) {
+    if (theme_get_setting($name . '_enabled')) {
+      drupal_add_js($theme_path . '/js/' . $file, array('group' => JS_THEME));
+    }
+  }
+
   # add search settings
   drupal_add_js(array('uw_search' => array(
     'type' => theme_get_setting('search_with'),

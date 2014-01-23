@@ -13,9 +13,6 @@ scripts[] = js/navigation.js
 scripts[] = js/misc.js
 scripts[] = js/search.js
 
-scripts[] = js/weather.js
-scripts[] = js/menu-columns.js
-
 scripts[] = js/bootstrap-hover-dropdown.min.js
 
 ; Disable the CDN as we are using our own source files.
