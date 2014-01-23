@@ -25,6 +25,10 @@ var data = {
   icon: null
 };
 
+// create an element to hold the weather
+var $li = $('<li class="weather" />');
+$('.thinstrip ul').append($li);
+
 var fetch_weather = function() {
   $.ajax({
     url: 'https://ajax.googleapis.com/ajax/services/feed/load',
@@ -35,18 +39,15 @@ var fetch_weather = function() {
       for (var prop in data) {
         data[prop] = entries[index++].title.split(' | ')[1];
       }
-      var $li = $('<li />');
-      $li.html(
+      $('li.weather').html(
         '<a href="http://www.atmos.washington.edu/weather/forecast.php"><img src="//uw.edu/news/wp-content/themes/uw/img/weather/top-nav/' + data.icon + '.png" title="Current weather: ' + data.weather + '" alt="" /> Seattle ' + data.temp + '</a>'
       );
-      $('.thinstrip ul').append($li);
     }
   });
 };
 
-// fetch now and every 9e5 milliseconds (15 minutes)
 fetch_weather();
-setInterval(fetch_weather, 9e5);
+setInterval(fetch_weather, 9e5); // every 15 minutes
 
 // #### END D7 behaviors wrapper #########
     }
