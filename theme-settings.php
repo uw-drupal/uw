@@ -21,12 +21,29 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#weight' => -40,
   );
 
+  $form['uw']['extensions'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Extensions'),
+  );
+
+  $form['uw']['extensions']['weather_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Weather'),
+    '#default_value' => theme_get_setting('weather_enabled'),
+  );
+
+  $form['uw']['extensions']['menu_columns_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Menu Columns'),
+    '#default_value' => theme_get_setting('menu_columns_enabled'),
+  );
+
   $form['uw']['search'] = array(
     '#type' => 'fieldset',
     '#title' => t('Search Box'),
   );
 
-$form['uw']['search']['show_search'] = array(
+  $form['uw']['search']['show_search'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show search (in header)'),
     '#default_value' => theme_get_setting('show_search'),
@@ -36,11 +53,51 @@ $form['uw']['search']['show_search'] = array(
     '#type'          => 'radios',
     '#title'         => t('Default search site'),
     '#default_value' => theme_get_setting('search_default_site'),
-    '#options' => drupal_map_assoc(array('this site', 'UW')),
+    '#options' => drupal_map_assoc(array( 'UW', 'this site' )),
     '#states' => array(
-      // Hide the patch color settings if show_patch is unchecked
+      // Hide this search setting if show_search is unchecked
       'invisible' => array(
         'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['uw']['search']['this_site_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('URL of "this site" (do not include http://)'),
+    '#default_value' => theme_get_setting('this_site_url'),
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['uw']['search']['search_with'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Search "this site" with:'),
+    '#default_value' => theme_get_setting('search_with'),
+    '#options' => array( 'drupal'=>'Drupal' , 'google'=>'Google (search results may contain ads)' , 'google_cse'=>'Google CSE -- provide your <a href="http://google.com/cse">Custom Search Engine</a> ID below'),
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['uw']['search']['google_cse_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google CSE ID'),
+    '#default_value' => theme_get_setting('google_cse_id'),
+    '#states' => array(
+      // Hide this search setting if show_search is unchecked
+      'invisible' => array(
+        'input[name="show_search"]' => array('checked' => FALSE),
+      ),
+      'enabled' => array(
+        'input[name="search_with"]' => array('value' => 'google_cse'),
       ),
     ),
   );
@@ -50,11 +107,12 @@ $form['uw']['search']['show_search'] = array(
     '#title' => t('UW "Patch & Band" Logo Options'),
   );
 
-$form['uw']['patch_band']['show_patch'] = array(
+  $form['uw']['patch_band']['show_patch'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show patch (W logo)'),
     '#default_value' => theme_get_setting('show_patch'),
   );
+
   $form['uw']['patch_band']['patch_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Patch color (W logo)'),
@@ -67,6 +125,7 @@ $form['uw']['patch_band']['show_patch'] = array(
       ),
     ),
   );
+
   $form['uw']['patch_band']['band_color'] = array(
     '#type'          => 'radios',
     '#title'         => t('Band color'),
@@ -78,6 +137,7 @@ $form['uw']['patch_band']['show_patch'] = array(
     '#type' => 'fieldset',
     '#title' => t('Header image settings (masthead background)'),
   );
+
   $form['uw']['header']['default_header'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use the default header image'),
@@ -85,6 +145,7 @@ $form['uw']['patch_band']['show_patch'] = array(
     '#tree' => FALSE,
     '#description' => t('Check here if you want the theme to use the header supplied with it.')
   );
+
   $form['uw']['header']['settings'] = array(
     '#type' => 'container',
     '#states' => array(
@@ -94,19 +155,20 @@ $form['uw']['patch_band']['show_patch'] = array(
       ),
     ),
   );
+
   $form['uw']['header']['settings']['header_path'] = array(
     '#type' => 'textfield',
     '#title' => t('Path to custom header'),
     '#description' => t('The path to the file you would like to use as your header file instead of the default header.'),
     '#default_value' => theme_get_setting('header_path'),
   );
+
   $form['uw']['header']['settings']['header_upload'] = array(
     '#type' => 'file',
     '#title' => t('Upload header image'),
     '#maxlength' => 40,
     '#description' => t("If you don't have direct file access to the server, use this field to upload your header.")
   );
-
 
   $form['#validate'][] = 'uw_theme_settings_validate';
   $form['#submit'][] = 'uw_theme_settings_submit';
@@ -142,6 +204,11 @@ function uw_theme_settings_validate($form, &$form_state) {
     if (!$path) {
       form_set_error('header_path', t('The custom header path is invalid.'));
     }
+  }
+
+  // If they checked CSE be sure they provided a CSE ID
+  if ( $form_state['values']['search_with'] == 'google_cse' && $form_state['values']['google_cse_id'] == '' ) {
+    form_set_error('google_cse_id', t('You selected "Google with your CSE" but did not provide a CSE Identifier.') );
   }
 }
 

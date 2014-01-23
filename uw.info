@@ -1,6 +1,6 @@
 name = UW
 description = UW Drupal Theme
-version = 7.x-2.0-rc2
+version = 7.x-2.0-rc3
 core = 7.x
 base theme = bootstrap
 
@@ -12,10 +12,8 @@ scripts[] = js/branding.js
 scripts[] = js/navigation.js
 scripts[] = js/misc.js
 scripts[] = js/search.js
-scripts[] = js/weather.js
-scripts[] = js/menu-columns.js
 
-modernizr[Modernizr.touch][nope][] = js/bootstrap-hover-dropdown.min.js
+scripts[] = js/bootstrap-hover-dropdown.min.js
 
 ; Disable the CDN as we are using our own source files.
 settings[cdn_bootstrap] = 0
