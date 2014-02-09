@@ -175,23 +175,23 @@ Layout diagram:
 }
 
 // fallback flexbox styles for legacy browsers
-  .no-flexbox.no-flexboxlegacy {
-    @include respond-to("large") {
-      .navbar .nav {
-        @include flex-parent-legacy;
+.no-flexbox.no-flexboxlegacy {
+  @include respond-to("large") {
+    .navbar .nav {
+      @include flex-parent-legacy;
 
-        > li {
-          @include flex-item-legacy;
-          vertical-align: middle;
-        }
+      > li {
+        @include flex-item-legacy;
+        vertical-align: middle;
       }
     }
+  }
 
-    .flex-parent {
-      @include flex-parent-legacy;
-    }
+  .flex-parent {
+    @include flex-parent-legacy;
+  }
 
-    .flex-item {
-      @include flex-item-legacy;
-    }
+  .flex-item {
+    @include flex-item-legacy;
+  }
 }
