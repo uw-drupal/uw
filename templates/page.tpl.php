@@ -243,7 +243,7 @@
   <?php if ($page['footer_left']): ?>
     <?php print render($page['footer_left']); ?>
   <?php else: ?>
-    <a href="http://www.washington.edu/">&copy; 2013 University of Washington</a>
+    <a href="http://www.washington.edu/">&copy; <?php print date('Y') ?> University of Washington</a>
   <?php endif; ?>
   </div>
 </footer>
