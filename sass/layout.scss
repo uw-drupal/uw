@@ -116,7 +116,9 @@ Layout diagram:
 }
 
 .sidebar {
-  clear: both;
+  @include respond-to("mobile") {
+    clear: both;
+  }
   margin-top: 40px;
 
   .region {
