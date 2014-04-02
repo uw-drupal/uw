@@ -67,11 +67,10 @@ Visit the UW {"url":"http:","expanded":true}
 -Planning a visit {"url":"http://www.washington.edu/discover/visit/"}
 -Things to do {"url":"http://www.washington.edu/discover/visit/uw-events"}
 -Tours {"url":"http://admit.washington.edu/Visit/GuidedTour"}
-
-Connect with us {"url":"http:","expanded":true}
+-Connect with us {"url":"http:","expanded":true}
 -Facebook {"url":"http://www.facebook.com/UofWA"}
 -YouTube {"url":"http://www.youtube.com/user/uwhuskies"}
--iTunes {"url":"http://depts.washington.edu/itunes/"}
+-Instagram {"url":"http://instagram.com/uofwa#"}
 -Twitter {"url":"http://twitter.com/UW"}
 -m.UW {"url":"http://www.washington.edu/mobile/"}
 -LinkedIn {"url":"http://www.linkedin.com/company/university-of-washington"}

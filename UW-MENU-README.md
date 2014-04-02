@@ -20,6 +20,16 @@ drush en -y menu_import
 
 ## Importing the Menus
 
+### Via a Drush script:
+ * SSH to your drupal site root. 
+ * At the shell prompt type: which drush 
+   - make a note of the path to drush. eg: /usr/lib/php/pear/drush
+ * At the shell prompt type: 
+   - drush php-script /path/to/theme/folder/uw-menu-install.php
+   - eg: drush php-script /sites/all/themes/UW-Drupal-Theme/uw-menu-install.php
+
+### Manually:
+
 * For each of the menus you would like to import (top, footer, thinstrip):
 	* Go to `admin/structure/menu`
 	* Click Add Menu
