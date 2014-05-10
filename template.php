@@ -161,3 +161,30 @@ function uw_pubcookie_login() {
 	$links .= l( date('Y') . ' University of Washington' , 'http://www.washington.edu');
 	return $links;
 }
+
+// Add Google font Droid Serif to link tag in HTML head
+$droid_font = array(
+  '#tag' => 'link', // The #tag is the html tag - <link />
+  '#attributes' => array( // Set up an array of attributes inside the tag
+    'href' 	=> 'https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic&amp;ver=3.6?1164cf2', 
+    'rel' 	=> 'stylesheet',
+    'type' 	=> 'text/css',
+		'media' => 'all' ,
+		'id' 		=> 'google-font-droid-serif-css' ,
+  ),
+);
+drupal_add_html_head($droid_font, 'google_font_droid_serif');
+
+// Add Google font Open Sans to link tag in HTML head
+$opensans_font = array(
+  '#tag' => 'link', // The #tag is the html tag - <link />
+  '#attributes' => array( // Set up an array of attributes inside the tag
+    'href' 	=> 'https://fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C600italic%2C700italic%2C400%2C600%2C700%2C800&amp;ver=3.6?1164cf2', 
+    'rel' 	=> 'stylesheet',
+    'type' 	=> 'text/css',
+		'media' => 'all' ,
+		'id' 		=> 'google-font-open-sans-css' ,
+  ),
+);
+drupal_add_html_head($opensans_font, 'google_font_open_sans');
+
