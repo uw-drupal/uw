@@ -28,8 +28,12 @@ drush en -y menu_import
    - drush php-script /path/to/theme/folder/uw-menu-install.php
    - eg: drush php-script /sites/all/themes/UW-Drupal-Theme/uw-menu-install.php
 
-### Manually:
+### Via Drush
+Note: You may also import menus via drush:
+drush menu-import [your-path-to]/sites/all/themes/UW-Drupal-Theme/uw-menu-top.txt menu-uw-top-menu --clean-import
 
+
+### Manually:
 * For each of the menus you would like to import (top, footer, thinstrip):
 	* Go to `admin/structure/menu`
 	* Click Add Menu
@@ -42,18 +46,17 @@ drush en -y menu_import
 	  - Options: Remove existing Menu Items
 	* Click Upload and Preview
 	* Click Import
-	* Go to `admin/structure/block`
-	* Scroll down to disabled and click configure next to the UW **[Top/Footer/Thinstrip]** block
-	  - Block title: \<none\>
-	  - Region Settings:
-	    - Top menu: Dropdowns region
-	    - Footer menu: Footer Nav region
-	    - Thinstrip menu: Thinstrip region
-	* Save Block
-	
-	Note: You may also import menus via drush:
-        drush menu-import /data/www/sites/all/themes/UW-Drupal-Theme/uw-menu-top.txt menu-uw-top-menu --clean-import
 
+### Configuring menus once they are installed or imported
+* Go to `admin/structure/block`
+* Scroll down to disabled and click configure next to the UW **[Top/Footer/Thinstrip]** block
+  - Block title: \<none\>
+  - Region Settings:
+    - Top menu: Dropdowns region
+    - Footer menu: Footer Nav region
+    - Thinstrip menu: Thinstrip region
+* Save Block
+	
 
 ## Menu Labels
 
