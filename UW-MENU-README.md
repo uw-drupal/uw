@@ -66,4 +66,4 @@ The UW-Drupal-Theme CSS files have been modified to work with this module.
 
 After installing and enabling the module, you may add menu items to your Drupal menus which contain the <nolink> URL.
 
-**Note**: After enabling the special_menu_items, navigate to the configuration page (`admin/config/system/special_menu_items`) and set the HTML tags for no link and separator to "<div".
+**Note**: After enabling the special_menu_items, navigate to the configuration page (`admin/config/system/special_menu_items`) and set the HTML tag for "nolink" to "</a>".
