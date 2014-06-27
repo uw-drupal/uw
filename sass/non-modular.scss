@@ -152,3 +152,21 @@
     content: "";
   }
 }
+
+// remove divider shadow on breadcrumb list
+ul.breadcrumb .divider:before , ul.breadcrumb .divider:after{
+		box-shadow:none;
+}
+
+// add style for breadcrumbs
+ul.breadcrumb{
+	margin: -25px 25px -5px 25px; 
+	background-color:transparent; 
+	position:relative; 
+	z-index:+1;
+	font-size:small;
+}
+	ul.breadcrumb li {white-space:nowrap;}
+	ul.breadcrumb li a:link, ul.breadcrumb li a:visited{ color:#ccc; } 
+	ul.breadcrumb li a:hover{ color:#999; text-decoration:none; } 
+	ul.breadcrumb li a:active{ color:#666; text-decoration:none;} 

@@ -180,8 +180,12 @@
 
 <?php print $messages; ?>
 
-<div class="container container-primary">
 
+<div class="container container-primary"> 
+
+	<?php if(theme_get_setting('breadcrumb')){ print $breadcrumb; } ?>
+	
+	 
    <div id="content" role="main">
     <div class="divider inner">
       <header class="entry-header">

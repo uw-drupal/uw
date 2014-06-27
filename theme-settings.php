@@ -133,6 +133,7 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#options' => drupal_map_assoc(array('purple', 'tan')),
   );
 
+
   $form['uw']['header'] = array(
     '#type' => 'fieldset',
     '#title' => t('Header image settings (masthead background)'),
@@ -169,6 +170,20 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
     '#maxlength' => 40,
     '#description' => t("If you don't have direct file access to the server, use this field to upload your header.")
   );
+
+
+  $form['uw']['breadcrumb'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Breadcrumb'),
+  );
+
+	$form['uw']['breadcrumb']['breadcrumb'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display breadcrumb links'),
+    '#default_value' => theme_get_setting('breadcrumb'),
+    '#description' => t('Check here if you want the breadcrumb links to display.')
+  );
+
 
   $form['#validate'][] = 'uw_theme_settings_validate';
   $form['#submit'][] = 'uw_theme_settings_submit';
