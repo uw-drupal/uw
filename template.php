@@ -187,4 +187,3 @@ $opensans_font = array(
   ),
 );
 drupal_add_html_head($opensans_font, 'google_font_open_sans');
-
