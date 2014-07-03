@@ -130,6 +130,12 @@ function uw_preprocess_page(&$variables) {
   $variables['header_path'] = file_create_url(theme_get_setting('header_path'));
 
   $page = $variables['page'];
+	
+	# Tighten margin widths
+	if (theme_get_setting('margin_width') == 'Tight' ){
+	  drupal_add_css($theme_path . '/css/tighter-margins.css' , 'file');
+	}
+	
 }
 
 /**

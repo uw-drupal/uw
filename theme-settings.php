@@ -172,16 +172,23 @@ function uw_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NU
   );
 
 
-  $form['uw']['breadcrumb'] = array(
+  $form['uw']['misc'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Breadcrumb'),
+    '#title' => t('Miscellaneous Settings'),
   );
 
-	$form['uw']['breadcrumb']['breadcrumb'] = array(
+	$form['uw']['misc']['breadcrumb'] = array(
     '#type' => 'checkbox',
     '#title' => t('Display breadcrumb links'),
     '#default_value' => theme_get_setting('breadcrumb'),
     '#description' => t('Check here if you want the breadcrumb links to display.')
+  );
+
+  $form['uw']['misc']['margin_width'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Margin width'),
+    '#default_value' => theme_get_setting('margin_width'),
+    '#options' => drupal_map_assoc(array( 'Default', 'Tight' )),
   );
 
 

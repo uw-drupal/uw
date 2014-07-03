@@ -1,0 +1,40 @@
+/* Provides tighter margins for uwd7 theme. This file is NOT generated via compass/sass */
+
+@charset "UTF-8";
+/* CSS Document */
+
+/* MAIN CONTAINERS =================== */
+div#content, div.sidebar
+{margin:0px; padding:0px; }
+
+/*  Content Column ================ */
+div#content div.inner
+{padding:0px 18px;}
+
+/* Arrow mark */
+span#arrow-mark
+{margin-top:-14px; background-size:75%}
+
+/* Sidebar First (tablet & narrower) =====================*/
+div.container div.sidebar div.region-sidebar-first
+{padding:0px; margin:15px -6px 0px 18px; }
+
+/* Wider screens --------------------------------------------- */
+@media (min-width: 980px) {
+
+  /* Sidebar First --------------------------------------------- */
+  div.container div.sidebar div.region-sidebar-first
+  {padding:0px; margin:15px -24px 0px -6px; }
+
+  /* Sidebar Second  ----------------------------------------- */
+  div.sidebar div.region-sidebar-second
+  {padding:0px; margin:-3px 0px 0px -24px; }
+
+}
+
+div.sidebar div.region section
+{margin-bottom:0px;}
+
+/* Breadcrumb - shift for tighter margins -------- */
+div.container ul.breadcrumb
+{margin-bottom: 9px; margin-left:18px;}

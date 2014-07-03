@@ -185,30 +185,32 @@ ul.breadcrumb .divider:before, ul.breadcrumb .divider:after {
 
 /* line 162, ../sass/non-modular.scss */
 ul.breadcrumb {
-  margin: -25px 25px -5px 25px;
+  padding: 0px;
+  margin: -20px 30px 0px 40px;
   background-color: transparent;
   position: relative;
   z-index: +1;
   font-size: small;
 }
 
-/* line 169, ../sass/non-modular.scss */
+/* line 170, ../sass/non-modular.scss */
 ul.breadcrumb li {
   white-space: nowrap;
+  border-bottom: thin solid #f3f3f3;
 }
 
-/* line 170, ../sass/non-modular.scss */
+/* line 171, ../sass/non-modular.scss */
 ul.breadcrumb li a:link, ul.breadcrumb li a:visited {
   color: #ccc;
 }
 
-/* line 171, ../sass/non-modular.scss */
+/* line 172, ../sass/non-modular.scss */
 ul.breadcrumb li a:hover {
   color: #999;
   text-decoration: none;
 }
 
-/* line 172, ../sass/non-modular.scss */
+/* line 173, ../sass/non-modular.scss */
 ul.breadcrumb li a:active {
   color: #666;
   text-decoration: none;

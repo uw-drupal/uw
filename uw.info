@@ -42,3 +42,4 @@ settings[sidebar_location] = right
 settings[default_header] = 1
 settings[toggle_secondary_menu] = 0
 settings[toggle_name] = 1
+settings[margin_width] = Default
